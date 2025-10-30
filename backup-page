@@ -1,0 +1,186 @@
+<?php include 'components/header.php'; ?>
+
+<!-- Main Content -->
+<main class="main-content">
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>About Verma Accounting & Financial Services</h1>
+      <p>Your trusted partner in tax and accounting services across Canada</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>Who We Are</h2>
+          <p>
+            Verma Accounting & Financial Services is a professional accounting
+            firm dedicated to providing comprehensive accounting, bookkeeping,
+            payroll, and tax services to individuals and businesses across Canada.
+            With over 10 years of experience in the industry, we have built a reputation
+            for accuracy, reliability, and exceptional customer service.
+          </p>
+          <p>
+            Our team of certified professionals is committed to helping you
+            navigate the complex world of accounting and taxes, ensuring
+            compliance with all regulations while maximizing your financial
+            benefits. We understand that every client has unique needs, and we
+            tailor our services accordingly.
+          </p>
+          <p>
+            Whether you're an individual looking for tax preparation services or a
+            business in need of comprehensive accounting solutions, Verma
+            Accounting & Financial Services has the expertise and dedication to
+            meet your needs. We pride ourselves on building long-term
+            relationships with our clients, providing ongoing support and guidance
+            throughout the year.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-item">
+            <h4>1000+</h4>
+            <p>Happy Clients</p>
+          </div>
+          <div class="stat-item">
+            <h4>6+</h4>
+            <p>Years Experience</p>
+          </div>
+          <div class="stat-item">
+            <h4>100%</h4>
+            <p>Client Satisfaction</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="mission-section">
+    <div class="container">
+      <div class="mission-content">
+        <h2>Our Mission</h2>
+        <p>
+          To provide exceptional tax and accounting services that help our
+          clients achieve their financial goals while ensuring full compliance
+          with all applicable regulations. We are committed to delivering
+          personalized solutions that meet the unique needs of each client.
+        </p>
+        <div class="mission-features">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>CRA Compliance</h3>
+            <p>Ensuring full compliance with all Canadian tax regulations and requirements.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Financial Growth</h3>
+            <p>Helping clients maximize their financial potential through strategic planning.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Personalized Service</h3>
+            <p>Tailored solutions that meet the unique needs of each individual and business.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section">
+    <div class="container">
+      <h2>Why Choose Our Team</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3>Professional Expertise</h3>
+          <p>
+            Our team consists of certified accountants and tax professionals
+            with extensive experience in Canadian tax law and accounting
+            standards. We stay current with all regulatory changes.
+          </p>
+        </div>
+        <div class="team-card">
+          <div class="team-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3>Client-Focused Approach</h3>
+          <p>
+            We prioritize our clients' needs and work closely with them to
+            understand their unique financial situations and goals.
+            Your success is our success.
+          </p>
+        </div>
+        <div class="team-card">
+          <div class="team-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <h3>Continuous Learning</h3>
+          <p>
+            Our team stays updated with the latest tax laws and accounting
+            practices to provide the most current and accurate advice.
+            We invest in ongoing education and training.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="values-section">
+    <div class="container">
+      <h2>Our Core Values</h2>
+      <div class="values-grid">
+        <div class="value-item">
+          <h3>Integrity</h3>
+          <p>We maintain the highest ethical standards in all our professional relationships.</p>
+        </div>
+        <div class="value-item">
+          <h3>Accuracy</h3>
+          <p>We ensure precision in every calculation and recommendation we provide.</p>
+        </div>
+        <div class="value-item">
+          <h3>Reliability</h3>
+          <p>You can count on us to deliver consistent, dependable service every time.</p>
+        </div>
+        <div class="value-item">
+          <h3>Innovation</h3>
+          <p>We embrace new technologies and methods to serve you better.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Work With Us?</h2>
+        <p>Let us help you achieve your financial goals with professional accounting services.</p>
+        <div class="cta-buttons">
+          <a href="contact.php" class="cta-button primary">
+            <i class="fas fa-phone"></i>
+            Get Free Consultation
+          </a>
+          <a href="services.php" class="cta-button secondary">
+            <i class="fas fa-calculator"></i>
+            View Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<?php include 'components/footer.php'; ?>
