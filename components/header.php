@@ -48,11 +48,11 @@
   <meta name="twitter:title" content="owningottawa — Real Estate, Mortgage, Property Management" />
   <meta name="twitter:description" content="Real estate and mortgage services for first-time buyers and sellers in Ottawa, plus property management, bookkeeping & accounting, and permits & design." />
 
-  <!-- Google Fonts - Roboto -->
+  <!-- Google Fonts - Nunito Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
     rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <!-- Font Awesome CDN -->
@@ -174,8 +174,8 @@
         <!-- Contact Information -->
         <div class="oo-contact">
           <div class="oo-cta">
-            <a href="tel:6133186478" class="btn-call"><i class="fas fa-phone"></i> Call</a>
-            <a href="/contact" class="btn-appointment"><i class="fas fa-calendar-alt"></i> Appointment</a>
+            <a href="tel:6133186478" class="btn-modern-primary"><i class="fas fa-phone"></i> 6133186478</a>
+            <a href="/contact" class="btn-modern-primary"><i class="fas fa-calendar-alt"></i> Appointment</a>
           </div>
         </div>
       </div>

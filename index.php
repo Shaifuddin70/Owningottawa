@@ -1,244 +1,550 @@
 <?php include 'components/header.php'; ?>
 <!-- Main Content -->
-<main class="main-content">
+<main class="main-content modern-redesign">
 
-  <!-- Hero Section -->
-  <section class="hero" aria-label="Featured neighbourhood tours">
+  <!-- Hero Section with Video Background -->
+  <section class="modern-hero" aria-label="Welcome to Owning Ottawa">
     <div class="hero-media">
-      <video class="hero-video" autoplay muted loop playsinline poster="images/hero-poster.jpg">
-        <source src="images/hero.mp4" type="video/mp4" />
-      </video>
-
+      <iframe class="hero-video"
+        src="https://www.youtube.com/embed/4jnzf1yj48M?autoplay=1&mute=1&loop=1&playlist=4jnzf1yj48M&controls=0&modestbranding=1&rel=0&playsinline=1"
+        title="DESIGNER RESIDENCE | CINEMATIC REAL ESTATE VIDEO IN 4K | SONY FX6"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
     </div>
 
-    <div class="hero-content">
-      <h1 class="hero-title">Your Complete Property Partner in Ottawa</h1>
-      <p class="hero-subtitle">First home? New project? Investment opportunity?
-        <br> Find it, finance it, and manage it, all with OwningOttawa.
+    <div class="modern-hero-content">
+      <div class="hero-badge fade-in-up">
+        <i class="fas fa-crown"></i>
+        <span>Premium Real Estate Portfolio</span>
+      </div>
+      <h1 class="modern-hero-title fade-in-up delay-1">
+        Your Complete Property Partner in <span class="text-gold">Ottawa</span>
+      </h1>
+      <p class="modern-hero-subtitle fade-in-up delay-2">
+        First home? New project? Investment opportunity?<br>
+        Find it, finance it, and manage it—all with OwningOttawa.
       </p>
-      <p>We bring everything under one roof: real estate, mortgages, property management, bookkeeping, and building permit design—helping you make confident property decisions from start to finish.</p>
-      <div class="hero-cta">
-        <a href="#neighbourhoods" class="btn-outline">Explore Neighbourhoods</a>
+      <div class="hero-features fade-in-up delay-3">
+        <div class="hero-feature-item">
+          <i class="fas fa-home"></i>
+          <span>Real Estate</span>
+        </div>
+        <div class="hero-feature-item">
+          <i class="fas fa-coins"></i>
+          <span>Mortgages</span>
+        </div>
+        <div class="hero-feature-item">
+          <i class="fas fa-building"></i>
+          <span>Management</span>
+        </div>
+      </div>
+      <div class="hero-cta-buttons fade-in-up delay-4">
+        <a href="#services" class="btn-modern-primary">
+          <span>Explore Services</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="/contact" class="btn-modern-outline">
+          <span>Get Started</span>
+          <i class="fas fa-paper-plane"></i>
+        </a>
+      </div>
+      <div class="scroll-indicator fade-in delay-5">
+        <i class="fas fa-chevron-down"></i>
       </div>
     </div>
   </section>
-  <section class="common-section">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6 order-lg-last">
-          <div class="img-box scroll-animate-left">
-            <img src="images/real-estate.jpg" alt="Real Estate">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="scroll-animate-right">
-            <h2 class="section-title">Stay Ahead in Ottawa’s Real Estate Market</h2>
-            <p>Ottawa’s real estate market moves fast, but the right agent keeps you prepared. At Owningottawa, we support home buyers, investors, and property owners with real guidance, proven results, and end-to-end service that simplifies every transaction.</p>
 
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card scroll-animate">
+          <div class="stat-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <div class="stat-content">
+            <h3 class="stat-number" data-target="500">0</h3>
+            <p class="stat-label">Happy Clients</p>
+          </div>
+        </div>
+        <div class="stat-card scroll-animate delay-1">
+          <div class="stat-icon">
+            <i class="fas fa-key"></i>
+          </div>
+          <div class="stat-content">
+            <h3 class="stat-number" data-target="1200">0</h3>
+            <p class="stat-label">Properties Sold</p>
+          </div>
+        </div>
+        <div class="stat-card scroll-animate delay-2">
+          <div class="stat-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <div class="stat-content">
+            <h3 class="stat-number" data-target="15">0</h3>
+            <p class="stat-label">Years Experience</p>
+          </div>
+        </div>
+        <div class="stat-card scroll-animate delay-3">
+          <div class="stat-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="stat-content">
+            <h3 class="stat-number" data-target="98">0</h3>
+            <p class="stat-label">% Satisfaction</p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="common-section">
+
+  <!-- Services Section -->
+  <section class="modern-services" id="services">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="img-box scroll-animate-right">
-            <img src="images/why-choose-us.jpg" alt="Why Work With Us">
+      <div class="section-header text-center scroll-animate">
+        <span class="section-tag"><i class="fas fa-sparkles"></i> What We Offer</span>
+        <h2 class="section-title-modern">Complete Real Estate Solutions</h2>
+        <p class="section-subtitle-modern">Everything you need under one roof for confident property decisions</p>
+      </div>
+
+      <div class="services-grid-modern">
+        <article class="service-card-modern scroll-animate">
+          <div class="service-icon-wrapper">
+            <div class="service-icon">
+              <i class="fas fa-home-lg-alt"></i>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="scroll-animate-left">
-            <h2 class="section-title">Why Work With Us</h2>
-            <p>Every client’s goal is different, but our approach stays consistent, clear, accurate, and confident. We combine market expertise with a professional, data-driven process to deliver smooth closings, organized management, and lasting value.</p>
+          <div class="service-content">
+            <h3 class="service-title">Real Estate Services</h3>
+            <p class="service-description">Buy, sell, or invest with confidence. Expert guidance from your first home to your next opportunity with strategic insight and precision.</p>
+            <a href="/services#real-estate" class="service-link">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
-        </div>
+          <div class="service-number">01</div>
+        </article>
+
+        <article class="service-card-modern scroll-animate delay-1">
+          <div class="service-icon-wrapper">
+            <div class="service-icon">
+              <i class="fas fa-percent"></i>
+            </div>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Mortgage Solutions</h3>
+            <p class="service-description">Get the right mortgage for your budget and goals. We compare lenders, explain rates, and secure the most favorable terms available.</p>
+            <a href="/services#mortgage" class="service-link">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="service-number">02</div>
+        </article>
+
+        <article class="service-card-modern scroll-animate delay-2">
+          <div class="service-icon-wrapper">
+            <div class="service-icon">
+              <i class="fas fa-building"></i>
+            </div>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Property Management</h3>
+            <p class="service-description">Keep your investment running smoothly with tenant placement, rent collection, maintenance coordination, and proactive communication.</p>
+            <a href="/services#property-management" class="service-link">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="service-number">03</div>
+        </article>
+
+        <article class="service-card-modern scroll-animate delay-3">
+          <div class="service-icon-wrapper">
+            <div class="service-icon">
+              <i class="fas fa-calculator"></i>
+            </div>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Bookkeeping & Accounting</h3>
+            <p class="service-description">Stay financially organized. Keep property owners and investors compliant, accurate, and ready for sustainable growth.</p>
+            <a href="/services#bookkeeping" class="service-link">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="service-number">04</div>
+        </article>
+
+        <article class="service-card-modern scroll-animate delay-4">
+          <div class="service-icon-wrapper">
+            <div class="service-icon">
+              <i class="fas fa-drafting-compass"></i>
+            </div>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Building Permits & Design</h3>
+            <p class="service-description">Simplify your renovation or new project with expert permit applications, drawings, and design documentation.</p>
+            <a href="/services#permits" class="service-link">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="service-number">05</div>
+        </article>
       </div>
     </div>
   </section>
-  <!-- What We Offer: Card Grid -->
-  <section class="common-section">
+
+  <!-- Featured Properties -->
+  <section class="featured-properties">
     <div class="container">
-      <h2 id="offer-title" class="section-title">What We Offer</h2>
-      <p class="section-subtitle">Homes and investments made simple</p>
-      <div class="offer-grid">
-        <article class="offer-card scroll-animate-right">
-          <img src="images/real-estate.jpg" alt="Real Estate Services" class="offer-thumb" />
-          <div class="offer-body">
-            <h3 class="offer-title">Real Estate Services</h3>
-            <p class="offer-text">Buy, sell, or invest with confidence. From your first home to your next opportunity, we guide each step with strategy, local insight, and precision.</p>
+      <div class="section-header text-center scroll-animate">
+        <span class="section-tag"><i class="fas fa-star"></i> Featured Listings</span>
+        <h2 class="section-title-modern">Exclusive Properties</h2>
+        <p class="section-subtitle-modern">Discover our handpicked selection of premium Ottawa real estate</p>
+      </div>
+
+      <div class="properties-grid">
+        <article class="property-card scroll-animate">
+          <div class="property-image">
+            <img src="https://via.placeholder.com/600x400/1a1a1a/d3ae77?text=Luxury+Condo" alt="Luxury Downtown Condo">
+            <div class="property-badge">Featured</div>
+            <div class="property-status">For Sale</div>
+          </div>
+          <div class="property-content">
+            <div class="property-price">$850,000</div>
+            <h3 class="property-title">Luxury Downtown Condo</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i> Downtown Ottawa</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 3 Beds</span>
+              <span><i class="fas fa-bath"></i> 2 Baths</span>
+              <span><i class="fas fa-ruler-combined"></i> 1,800 sqft</span>
+            </div>
+            <a href="/services" class="property-btn">View Details <i class="fas fa-arrow-right"></i></a>
           </div>
         </article>
 
-        <article class="offer-card scroll-animate-right">
-          <img src="images/mortgage.jpg" alt="Mortgage Solutions" class="offer-thumb" />
-          <div class="offer-body">
-            <h3 class="offer-title">Mortgage Solutions</h3>
-            <p class="offer-text">Get the right mortgage for your budget and goals. We compare lenders, explain rates, and help secure the most favorable terms available.</p>
+        <article class="property-card scroll-animate delay-1">
+          <div class="property-image">
+            <img src="https://via.placeholder.com/600x400/1a1a1a/d3ae77?text=Family+Home" alt="Modern Family Home">
+            <div class="property-badge">New</div>
+            <div class="property-status">For Sale</div>
+          </div>
+          <div class="property-content">
+            <div class="property-price">$1,250,000</div>
+            <h3 class="property-title">Modern Family Home</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i> Kanata</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 4 Beds</span>
+              <span><i class="fas fa-bath"></i> 3 Baths</span>
+              <span><i class="fas fa-ruler-combined"></i> 2,500 sqft</span>
+            </div>
+            <a href="/services" class="property-btn">View Details <i class="fas fa-arrow-right"></i></a>
           </div>
         </article>
 
-        <article class="offer-card scroll-animate-right">
-          <img src="images/property-management.jpg" alt="Property Management" class="offer-thumb" />
-          <div class="offer-body">
-            <h3 class="offer-title">Property Management</h3>
-            <p class="offer-text">Keep your investment running smoothly: tenant placement, rent collection, maintenance coordination, and proactive communication.</p>
+        <article class="property-card scroll-animate delay-2">
+          <div class="property-image">
+            <img src="https://via.placeholder.com/600x400/1a1a1a/d3ae77?text=Investment+Property" alt="Investment Property">
+            <div class="property-badge">Hot</div>
+            <div class="property-status">For Sale</div>
           </div>
-        </article>
-
-        <article class="offer-card scroll-animate-right">
-          <img src="images/bookkeeping.jpg" alt="Bookkeeping & Accounting" class="offer-thumb" />
-          <div class="offer-body">
-            <h3 class="offer-title">Bookkeeping &amp; Accounting</h3>
-            <p class="offer-text">Stay financially organized. We keep property owners and investors compliant, accurate, and ready for growth.</p>
-          </div>
-        </article>
-
-        <article class="offer-card scroll-animate-right">
-          <img src="images/permits.jpg" alt="Building Permits & Design" class="offer-thumb" />
-          <div class="offer-body">
-            <h3 class="offer-title">Building Permits &amp; Design</h3>
-            <p class="offer-text">Simplify your renovation or new project. We prepare and manage permit applications, drawings, and design documentation to meet local standards.</p>
+          <div class="property-content">
+            <div class="property-price">$675,000</div>
+            <h3 class="property-title">Investment Opportunity</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i> Orleans</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 3 Beds</span>
+              <span><i class="fas fa-bath"></i> 2 Baths</span>
+              <span><i class="fas fa-ruler-combined"></i> 1,600 sqft</span>
+            </div>
+            <a href="/services" class="property-btn">View Details <i class="fas fa-arrow-right"></i></a>
           </div>
         </article>
       </div>
-    </div>
-  </section>
-  <section class="common-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="img-box scroll-animate-right">
-            <img src="images/neighbourhoods.jpg" alt="Local Expertise">
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="scroll-animate-left">
-            <h2 id="neighbourhoods" class="section-title">Local Expertise That Works for You</h2>
-            <p>Ottawa’s neighborhoods each have their own rhythm. Whether it’s a downtown condo, suburban home, or investment property in Kanata, our knowledge helps match every client to the right area, opportunity, and long-term plan.</p>
-          </div>
-        </div>
+
+      <div class="text-center scroll-animate">
+        <a href="/services" class="btn-modern-primary">
+          <span>View All Properties</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Process Steps -->
-  <section class="process-section" aria-labelledby="process-title">
+  <!-- Process Timeline -->
+  <section class="process-timeline">
     <div class="container">
-      <header class="process-header">
-        <h2 id="process-title" class="section-title">How We Work</h2>
-        <p class="section-subtitle">A simple, guided process from first chat to long‑term success</p>
-      </header>
+      <div class="section-header text-center scroll-animate">
+        <span class="section-tag"><i class="fas fa-route"></i> Our Process</span>
+        <h2 class="section-title-modern">How We Work</h2>
+        <p class="section-subtitle-modern">A simple, guided journey from first consultation to long-term success</p>
+      </div>
 
-      <ol class="process-grid">
-        <li class="process-step scroll-animate-left">
-          <div class="process-badge">1</div>
-          <h3 class="process-title">Consultation &amp; Assessment</h3>
-          <p class="process-text">We start by understanding your goals, budget, and timeline.</p>
-        </li>
-        <li class="process-step scroll-animate-left">
-          <div class="process-badge">2</div>
-          <h3 class="process-title">Property Strategy &amp; Planning</h3>
-          <p class="process-text">We build a roadmap that connects real estate, finance, and management for a seamless experience.</p>
-        </li>
-        <li class="process-step scroll-animate-left">
-          <div class="process-badge">3</div>
-          <h3 class="process-title">Execution &amp; Coordination</h3>
-          <p class="process-text">From showings and negotiations to paperwork, we manage every step with precision.</p>
-        </li>
-        <li class="process-step scroll-animate-left">
-          <div class="process-badge">4</div>
-          <h3 class="process-title">Ongoing Support</h3>
-          <p class="process-text">After closing or leasing, we remain your long‑term partner for accounting, management, and future investments.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-  <section class="common-section text-center">
-    <div class="container">
-      <h2 id="listings" class="section-title">Explore Our Current Listings</h2>
-      <p class="section-subtitle">Highlight your current listings with a brief description and an “Explore” button for each.</p>
-      <a href="/services" class="btn-outline">Explore Our Current Listings</a>
-    </div>
-  </section>
-  <section class="common-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="img-box scroll-animate-right">
-            <img src="images/about.jpg" alt="About Owningottawa">
+      <div class="timeline">
+        <div class="timeline-item scroll-animate">
+          <div class="timeline-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-number">01</div>
+            <h3 class="timeline-title">Consultation & Assessment</h3>
+            <p class="timeline-text">We start by understanding your goals, budget, and timeline to create a personalized strategy.</p>
           </div>
         </div>
-        <div class="col-lg-6">
-          <div class="scroll-animate-left">
-            <h2 id="about" class="section-title">About Owningottawa</h2>
-            <p>Owningottawa was built to make property ownership in Ottawa simple, informed, and rewarding. Led by Rishabh, our approach blends real estate insight, financial expertise, and local experience to deliver dependable results.</p>
-            <p>Real success comes from transparency, preparation, and consistent communication. Whether you’re buying, financing, managing, or building—we guide each step with confidence and clarity.</p>
+
+        <div class="timeline-item scroll-animate delay-1">
+          <div class="timeline-icon">
+            <i class="fas fa-map-marked-alt"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-number">02</div>
+            <h3 class="timeline-title">Property Strategy & Planning</h3>
+            <p class="timeline-text">We build a comprehensive roadmap connecting real estate, finance, and management.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item scroll-animate delay-2">
+          <div class="timeline-icon">
+            <i class="fas fa-tasks"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-number">03</div>
+            <h3 class="timeline-title">Execution & Coordination</h3>
+            <p class="timeline-text">From showings and negotiations to paperwork, we manage every step with precision.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item scroll-animate delay-3">
+          <div class="timeline-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-number">04</div>
+            <h3 class="timeline-title">Ongoing Support</h3>
+            <p class="timeline-text">We remain your long-term partner for accounting, management, and future investments.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <div class="common-section text-center">
+
+  <!-- Why Choose Us -->
+  <section class="why-choose-us">
     <div class="container">
-      <p class="section-subtitle">Ready to find your perfect home or residential investment in Ottawa? Partner with Owningottawa and move forward with confidence.</p>
-      <a href="/contact" class="btn-outline">Contact Us</a>
+      <div class="why-grid">
+        <div class="why-content scroll-animate">
+          <span class="section-tag"><i class="fas fa-medal"></i> Why Choose Us</span>
+          <h2 class="section-title-modern">Excellence in Every Transaction</h2>
+          <p class="section-description">Every client's goal is different, but our approach stays consistent: clear, accurate, and confident. We combine market expertise with a professional, data-driven process to deliver results.</p>
+
+          <div class="why-features">
+            <div class="why-feature-item">
+              <div class="why-feature-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="why-feature-content">
+                <h4>Local Market Expertise</h4>
+                <p>Deep knowledge of Ottawa's neighborhoods and market trends</p>
+              </div>
+            </div>
+
+            <div class="why-feature-item">
+              <div class="why-feature-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="why-feature-content">
+                <h4>Comprehensive Services</h4>
+                <p>Everything from real estate to permits under one roof</p>
+              </div>
+            </div>
+
+            <div class="why-feature-item">
+              <div class="why-feature-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="why-feature-content">
+                <h4>Client-First Approach</h4>
+                <p>Your goals drive our strategy and execution</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="/about" class="btn-modern-outline">
+            <span>Learn More About Us</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="why-image scroll-animate delay-1">
+          <img src="https://via.placeholder.com/800x600/1a1a1a/d3ae77?text=Why+Choose+Us" alt="Why Choose Owning Ottawa">
+          <div class="image-decoration"></div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header text-center scroll-animate">
+        <span class="section-tag"><i class="fas fa-quote-left"></i> Testimonials</span>
+        <h2 class="section-title-modern">What Our Clients Say</h2>
+        <p class="section-subtitle-modern">Real stories from satisfied property owners and investors</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <article class="testimonial-card scroll-animate">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Working with OwningOttawa was the best decision we made. They guided us through our first home purchase with patience and expertise."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="author-info">
+              <h4 class="author-name">Sarah Johnson</h4>
+              <p class="author-role">First-Time Buyer</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card scroll-animate delay-1">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Exceptional service! They helped me find the perfect investment property and now manage it seamlessly. Highly recommend!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="author-info">
+              <h4 class="author-name">Michael Chen</h4>
+              <p class="author-role">Property Investor</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card scroll-animate delay-2">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Professional, knowledgeable, and always available. They made selling our home stress-free and got us an amazing price!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="author-info">
+              <h4 class="author-name">Emily Rodriguez</h4>
+              <p class="author-role">Home Seller</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ Section -->
-  <section class="faq-section" aria-labelledby="faq-title">
+  <section class="faq-modern">
     <div class="container">
-      <h2 id="faq-title" class="section-title text-center">Frequently Asked Questions</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false" onclick="toggleFAQ(this)">
-            Do you only work in Ottawa?
-            <i class="fas fa-chevron-down" aria-hidden="true"></i>
-          </button>
-          <div class="faq-answer" aria-hidden="true">
-            <p>Our primary focus is Ottawa, but we assist clients relocating from across Canada and guide them to find the right property locally.</p>
+      <div class="section-header text-center scroll-animate">
+        <span class="section-tag"><i class="fas fa-question-circle"></i> FAQ</span>
+        <h2 class="section-title-modern">Frequently Asked Questions</h2>
+        <p class="section-subtitle-modern">Find answers to common questions about our services</p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-column">
+          <div class="faq-item-modern scroll-animate">
+            <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+              <span class="faq-icon"><i class="fas fa-map-marked-alt"></i></span>
+              <span class="faq-title">Do you only work in Ottawa?</span>
+              <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer-modern">
+              <p>Our primary focus is Ottawa, but we assist clients relocating from across Canada and guide them to find the right property locally.</p>
+            </div>
+          </div>
+
+          <div class="faq-item-modern scroll-animate delay-1">
+            <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+              <span class="faq-icon"><i class="fas fa-percentage"></i></span>
+              <span class="faq-title">Can you help with mortgage approval?</span>
+              <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer-modern">
+              <p>Yes. We connect clients with trusted lenders and help navigate each stage of the approval and refinancing process.</p>
+            </div>
+          </div>
+
+          <div class="faq-item-modern scroll-animate delay-2">
+            <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+              <span class="faq-icon"><i class="fas fa-building"></i></span>
+              <span class="faq-title">Do you manage rental properties?</span>
+              <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer-modern">
+              <p>Yes. We offer complete management—from tenant placement to maintenance and financial reporting.</p>
+            </div>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false" onclick="toggleFAQ(this)">
-            Can you help with mortgage approval?
-            <i class="fas fa-chevron-down" aria-hidden="true"></i>
-          </button>
-          <div class="faq-answer" aria-hidden="true">
-            <p>Yes. We connect clients with trusted lenders and help navigate each stage of the approval and refinancing process.</p>
+        <div class="faq-column">
+          <div class="faq-item-modern scroll-animate delay-3">
+            <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+              <span class="faq-icon"><i class="fas fa-file-contract"></i></span>
+              <span class="faq-title">Can you help with building permits?</span>
+              <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer-modern">
+              <p>Absolutely. We handle drawings, documentation, and permit coordination to keep your project compliant and moving forward.</p>
+            </div>
+          </div>
+
+          <div class="faq-item-modern scroll-animate delay-4">
+            <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+              <span class="faq-icon"><i class="fas fa-calculator"></i></span>
+              <span class="faq-title">Do you provide bookkeeping for investors?</span>
+              <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer-modern">
+              <p>Yes. Our accounting services keep your financials accurate, compliant, and ready for reporting or tax filing.</p>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false" onclick="toggleFAQ(this)">
-            Do you manage rental properties?
-            <i class="fas fa-chevron-down" aria-hidden="true"></i>
-          </button>
-          <div class="faq-answer" aria-hidden="true">
-            <p>Yes. We offer complete management—from tenant placement to maintenance and financial reporting.</p>
-          </div>
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content scroll-animate">
+        <div class="cta-icon">
+          <i class="fas fa-home-heart"></i>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false" onclick="toggleFAQ(this)">
-            Can you help with building permits?
-            <i class="fas fa-chevron-down" aria-hidden="true"></i>
-          </button>
-          <div class="faq-answer" aria-hidden="true">
-            <p>Absolutely. We handle drawings, documentation, and permit coordination to keep your project compliant and moving forward.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false" onclick="toggleFAQ(this)">
-            Do you provide bookkeeping for real estate investors?
-            <i class="fas fa-chevron-down" aria-hidden="true"></i>
-          </button>
-          <div class="faq-answer" aria-hidden="true">
-            <p>Yes. Our accounting services keep your financials accurate, compliant, and ready for reporting or tax filing.</p>
-          </div>
+        <h2 class="cta-title">Ready to Find Your Perfect Property?</h2>
+        <p class="cta-text">Partner with OwningOttawa and move forward with confidence. Let's turn your real estate goals into reality.</p>
+        <div class="cta-buttons">
+          <a href="/contact" class="btn-modern-primary">
+            <span>Get Started Today</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="tel:6133186478" class="btn-modern-outline">
+            <span><i class="fas fa-phone"></i> Call Now</span>
+          </a>
         </div>
       </div>
     </div>
@@ -246,5 +552,98 @@
 
 </main>
 
+<script>
+  // Animated Counter
+  function animateCounter(element) {
+    const target = parseInt(element.getAttribute('data-target'));
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        element.textContent = target + (element.nextElementSibling.textContent.includes('%') ? '%' : '+');
+        clearInterval(timer);
+      } else {
+        element.textContent = Math.floor(current);
+      }
+    }, 16);
+  }
+
+  // Intersection Observer for scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated');
+
+        // Trigger counter animation for stat numbers
+        if (entry.target.querySelector('.stat-number')) {
+          const statNumber = entry.target.querySelector('.stat-number');
+          if (!statNumber.classList.contains('counted')) {
+            statNumber.classList.add('counted');
+            animateCounter(statNumber);
+          }
+        }
+      }
+    });
+  }, observerOptions);
+
+  // Observe all scroll-animate elements
+  document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('.scroll-animate, .fade-in-up, .fade-in');
+    animatedElements.forEach(el => observer.observe(el));
+  });
+
+  // Modern FAQ Toggle
+  function toggleModernFAQ(button) {
+    const item = button.parentElement;
+    const answer = item.querySelector('.faq-answer-modern');
+    const icon = button.querySelector('.faq-toggle i');
+    const isOpen = item.classList.contains('active');
+
+    // Close all other FAQs
+    document.querySelectorAll('.faq-item-modern').forEach(faq => {
+      if (faq !== item) {
+        faq.classList.remove('active');
+        faq.querySelector('.faq-answer-modern').style.maxHeight = null;
+        faq.querySelector('.faq-toggle i').classList.remove('fa-minus');
+        faq.querySelector('.faq-toggle i').classList.add('fa-plus');
+      }
+    });
+
+    // Toggle current FAQ
+    if (isOpen) {
+      item.classList.remove('active');
+      answer.style.maxHeight = null;
+      icon.classList.remove('fa-minus');
+      icon.classList.add('fa-plus');
+    } else {
+      item.classList.add('active');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      icon.classList.remove('fa-plus');
+      icon.classList.add('fa-minus');
+    }
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+</script>
 
 <?php include 'components/footer.php'; ?>
