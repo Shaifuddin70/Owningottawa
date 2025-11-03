@@ -127,57 +127,193 @@
   <!-- Header Placeholder -->
   <div id="header-placeholder"></div>
 
-  <!-- Navigation Header -->
-  <header class="oo-header">
-    <nav class="oo-nav">
-      <div class="oo-container">
+  <!-- Modern Navigation Header -->
+  <header class="modern-header">
+    <nav class="modern-nav">
+      <div class="nav-container">
         <!-- Logo Section -->
-        <div class="oo-logo">
-          <a href="/">
-            <img
-              src="images/owningottawa.jpg"
-              alt="owningottawa"
-              class="oo-logo-img" />
+        <div class="modern-logo">
+          <a href="/" class="logo-link">
+            <img src="images/owningottawa.jpg" alt="OwningOttawa" class="logo-image" />
+            <div class="logo-text">
+              <span class="logo-title">OwningOttawa</span>
+              <span class="logo-tagline">Premium Real Estate</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="nav-menu" id="navMenu">
+          <a href="/" class="nav-link active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+
+          <div class="nav-dropdown">
+            <a href="/services" class="nav-link">
+              <i class="fas fa-briefcase"></i>
+              <span>Services</span>
+              <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </a>
+            <div class="dropdown-menu">
+              <a href="/services#real-estate" class="dropdown-item">
+                <i class="fas fa-home-lg-alt"></i>
+                <div class="dropdown-content">
+                  <span class="dropdown-title">Real Estate</span>
+                  <span class="dropdown-desc">Buy, sell, invest</span>
+                </div>
+              </a>
+              <a href="/services#mortgage" class="dropdown-item">
+                <i class="fas fa-percent"></i>
+                <div class="dropdown-content">
+                  <span class="dropdown-title">Mortgages</span>
+                  <span class="dropdown-desc">Best rates & terms</span>
+                </div>
+              </a>
+              <a href="/services#property-management" class="dropdown-item">
+                <i class="fas fa-building"></i>
+                <div class="dropdown-content">
+                  <span class="dropdown-title">Property Management</span>
+                  <span class="dropdown-desc">Complete management</span>
+                </div>
+              </a>
+              <a href="/services#bookkeeping" class="dropdown-item">
+                <i class="fas fa-calculator"></i>
+                <div class="dropdown-content">
+                  <span class="dropdown-title">Bookkeeping</span>
+                  <span class="dropdown-desc">Financial services</span>
+                </div>
+              </a>
+              <a href="/services#permits" class="dropdown-item">
+                <i class="fas fa-drafting-compass"></i>
+                <div class="dropdown-content">
+                  <span class="dropdown-title">Permits & Design</span>
+                  <span class="dropdown-desc">Plans & approvals</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <a href="/about" class="nav-link">
+            <i class="fas fa-users"></i>
+            <span>About</span>
+          </a>
+
+          <a href="/contact" class="nav-link">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+          </a>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="nav-cta">
+          <a href="tel:6133186478" class="cta-phone">
+            <i class="fas fa-phone-alt"></i>
+            <span>613-318-6478</span>
+          </a>
+          <a href="/contact" class="cta-appointment">
+            <i class="fas fa-calendar-check"></i>
+            <span>Book Appointment</span>
           </a>
         </div>
 
         <!-- Mobile Menu Toggle -->
-        <button class="oo-mobile-toggle" id="ooMobileToggle">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
         </button>
-
-        <!-- Navigation Links -->
-        <div class="oo-menu">
-          <a href="/" class="oo-link active" data-page="home">Home</a>
-          <div class="oo-submenu">
-            <a
-              href="/services"
-              class="oo-link oo-toggle"
-              data-page="services">
-              Our Services
-              <span class="oo-arrow">▼</span>
-            </a>
-            <div class="oo-submenu-items">
-              <a href="/services#real-estate" class="oo-submenu-link">Real Estate Services</a>
-              <a href="/services#mortgage" class="oo-submenu-link">Mortgage Solutions</a>
-              <a href="/services#property-management" class="oo-submenu-link">Property Management</a>
-              <a href="/services#bookkeeping" class="oo-submenu-link">Bookkeeping & Accounting</a>
-              <a href="/services#permits" class="oo-submenu-link">Building Permits & Design</a>
-            </div>
-          </div>
-          <a href="/contact" class="oo-link" data-page="contact">Contact Us</a>
-          <a href="/about" class="oo-link" data-page="about">About Us</a>
-        </div>
-
-        <!-- Contact Information -->
-        <div class="oo-contact">
-          <div class="oo-cta">
-            <a href="tel:6133186478" class="btn-modern-primary"><i class="fas fa-phone"></i> 6133186478</a>
-            <a href="/contact" class="btn-modern-primary"><i class="fas fa-calendar-alt"></i> Appointment</a>
-          </div>
-        </div>
       </div>
     </nav>
   </header>
+
+  <script>
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      // Modern header scroll effect
+      const header = document.querySelector('.modern-header');
+      if (header) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        });
+      }
+
+      // Mobile menu toggle
+      const mobileToggle = document.getElementById('mobileToggle');
+      const navMenu = document.getElementById('navMenu');
+
+      if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', () => {
+          mobileToggle.classList.toggle('active');
+          navMenu.classList.toggle('active');
+          document.body.classList.toggle('menu-open');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!e.target.closest('.modern-nav')) {
+            mobileToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+          }
+        });
+      }
+
+      // Dropdown functionality for modern header
+      const dropdowns = document.querySelectorAll('.nav-dropdown');
+      dropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector('.nav-link');
+        const menu = dropdown.querySelector('.dropdown-menu');
+
+        if (link && menu) {
+          dropdown.addEventListener('mouseenter', () => {
+            dropdown.classList.add('active');
+          });
+
+          dropdown.addEventListener('mouseleave', () => {
+            dropdown.classList.remove('active');
+          });
+
+          // Mobile dropdown toggle
+          link.addEventListener('click', (e) => {
+            if (window.innerWidth <= 992) {
+              e.preventDefault();
+              dropdown.classList.toggle('active');
+            }
+          });
+        }
+      });
+
+      // Also handle old oo-submenu structure if it exists
+      const ooSubmenus = document.querySelectorAll('.oo-submenu');
+      ooSubmenus.forEach(submenu => {
+        const toggle = submenu.querySelector('.oo-toggle');
+        const menuItems = submenu.querySelector('.oo-submenu-items');
+
+        if (toggle && menuItems) {
+          // Desktop hover
+          if (window.innerWidth > 992) {
+            submenu.addEventListener('mouseenter', () => {
+              submenu.classList.add('active');
+            });
+
+            submenu.addEventListener('mouseleave', () => {
+              submenu.classList.remove('active');
+            });
+          }
+
+          // Mobile click
+          toggle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 992) {
+              e.preventDefault();
+              submenu.classList.toggle('active');
+            }
+          });
+        }
+      });
+    });
+  </script>
