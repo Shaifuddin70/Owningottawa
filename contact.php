@@ -2,20 +2,17 @@
 <main class="main-content modern-redesign">
 
     <!-- Contact Hero Section -->
-    <section class="contact-hero">
-        <div class="hero-background">
+    <section class="modern-hero" aria-label="Contact OwningOttawa">
+        <div class="hero-media">
             <img src="https://via.placeholder.com/1920x600/1a1a1a/d3ae77?text=Get+in+Touch" alt="Contact Us Background">
-            <div class="hero-overlay"></div>
         </div>
-        <div class="container">
-            <div class="contact-hero-content scroll-animate">
-                <span class="hero-badge">
-                    <i class="fas fa-envelope-open-text"></i>
-                    <span>Contact Us</span>
-                </span>
-                <h1 class="contact-hero-title">Let's Start Your Property Journey</h1>
-                <p class="contact-hero-subtitle">Have questions? Ready to buy, sell, or invest? We're here to help. Reach out and let's discuss how we can turn your real estate goals into reality.</p>
+        <div class="modern-hero-content">
+            <div class="hero-badge fade-in-up">
+                <i class="fas fa-envelope-open-text"></i>
+                <span>Contact Us</span>
             </div>
+            <h1 class="modern-hero-title fade-in-up delay-1">Let's Start Your Property Journey</h1>
+            <p class="modern-hero-subtitle fade-in-up delay-2">Have questions? Ready to buy, sell, or invest? We're here to help. Reach out and let's discuss how we can turn your real estate goals into reality.</p>
         </div>
     </section>
 
@@ -171,23 +168,20 @@
     <!-- Map Section -->
     <section class="contact-map-section">
         <div class="container">
-            <div class="map-header scroll-animate text-center">
-                <span class="section-tag"><i class="fas fa-map"></i> Our Location</span>
-                <h2 class="section-title-modern">Find Us in Ottawa</h2>
-                <p class="section-description">We serve clients throughout Ottawa and the surrounding areas. Get in touch to schedule an in-person meeting or virtual consultation.</p>
-            </div>
-
-            <div class="map-wrapper scroll-animate delay-1">
-                <div class="map-placeholder">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.523065776666!2d-75.6971930844444!3d45.42152997909955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce05b25f5113af%3A0x8a6a51e131dd15ed!2sOttawa%2C%20ON!5e0!3m2!1sen!2sca!4v1234567890123!5m2!1sen!2sca"
-                        width="100%"
-                        height="450"
-                        style="border:0; border-radius: 20px;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+            <div class="row align-items-center">
+                <div class="col-lg-6 ">
+                    <div class="map-header scroll-animate text-center">
+                        <span class="section-tag"><i class="fas fa-map"></i> Our Location</span>
+                        <h2 class="section-title-modern">Find Us in Ottawa</h2>
+                        <p class="section-description">We serve clients throughout Ottawa and the surrounding areas. Get in touch to schedule an in-person meeting or virtual consultation.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="map-wrapper scroll-animate delay-1">
+                        <div class="map-placeholder">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d306415.73021764646!2d-75.8808451768035!3d45.30164341461328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce05b25f5113af%3A0x8a6a51e131dd15ed!2sOttawa%2C%20ON!5e0!3m2!1sen!2sca!4v1763384012429!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

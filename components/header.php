@@ -144,25 +144,42 @@
 
         <!-- Navigation Links -->
         <div class="nav-menu" id="navMenu">
-          <a href="/" class="nav-link active">
+          <a href="/" class="nav-link" data-page="home">
             <i class="fas fa-home"></i>
             <span>Home</span>
           </a>
 
           <div class="nav-dropdown">
-            <a href="/services" class="nav-link">
+            <a href="/services" class="nav-link" data-page="services">
               <i class="fas fa-briefcase"></i>
               <span>Services</span>
               <i class="fas fa-chevron-down dropdown-arrow"></i>
             </a>
             <div class="dropdown-menu">
-              <a href="/services#real-estate" class="dropdown-item">
-                <i class="fas fa-home-lg-alt"></i>
-                <div class="dropdown-content">
-                  <span class="dropdown-title">Real Estate</span>
-                  <span class="dropdown-desc">Buy, sell, invest</span>
+              <div class="dropdown-item-nested">
+                <a href="/services#real-estate" class="dropdown-item dropdown-item-parent">
+                  <i class="fas fa-home-lg-alt"></i>
+                  <div class="dropdown-content">
+                    <span class="dropdown-title">Real Estate</span>
+                    <span class="dropdown-desc">Buy, sell, invest</span>
+                  </div>
+                  <i class="fas fa-chevron-right nested-arrow"></i>
+                </a>
+                <div class="nested-dropdown-menu">
+                  <a href="/services#real-estate-buy" class="nested-dropdown-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Buy</span>
+                  </a>
+                  <a href="/services#real-estate-sell" class="nested-dropdown-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <span>Sell</span>
+                  </a>
+                  <a href="/services#real-estate-invest" class="nested-dropdown-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Invest</span>
+                  </a>
                 </div>
-              </a>
+              </div>
               <a href="/services#mortgage" class="dropdown-item">
                 <i class="fas fa-percent"></i>
                 <div class="dropdown-content">
@@ -194,12 +211,17 @@
             </div>
           </div>
 
-          <a href="/about" class="nav-link">
+          <a href="/about" class="nav-link" data-page="about">
             <i class="fas fa-users"></i>
             <span>About</span>
           </a>
 
-          <a href="/contact" class="nav-link">
+          <a href="/resources" class="nav-link" data-page="resources">
+            <i class="fas fa-book"></i>
+            <span>Resources</span>
+          </a>
+
+          <a href="/contact" class="nav-link" data-page="contact">
             <i class="fas fa-envelope"></i>
             <span>Contact</span>
           </a>
@@ -210,6 +232,10 @@
           <a href="tel:6133186478" class="cta-phone">
             <i class="fas fa-phone-alt"></i>
             <span>613-318-6478</span>
+          </a>
+          <a href="mailto:info@owningottawa.ca" class="cta-email">
+            <i class="fas fa-envelope"></i>
+            <span>info@owningottawa.ca</span>
           </a>
           <a href="/contact" class="cta-appointment">
             <i class="fas fa-calendar-check"></i>
@@ -230,6 +256,41 @@
   <script>
     // Wait for DOM to be fully loaded
     document.addEventListener('DOMContentLoaded', () => {
+      // Set active navigation link based on current page
+      function setActiveNavLink() {
+        const currentPath = window.location.pathname.toLowerCase();
+        const navLinks = document.querySelectorAll('.nav-link[data-page]');
+
+        // Remove active class from all nav links
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+        });
+
+        // Determine current page
+        let currentPage = 'home'; // default
+
+        if (currentPath === '/' || currentPath === '/index.php' || currentPath.endsWith('index.php')) {
+          currentPage = 'home';
+        } else if (currentPath.includes('/services') || currentPath.endsWith('services.php')) {
+          currentPage = 'services';
+        } else if (currentPath.includes('/about') || currentPath.endsWith('about.php')) {
+          currentPage = 'about';
+        } else if (currentPath.includes('/resources') || currentPath.endsWith('resources.php')) {
+          currentPage = 'resources';
+        } else if (currentPath.includes('/contact') || currentPath.endsWith('contact.php')) {
+          currentPage = 'contact';
+        }
+
+        // Add active class to matching nav link
+        const activeLink = document.querySelector(`.nav-link[data-page="${currentPage}"]`);
+        if (activeLink) {
+          activeLink.classList.add('active');
+        }
+      }
+
+      // Set active link on page load
+      setActiveNavLink();
+
       // Modern header scroll effect
       const header = document.querySelector('.modern-header');
       if (header) {
@@ -265,28 +326,108 @@
 
       // Dropdown functionality for modern header
       const dropdowns = document.querySelectorAll('.nav-dropdown');
+      const isMobile = () => window.innerWidth <= 992;
+
+      // Nested dropdown functionality
+      const nestedDropdowns = document.querySelectorAll('.dropdown-item-nested');
+      nestedDropdowns.forEach(nested => {
+        const parentLink = nested.querySelector('.dropdown-item-parent');
+        const nestedMenu = nested.querySelector('.nested-dropdown-menu');
+
+        if (parentLink && nestedMenu) {
+          // Desktop hover
+          if (!isMobile()) {
+            nested.addEventListener('mouseenter', () => {
+              nested.classList.add('active');
+            });
+
+            nested.addEventListener('mouseleave', () => {
+              nested.classList.remove('active');
+            });
+          }
+
+          // Mobile/Tablet click toggle
+          parentLink.addEventListener('click', function(e) {
+            if (isMobile()) {
+              e.preventDefault();
+              e.stopPropagation();
+
+              const isCurrentlyActive = nested.classList.contains('active');
+
+              // Close all nested dropdowns first
+              nestedDropdowns.forEach(otherNested => {
+                otherNested.classList.remove('active');
+              });
+
+              // Open if it wasn't active, close if it was
+              if (!isCurrentlyActive) {
+                nested.classList.add('active');
+              }
+
+              return false;
+            }
+          });
+        }
+      });
+
       dropdowns.forEach(dropdown => {
         const link = dropdown.querySelector('.nav-link');
         const menu = dropdown.querySelector('.dropdown-menu');
 
         if (link && menu) {
-          dropdown.addEventListener('mouseenter', () => {
-            dropdown.classList.add('active');
-          });
+          // Desktop hover events
+          if (!isMobile()) {
+            dropdown.addEventListener('mouseenter', () => {
+              dropdown.classList.add('active');
+            });
 
-          dropdown.addEventListener('mouseleave', () => {
-            dropdown.classList.remove('active');
-          });
+            dropdown.addEventListener('mouseleave', () => {
+              dropdown.classList.remove('active');
+            });
+          }
 
-          // Mobile dropdown toggle
-          link.addEventListener('click', (e) => {
-            if (window.innerWidth <= 992) {
+          // Mobile/Tablet click toggle
+          link.addEventListener('click', function(e) {
+            if (isMobile()) {
               e.preventDefault();
-              dropdown.classList.toggle('active');
+              e.stopPropagation();
+
+              const isCurrentlyActive = dropdown.classList.contains('active');
+
+              // Close all dropdowns first
+              dropdowns.forEach(otherDropdown => {
+                otherDropdown.classList.remove('active');
+              });
+
+              // Open if it wasn't active, close if it was
+              if (!isCurrentlyActive) {
+                dropdown.classList.add('active');
+              }
+
+              return false;
             }
           });
         }
       });
+
+      // Close dropdowns when clicking outside on mobile
+      if (isMobile()) {
+        document.addEventListener('click', (e) => {
+          let clickedInsideDropdown = false;
+
+          dropdowns.forEach(dropdown => {
+            if (dropdown.contains(e.target)) {
+              clickedInsideDropdown = true;
+            }
+          });
+
+          if (!clickedInsideDropdown) {
+            dropdowns.forEach(dropdown => {
+              dropdown.classList.remove('active');
+            });
+          }
+        });
+      }
 
       // Also handle old oo-submenu structure if it exists
       const ooSubmenus = document.querySelectorAll('.oo-submenu');
@@ -296,7 +437,7 @@
 
         if (toggle && menuItems) {
           // Desktop hover
-          if (window.innerWidth > 992) {
+          if (!isMobile()) {
             submenu.addEventListener('mouseenter', () => {
               submenu.classList.add('active');
             });
@@ -307,13 +448,46 @@
           }
 
           // Mobile click
-          toggle.addEventListener('click', (e) => {
-            if (window.innerWidth <= 992) {
+          toggle.addEventListener('click', function(e) {
+            if (isMobile()) {
               e.preventDefault();
-              submenu.classList.toggle('active');
+              e.stopPropagation();
+
+              const isCurrentlyActive = submenu.classList.contains('active');
+
+              // Close all submenus first
+              ooSubmenus.forEach(otherSubmenu => {
+                otherSubmenu.classList.remove('active');
+              });
+
+              // Open if it wasn't active, close if it was
+              if (!isCurrentlyActive) {
+                submenu.classList.add('active');
+              }
+
+              return false;
             }
           });
         }
       });
+
+      // Close submenus when clicking outside on mobile
+      if (isMobile()) {
+        document.addEventListener('click', (e) => {
+          let clickedInsideSubmenu = false;
+
+          ooSubmenus.forEach(submenu => {
+            if (submenu.contains(e.target)) {
+              clickedInsideSubmenu = true;
+            }
+          });
+
+          if (!clickedInsideSubmenu) {
+            ooSubmenus.forEach(submenu => {
+              submenu.classList.remove('active');
+            });
+          }
+        });
+      }
     });
   </script>

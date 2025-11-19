@@ -51,9 +51,7 @@
           <i class="fas fa-paper-plane"></i>
         </a>
       </div>
-      <div class="scroll-indicator fade-in delay-5">
-        <i class="fas fa-chevron-down"></i>
-      </div>
+
     </div>
   </section>
 
@@ -94,7 +92,7 @@
           </div>
           <div class="stat-content">
             <h3 class="stat-number" data-target="98">0</h3>
-            <p class="stat-label">% Satisfaction</p>
+            <p class="stat-label">Satisfaction</p>
           </div>
         </div>
       </div>
@@ -195,7 +193,7 @@
   </section>
 
   <!-- Featured Properties -->
-  <section class="featured-properties">
+  <!-- <section class="featured-properties">
     <div class="container">
       <div class="section-header text-center scroll-animate">
         <span class="section-tag"><i class="fas fa-star"></i> Featured Listings</span>
@@ -269,7 +267,7 @@
         </a>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- Process Timeline -->
   <section class="process-timeline">
@@ -376,7 +374,7 @@
         </div>
 
         <div class="why-image scroll-animate delay-1">
-          <img src="https://via.placeholder.com/800x600/1a1a1a/d3ae77?text=Why+Choose+Us" alt="Why Choose Owning Ottawa">
+          <img src="/images/expert-agents.jpg" alt="Why Choose Owning Ottawa">
           <div class="image-decoration"></div>
         </div>
       </div>

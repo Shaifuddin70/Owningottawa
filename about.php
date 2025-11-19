@@ -2,19 +2,18 @@
 <main class="main-content modern-redesign">
 
     <!-- Hero Section -->
-    <section class="about-hero">
-        <div class="hero-background">
+    <section class="modern-hero" aria-label="About OwningOttawa">
+        <div class="hero-media">
             <img src="https://via.placeholder.com/1920x600/1a1a1a/d3ae77?text=About+OwningOttawa" alt="About Us Background">
-            <div class="hero-overlay"></div>
         </div>
-        <div class="container">
-            <div class="about-hero-content scroll-animate">
-                <span class="hero-badge">
-                    <i class="fas fa-users"></i>
-                    <span>Our Story</span>
-                </span>
-                <h1 class="about-hero-title">Your Property Journey, All in One Place</h1>
-                <p class="about-hero-subtitle">From first homes to full portfolios—Owningottawa brings clarity, connection, and confidence to every stage of real estate in Ottawa.</p>
+        <div class="modern-hero-content">
+            <div class="hero-badge fade-in-up">
+                <i class="fas fa-users"></i>
+                <span>Our Story</span>
+            </div>
+            <h1 class="modern-hero-title fade-in-up delay-1">Your Property Journey, All in One Place</h1>
+            <p class="modern-hero-subtitle fade-in-up delay-2">From first homes to full portfolios—Owningottawa brings clarity, connection, and confidence to every stage of real estate in Ottawa.</p>
+            <div class="hero-cta-buttons fade-in-up delay-3">
                 <a href="/contact" class="btn-modern-primary">
                     <span>Book a Consultation</span>
                     <i class="fas fa-calendar-check"></i>
