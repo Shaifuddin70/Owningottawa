@@ -314,22 +314,33 @@
 
 <script>
     // Scroll animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+    // Check if observerOptions already exists (from footer.php)
+    if (typeof observerOptions === 'undefined') {
+        var observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+    }
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animated');
-            }
-        });
-    }, observerOptions);
+    // Use a unique name to avoid conflicts
+    var aboutObserver;
+    if (!aboutObserver) {
+        aboutObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+    }
 
     document.addEventListener('DOMContentLoaded', () => {
         const animatedElements = document.querySelectorAll('.scroll-animate');
-        animatedElements.forEach(el => observer.observe(el));
+        animatedElements.forEach(el => {
+            if (aboutObserver) {
+                aboutObserver.observe(el);
+            }
+        });
     });
 
     // Smooth scroll for anchor links

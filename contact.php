@@ -19,54 +19,40 @@
     <!-- Contact Information Cards -->
     <section class="contact-info-section">
         <div class="container">
-            <div class="contact-info-grid">
-                <div class="contact-info-card scroll-animate">
-                    <div class="contact-info-icon">
-                        <i class="fas fa-phone-alt"></i>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 col-12  scroll-animate mb-5 mb-lg-0">
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3 class="contact-info-title">Phone</h3>
+                        <p class="contact-info-text">Call us anytime during business hours</p>
+                        <a href="tel:6133186478" class="contact-info-link">613-318-6478</a>
                     </div>
-                    <h3 class="contact-info-title">Phone</h3>
-                    <p class="contact-info-text">Call us anytime during business hours</p>
-                    <a href="tel:6133186478" class="contact-info-link">613-318-6478</a>
                 </div>
 
-                <div class="contact-info-card scroll-animate delay-1">
-                    <div class="contact-info-icon">
-                        <i class="fas fa-envelope"></i>
+                <div class="col-lg-4 col-md-6 col-12  scroll-animate delay-1 mb-5 mb-lg-0">
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="contact-info-title">Email</h3>
+                        <p class="contact-info-text">Send us a message anytime</p>
+                        <a href="mailto:info@owningottawa.ca" class="contact-info-link">info@owningottawa.ca</a>
                     </div>
-                    <h3 class="contact-info-title">Email</h3>
-                    <p class="contact-info-text">Send us a message anytime</p>
-                    <a href="mailto:info@owningottawa.ca" class="contact-info-link">info@owningottawa.ca</a>
                 </div>
 
-                <div class="contact-info-card scroll-animate delay-2">
-                    <div class="contact-info-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                <div class="col-lg-4 col-md-6 col-12  scroll-animate delay-2">
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="contact-info-title">Location</h3>
+                        <p class="contact-info-text">Serving Ottawa and surrounding areas</p>
+                        <p class="contact-info-address">Ottawa, ON, Canada</p>
                     </div>
-                    <h3 class="contact-info-title">Location</h3>
-                    <p class="contact-info-text">Serving Ottawa and surrounding areas</p>
-                    <p class="contact-info-address">Ottawa, ON, Canada</p>
                 </div>
 
-                <div class="contact-info-card scroll-animate delay-3">
-                    <div class="contact-info-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3 class="contact-info-title">Business Hours</h3>
-                    <div class="contact-hours">
-                        <p class="contact-hours-item">
-                            <span class="hours-day">Monday - Friday</span>
-                            <span class="hours-time">9:00 AM - 5:00 PM</span>
-                        </p>
-                        <p class="contact-hours-item">
-                            <span class="hours-day">Saturday</span>
-                            <span class="hours-time">By Appointment</span>
-                        </p>
-                        <p class="contact-hours-item">
-                            <span class="hours-day">Sunday</span>
-                            <span class="hours-time">Closed</span>
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -75,91 +61,86 @@
     <section class="contact-form-section">
         <div class="container">
             <div class="contact-form-grid">
-                <div class="contact-form-content scroll-animate">
+                <form class="contact-form scroll-animate" id="contactForm" method="POST" action="#">
                     <span class="section-tag"><i class="fas fa-paper-plane"></i> Send a Message</span>
-                    <h2 class="section-title-modern">Get in Touch</h2>
-                    <p class="section-description">Fill out the form below and we'll get back to you as soon as possible. Whether you're looking to buy, sell, or invest, we're here to help.</p>
+                    <div class="form-group">
+                        <label for="name" class="form-label">
+                            <i class="fas fa-user"></i>
+                            <span>Full Name</span>
+                        </label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
+                    </div>
 
-                    <div class="contact-form-features">
-                        <div class="contact-feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Quick Response Time</span>
-                        </div>
-                        <div class="contact-feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Expert Consultation</span>
-                        </div>
-                        <div class="contact-feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Free Initial Assessment</span>
+                    <div class="form-group">
+                        <label for="email" class="form-label">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email Address</span>
+                        </label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="form-label">
+                            <i class="fas fa-phone"></i>
+                            <span>Phone Number</span>
+                        </label>
+                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service" class="form-label">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Service Interested In</span>
+                        </label>
+                        <select id="service" name="service" class="form-select" required>
+                            <option value="">Select a service</option>
+                            <option value="real-estate">Real Estate</option>
+                            <option value="mortgage">Mortgage Solutions</option>
+                            <option value="property-management">Property Management</option>
+                            <option value="bookkeeping">Bookkeeping & Accounting</option>
+                            <option value="permits">Building Permits & Design</option>
+                            <option value="general">General Inquiry</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">
+                            <i class="fas fa-comment-alt"></i>
+                            <span>Message</span>
+                        </label>
+                        <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell us about your needs..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-modern-primary form-submit">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+
+                <div class="contact-form-sidebar scroll-animate delay-1">
+                    <div class="contact-form-image">
+                        <img src="images/expert-agents.jpg" alt="Our Expert Team" class="contact-person-image">
+                    </div>
+
+                    <div class="contact-sidebar-content">
+                        <h2 class="section-title-modern ">Shubham Duggal</h2>
+                        <p class="contact-person-role ">Your Real Estate Expert in Ottawa</p>
+                        <p class="section-description ">I am here to address any questions you may have - big or small. Get started by filling out this inquiry form.</p>
+
+                        <div class="contact-form-features">
+                            <div class="contact-feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Quick Response Time</span>
+                            </div>
+                            <div class="contact-feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Expert Consultation</span>
+                            </div>
+                            <div class="contact-feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Free Initial Assessment</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="contact-form-wrapper scroll-animate delay-1">
-                    <form class="contact-form" id="contactForm" method="POST" action="#">
-                        <div class="form-group">
-                            <label for="name" class="form-label">
-                                <i class="fas fa-user"></i>
-                                <span>Full Name</span>
-                            </label>
-                            <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email" class="form-label">
-                                <i class="fas fa-envelope"></i>
-                                <span>Email Address</span>
-                            </label>
-                            <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone" class="form-label">
-                                <i class="fas fa-phone"></i>
-                                <span>Phone Number</span>
-                            </label>
-                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="service" class="form-label">
-                                <i class="fas fa-briefcase"></i>
-                                <span>Service Interested In</span>
-                            </label>
-                            <select id="service" name="service" class="form-select" required>
-                                <option value="">Select a service</option>
-                                <option value="real-estate">Real Estate</option>
-                                <option value="mortgage">Mortgage Solutions</option>
-                                <option value="property-management">Property Management</option>
-                                <option value="bookkeeping">Bookkeeping & Accounting</option>
-                                <option value="permits">Building Permits & Design</option>
-                                <option value="general">General Inquiry</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message" class="form-label">
-                                <i class="fas fa-comment-alt"></i>
-                                <span>Message</span>
-                            </label>
-                            <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell us about your needs..." required></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-checkbox">
-                                <input type="checkbox" name="consent" required>
-                                <span>I agree to be contacted regarding my inquiry</span>
-                            </label>
-                        </div>
-
-                        <button type="submit" class="btn-modern-primary form-submit">
-                            <span>Send Message</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-
-                        <div id="formMessage" class="form-message"></div>
-                    </form>
                 </div>
             </div>
         </div>
@@ -427,21 +408,32 @@
         }
 
         // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // Check if observerOptions already exists (from footer.php)
+        if (typeof observerOptions === 'undefined') {
+            var observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+        }
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animated');
-                }
-            });
-        }, observerOptions);
+        // Use a unique name to avoid conflicts
+        var contactObserver;
+        if (!contactObserver) {
+            contactObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, observerOptions);
+        }
 
         const animatedElements = document.querySelectorAll('.scroll-animate');
-        animatedElements.forEach(el => observer.observe(el));
+        animatedElements.forEach(el => {
+            if (contactObserver) {
+                contactObserver.observe(el);
+            }
+        });
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

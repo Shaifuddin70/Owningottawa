@@ -5,9 +5,9 @@
 <footer class="modern-footer">
   <div class="footer-top">
     <div class="container">
-      <div class="footer-grid">
+      <div class="row">
         <!-- Brand Section -->
-        <div class="footer-brand scroll-animate">
+        <div class="col-lg-4 col-md-6 col-12 footer-brand scroll-animate">
           <div class="footer-logo">
             <a href="/" class="footer-logo-link">
               <img src="images/owningottawa.jpg" alt="OwningOttawa" class="footer-logo-img">
@@ -44,7 +44,7 @@
         </div>
 
         <!-- Services Section -->
-        <div class="footer-section scroll-animate delay-1">
+        <div class="col-lg-3 col-md-6 col-12 footer-section scroll-animate delay-1">
           <h3 class="footer-title">
             <i class="fas fa-briefcase"></i>
             Our Services
@@ -84,7 +84,7 @@
         </div>
 
         <!-- Quick Links Section -->
-        <div class="footer-section scroll-animate delay-2">
+        <div class="col-lg-2 col-md-6 col-12 footer-section scroll-animate delay-2">
           <h3 class="footer-title">
             <i class="fas fa-link"></i>
             Quick Links
@@ -118,7 +118,7 @@
         </div>
 
         <!-- Newsletter / CTA Section -->
-        <div class="footer-section footer-cta scroll-animate delay-3">
+        <div class="col-lg-3 col-md-6 col-12 footer-section footer-cta scroll-animate delay-3">
           <h3 class="footer-title">
             <i class="fas fa-paper-plane"></i>
             Get In Touch
@@ -173,29 +173,113 @@
 </footer>
 
 <!-- Fixed Pop-up Button (Bottom Left) -->
-<a href="/contact" class="popup-button" id="popupButton" aria-label="Contact Us">
+<button class="popup-button" id="popupButton" aria-label="Open Chat">
   <i class="fas fa-comments"></i>
   <span class="popup-button-text">Get in Touch</span>
-</a>
+</button>
+
+<!-- Chatbot Modal -->
+<div class="chatbot-modal" id="chatbotModal">
+  <div class="chatbot-container">
+    <div class="chatbot-header">
+      <div class="chatbot-header-content">
+        <div class="chatbot-avatar">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <div class="chatbot-header-text">
+          <h3>OwningOttawa Support</h3>
+          <p>We're here to help!</p>
+        </div>
+      </div>
+      <button class="chatbot-close" id="chatbotClose" aria-label="Close chat">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div class="chatbot-body" id="chatbotBody">
+      <div class="chatbot-welcome">
+        <div class="chat-message bot-message">
+          <div class="message-content">
+            <p>Hello! 👋 How can we help you today?</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="chatbot-questions" id="chatbotQuestions">
+        <button class="question-btn" data-question="1">
+          <i class="fas fa-home"></i>
+          <span>What services do you offer?</span>
+        </button>
+        <button class="question-btn" data-question="2">
+          <i class="fas fa-dollar-sign"></i>
+          <span>What are your fees?</span>
+        </button>
+        <button class="question-btn" data-question="3">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>What areas do you serve?</span>
+        </button>
+        <button class="question-btn" data-question="4">
+          <i class="fas fa-clock"></i>
+          <span>What are your business hours?</span>
+        </button>
+        <button class="question-btn" data-question="5">
+          <i class="fas fa-calendar-check"></i>
+          <span>How do I book a consultation?</span>
+        </button>
+        <button class="question-btn" data-question="6">
+          <i class="fas fa-info-circle"></i>
+          <span>Tell me more about your company</span>
+        </button>
+      </div>
+
+      <div class="chatbot-messages" id="chatbotMessages"></div>
+
+      <div class="chatbot-custom" id="chatbotCustom" style="display: none;">
+        <div class="custom-message-input">
+          <textarea
+            id="customMessage"
+            class="custom-message-textarea"
+            placeholder="Type your message here..."
+            rows="3"></textarea>
+          <button class="send-whatsapp-btn" id="sendWhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span>Send via WhatsApp</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
+  // Wrap everything in try-catch to catch any errors
+  try {
+    // Debug: Confirm script is running
+    console.log('Footer script loaded on:', window.location.pathname);
+    console.log('Footer script executing at:', new Date().toISOString());
+  } catch (e) {
+    console.error('Error in footer script initialization:', e);
+  }
+
   // Back to top button
   const backToTop = document.getElementById('backToTop');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      backToTop.classList.add('show');
-    } else {
-      backToTop.classList.remove('show');
-    }
-  });
-
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
     });
-  });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
 
   // Scroll animations for footer
   const footerObserver = new IntersectionObserver((entries) => {
@@ -427,19 +511,25 @@
     };
   }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-in');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
+  // Use a unique name to avoid conflicts with page-specific observers
+  var footerScrollObserver;
+  if (typeof footerScrollObserver === 'undefined' || !footerScrollObserver) {
+    footerScrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          footerScrollObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+  }
 
   document.addEventListener('DOMContentLoaded', function() {
     const animatedElements = document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right, .scroll-animate-scale');
     animatedElements.forEach(el => {
-      observer.observe(el);
+      if (footerScrollObserver) {
+        footerScrollObserver.observe(el);
+      }
     });
 
     if (slides.length > 0) {
@@ -548,6 +638,261 @@
   document.addEventListener('DOMContentLoaded', function() {
     setTimeout(initTypingAnimation, 1000);
   });
+
+  // Chatbot Functionality - Initialize when DOM is ready
+  // Flag to prevent duplicate initialization
+  let chatbotInitialized = false;
+
+  function initChatbot() {
+    // Prevent duplicate initialization
+    if (chatbotInitialized) {
+      console.log('Chatbot already initialized, skipping...');
+      return;
+    }
+
+    const chatbotModal = document.getElementById('chatbotModal');
+    const popupButton = document.getElementById('popupButton');
+    const chatbotClose = document.getElementById('chatbotClose');
+    const chatbotQuestions = document.getElementById('chatbotQuestions');
+    const chatbotMessages = document.getElementById('chatbotMessages');
+    const chatbotCustom = document.getElementById('chatbotCustom');
+    const customMessage = document.getElementById('customMessage');
+    const sendWhatsApp = document.getElementById('sendWhatsApp');
+
+    // Check if elements exist (safety check)
+    if (!chatbotModal || !popupButton || !chatbotClose || !chatbotQuestions || !chatbotMessages || !chatbotCustom || !customMessage || !sendWhatsApp) {
+      console.warn('Chatbot elements not found');
+      return;
+    }
+
+    // Mark as initialized
+    chatbotInitialized = true;
+
+    // Questions and Answers
+    const qaData = {
+      1: {
+        question: "What services do you offer?",
+        answer: "We offer comprehensive real estate services including:\n\n🏠 Home Buying & Selling\n💰 Mortgage Solutions\n🏢 Property Management\n📊 Bookkeeping & Accounting\n📋 Building Permits & Design\n\nWe help first-time buyers, homeowners, and residential investors navigate the Ottawa real estate market with confidence."
+      },
+      2: {
+        question: "What are your fees?",
+        answer: "Our fees vary depending on the service you need. We believe in transparency and will provide you with a clear breakdown of all costs before you commit to anything.\n\n💡 For a personalized quote, please contact us directly or book a free consultation. We're happy to discuss pricing based on your specific needs."
+      },
+      3: {
+        question: "What areas do you serve?",
+        answer: "We proudly serve Ottawa and all surrounding areas in the National Capital Region, including:\n\n📍 Ottawa (all neighborhoods)\n📍 Nepean\n📍 Kanata\n📍 Orleans\n📍 Barrhaven\n📍 Stittsville\n📍 And more!\n\nIf you're unsure if we serve your area, feel free to ask!"
+      },
+      4: {
+        question: "What are your business hours?",
+        answer: "Our business hours are:\n\n📅 Monday - Friday: 9:00 AM - 5:00 PM\n📅 Saturday: By Appointment\n📅 Sunday: Closed\n\nWe're also available for evening and weekend consultations by appointment. Don't hesitate to reach out!"
+      },
+      5: {
+        question: "How do I book a consultation?",
+        answer: "Booking a consultation is easy! You can:\n\n📞 Call us at: 613-318-6478\n📧 Email us at: info@owningottawa.ca\n📝 Fill out our contact form on the website\n💬 Send us a message via WhatsApp\n\nWe offer free initial consultations to discuss your real estate needs and how we can help you achieve your goals."
+      },
+      6: {
+        question: "Tell me more about your company",
+        answer: "OwningOttawa is your trusted real estate partner in Ottawa. We specialize in helping:\n\n👨‍👩‍👧 First-time homebuyers navigate the market\n🏡 Homeowners buy and sell properties\n💼 Residential investors build their portfolios\n\nOur team provides professional, transparent, and locally-focused expertise. We're committed to helping you make informed decisions with clarity and confidence.\n\nLearn more about us on our About page!"
+      }
+    };
+
+    // Open chatbot
+    popupButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('Chatbot button clicked');
+      chatbotModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+
+    console.log('Chatbot initialized successfully');
+
+    // Close chatbot
+    chatbotClose.addEventListener('click', () => {
+      chatbotModal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    // Close on outside click (clicking on the modal backdrop)
+    chatbotModal.addEventListener('click', (e) => {
+      // Only close if clicking directly on the modal container, not on its children
+      if (e.target === chatbotModal) {
+        chatbotModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Also close when clicking outside the modal (on document)
+    document.addEventListener('click', function(e) {
+      // Check if modal is open and click is outside the modal
+      if (chatbotModal.classList.contains('active')) {
+        // Check if click is outside both the modal and the popup button
+        const isClickInsideModal = chatbotModal.contains(e.target);
+        const isClickOnPopupButton = popupButton.contains(e.target);
+
+        if (!isClickInsideModal && !isClickOnPopupButton) {
+          chatbotModal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      }
+    });
+
+    // Handle question clicks
+    chatbotQuestions.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent event bubbling
+
+      const questionBtn = e.target.closest('.question-btn');
+      if (!questionBtn) return;
+
+      // Prevent duplicate submissions
+      if (questionBtn.disabled || questionBtn.classList.contains('processing')) {
+        e.preventDefault();
+        return;
+      }
+
+      // Mark as processing
+      questionBtn.disabled = true;
+      questionBtn.classList.add('processing');
+
+      const questionId = questionBtn.dataset.question;
+      const qa = qaData[questionId];
+
+      if (qa) {
+        // Hide questions
+        chatbotQuestions.style.display = 'none';
+
+        // Add user question
+        addMessage(qa.question, 'user');
+
+        // Add bot answer after a short delay
+        setTimeout(() => {
+          addMessage(qa.answer, 'bot');
+
+          // Show custom message option after answer
+          setTimeout(() => {
+            showCustomMessageOption();
+          }, 500);
+        }, 500);
+      }
+    });
+
+    // Add message to chat
+    function addMessage(text, type) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `chat-message ${type}-message`;
+
+      const contentDiv = document.createElement('div');
+      contentDiv.className = 'message-content';
+      contentDiv.innerHTML = `<p>${text.replace(/\n/g, '<br>')}</p>`;
+
+      messageDiv.appendChild(contentDiv);
+      chatbotMessages.appendChild(messageDiv);
+
+      // Scroll to bottom
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    // Show custom message option
+    function showCustomMessageOption() {
+      chatbotCustom.style.display = 'block';
+      setTimeout(() => {
+        customMessage.focus();
+      }, 100);
+    }
+
+    // Send to WhatsApp
+    sendWhatsApp.addEventListener('click', () => {
+      const message = customMessage.value.trim();
+      if (!message) {
+        customMessage.focus();
+        return;
+      }
+
+      // WhatsApp phone number (+1 (613) 332‑8884)
+      // Format: remove spaces, parentheses, dashes, and + sign for WhatsApp URL
+      const phoneNumber = '16133328884';
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+      window.open(whatsappUrl, '_blank');
+
+      // Add user message to chat
+      addMessage(message, 'user');
+
+      // Clear input
+      customMessage.value = '';
+
+      // Add bot response
+      setTimeout(() => {
+        addMessage("Great! I've opened WhatsApp for you. You can send your message there and we'll get back to you as soon as possible! 😊", 'bot');
+      }, 500);
+    });
+
+    // Allow Enter key to send (Shift+Enter for new line)
+    customMessage.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendWhatsApp.click();
+      }
+    });
+  }
+
+  // Initialize chatbot - try multiple times to ensure elements are available
+  function tryInitChatbot(attempts = 0) {
+    const maxAttempts = 10;
+    const chatbotModal = document.getElementById('chatbotModal');
+    const popupButton = document.getElementById('popupButton');
+
+    console.log('Attempting to initialize chatbot, attempt:', attempts + 1);
+    console.log('chatbotModal found:', !!chatbotModal);
+    console.log('popupButton found:', !!popupButton);
+
+    if (chatbotModal && popupButton) {
+      // Elements found, initialize
+      console.log('Chatbot elements found, initializing...');
+      initChatbot();
+    } else if (attempts < maxAttempts) {
+      // Elements not found yet, try again
+      setTimeout(function() {
+        tryInitChatbot(attempts + 1);
+      }, 100);
+    } else {
+      console.error('Chatbot elements not found after', maxAttempts, 'attempts');
+      console.error('chatbotModal:', chatbotModal);
+      console.error('popupButton:', popupButton);
+      console.error('All elements in document:', document.querySelectorAll('[id*="chatbot"], [id*="popup"]'));
+    }
+  }
+
+  // Initialize chatbot when DOM is ready
+  (function() {
+    function initialize() {
+      console.log('Initializing chatbot, document.readyState:', document.readyState);
+      tryInitChatbot();
+    }
+
+    // If DOM is already loaded, run immediately
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initialize);
+    } else {
+      // DOM is already loaded
+      setTimeout(initialize, 0);
+    }
+
+    // Also try on window load as backup
+    window.addEventListener('load', function() {
+      console.log('Window load event fired');
+      setTimeout(function() {
+        const chatbotModal = document.getElementById('chatbotModal');
+        const popupButton = document.getElementById('popupButton');
+        if (chatbotModal && popupButton && !popupButton.hasAttribute('data-initialized')) {
+          console.log('Initializing chatbot on window load');
+          popupButton.setAttribute('data-initialized', 'true');
+          initChatbot();
+        }
+      }, 100);
+    });
+  })();
 </script>
 
 <!-- Bootstrap JavaScript CDN -->
