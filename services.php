@@ -4,7 +4,7 @@
     <!-- Hero Section -->
     <section class="modern-hero" aria-label="Our Services">
         <div class="hero-media">
-            <img src="https://via.placeholder.com/1920x800/1a1a1a/d3ae77?text=Our+Services" alt="Services Background">
+            <img src="/images/services-hero-bg.jpg" alt="services-hero-bg" title="services-hero-bg" />
         </div>
         <div class="modern-hero-content">
             <div class="hero-badge fade-in-up">
@@ -40,40 +40,45 @@
     <!-- Overview Section -->
     <section class="services-overview">
         <div class="container">
-            <div class="overview-grid">
-                <div class="overview-content scroll-animate">
-                    <span class="section-tag"><i class="fas fa-lightbulb"></i> Overview</span>
-                    <h2 class="section-title-modern">One Partner. Every Real Estate Need.</h2>
-                    <p class="section-description">Owningottawa brings every key real estate service under one roof, from buying and financing to managing and designing.</p>
-                    <p>We combine deep market knowledge, financial expertise, and hands-on experience to make property ownership in Ottawa simple, informed, and rewarding.</p>
-                    <div class="overview-features">
-                        <div class="overview-feature-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <div>
-                                <h4>Trusted Expertise</h4>
-                                <p>15+ years of local Ottawa market experience</p>
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="img-box overview-image scroll-animate delay-1">
+                        <img src="/images/happy-customer.jpg" alt="Happy Customer" title="Happy Customer" />
+                        <div class="image-decoration"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="overview-content scroll-animate">
+                        <span class="section-tag"><i class="fas fa-lightbulb"></i> Overview</span>
+                        <h2 class="section-title-modern">One Partner. Every Real Estate Need.</h2>
+                        <p class="section-description">Owningottawa brings every key real estate service under one roof, from buying and financing to managing and designing.</p>
+                        <p>We combine deep market knowledge, financial expertise, and hands-on experience to make property ownership in Ottawa simple, informed, and rewarding.</p>
+                        <div class="overview-features">
+                            <div class="overview-feature-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <div>
+                                    <h4>Trusted Expertise</h4>
+                                    <p>15+ years of local Ottawa market experience</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="overview-feature-item">
-                            <i class="fas fa-handshake"></i>
-                            <div>
-                                <h4>Personalized Service</h4>
-                                <p>Tailored solutions for every client</p>
+                            <div class="overview-feature-item">
+                                <i class="fas fa-handshake"></i>
+                                <div>
+                                    <h4>Personalized Service</h4>
+                                    <p>Tailored solutions for every client</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="overview-feature-item">
-                            <i class="fas fa-chart-line"></i>
-                            <div>
-                                <h4>Proven Results</h4>
-                                <p>500+ successful transactions</p>
+                            <div class="overview-feature-item">
+                                <i class="fas fa-chart-line"></i>
+                                <div>
+                                    <h4>Proven Results</h4>
+                                    <p>500+ successful transactions</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="overview-image scroll-animate delay-1">
-                    <img src="https://via.placeholder.com/800x600/1a1a1a/d3ae77?text=Services+Overview" alt="Services Overview">
-                    <div class="image-decoration"></div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -84,7 +89,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="service-detail-image scroll-animate">
-                        <img src="https://via.placeholder.com/700x500/1a1a1a/d3ae77?text=Real+Estate+Services" alt="Real Estate Services">
+                        <img src="/images/real-estate-agent.jpg" alt="Real Estate Agent" title="Real Estate Agent" />
                         <div class="service-image-badge">
                             <i class="fas fa-home-lg-alt"></i>
                         </div>
@@ -205,7 +210,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-2">
                     <div class="service-detail-image scroll-animate delay-1">
-                        <img src="https://via.placeholder.com/700x500/1a1a1a/d3ae77?text=Mortgage+Solutions" alt="Mortgage Solutions">
+                        <img src="/images/mortgage-solution.jpg" alt="Mortgage Solution" title="Mortgage Solution" />
                         <div class="service-image-badge">
                             <i class="fas fa-percent"></i>
                         </div>
@@ -324,7 +329,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="service-detail-image scroll-animate">
-                        <img src="https://via.placeholder.com/700x500/1a1a1a/d3ae77?text=Property+Management" alt="Property Management">
+                        <img src="/images/Property-solution.jpg" alt="Property Solution" title="Property Solution" />
                         <div class="service-image-badge">
                             <i class="fas fa-building"></i>
                         </div>
@@ -454,7 +459,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-2">
                     <div class="service-detail-image scroll-animate delay-1">
-                        <img src="https://via.placeholder.com/700x500/1a1a1a/d3ae77?text=Bookkeeping+%26+Accounting" alt="Bookkeeping & Accounting">
+                        <img src="/images/accounting.jpg" alt="Accounting" title="Accounting" />
                         <div class="service-image-badge">
                             <i class="fas fa-calculator"></i>
                         </div>
@@ -565,7 +570,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="service-detail-image scroll-animate">
-                        <img src="https://via.placeholder.com/700x500/1a1a1a/d3ae77?text=Building+Permits+%26+Design" alt="Building Permits & Design">
+                        <img src="/images/building-design.jpg" alt="Building design" title="Building design" />
                         <div class="service-image-badge">
                             <i class="fas fa-drafting-compass"></i>
                         </div>

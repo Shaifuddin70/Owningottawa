@@ -5,14 +5,14 @@
   <!-- Hero Section with Video Background -->
   <section class="modern-hero" aria-label="Welcome to Owning Ottawa">
     <div class="hero-media">
-      <!-- <iframe class="hero-video"
+      <iframe class="hero-video"
         src="https://www.youtube.com/embed/4jnzf1yj48M?autoplay=1&mute=1&loop=1&playlist=4jnzf1yj48M&controls=0&modestbranding=1&rel=0&playsinline=1"
         title="DESIGNER RESIDENCE | CINEMATIC REAL ESTATE VIDEO IN 4K | SONY FX6"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen>
-      </iframe> -->
+      </iframe>
     </div>
 
     <div class="modern-hero-content">
@@ -50,11 +50,54 @@
           <span>Get Started</span>
           <i class="fas fa-paper-plane"></i>
         </a>
-
       </div>
 
     </div>
   </section>
+
+  <!-- Stats Section
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card scroll-animate">
+          <div class="stat-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <div class="stat-content">
+            <h3 class="stat-number" data-target="500">0</h3>
+            <p class="stat-label">Happy Clients</p>
+          </div>
+        </div>
+        <div class="stat-card scroll-animate delay-1">
+          <div class="stat-icon">
+            <i class="fas fa-key"></i>
+          </div>
+          <div class="stat-content">
+            <h3 class="stat-number" data-target="1200">0</h3>
+            <p class="stat-label">Properties Sold</p>
+          </div>
+        </div>
+        <div class="stat-card scroll-animate delay-2">
+          <div class="stat-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <div class="stat-content">
+            <h3 class="stat-number" data-target="15">0</h3>
+            <p class="stat-label">Years Experience</p>
+          </div>
+        </div>
+        <div class="stat-card scroll-animate delay-3">
+          <div class="stat-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="stat-content">
+            <h3 class="stat-number" data-target="98">0</h3>
+            <p class="stat-label">Satisfaction</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
 
   <!-- Services Section -->
   <section class="modern-services" id="services">
@@ -508,6 +551,24 @@
 </main>
 
 <script>
+  // Animated Counter
+  function animateCounter(element) {
+    const target = parseInt(element.getAttribute('data-target'));
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        element.textContent = target + (element.nextElementSibling.textContent.includes('%') ? '%' : '+');
+        clearInterval(timer);
+      } else {
+        element.textContent = Math.floor(current);
+      }
+    }, 16);
+  }
+
   // Intersection Observer for scroll animations
   if (typeof observerOptions === 'undefined') {
     var observerOptions = {
@@ -516,25 +577,27 @@
     };
   }
 
-  var indexObserver;
-  if (!indexObserver) {
-    indexObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animated');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated');
+
+        // Trigger counter animation for stat numbers
+        if (entry.target.querySelector('.stat-number')) {
+          const statNumber = entry.target.querySelector('.stat-number');
+          if (!statNumber.classList.contains('counted')) {
+            statNumber.classList.add('counted');
+            animateCounter(statNumber);
+          }
         }
-      });
-    }, observerOptions);
-  }
+      }
+    });
+  }, observerOptions);
 
   // Observe all scroll-animate elements
   document.addEventListener('DOMContentLoaded', () => {
     const animatedElements = document.querySelectorAll('.scroll-animate, .fade-in-up, .fade-in');
-    animatedElements.forEach(el => {
-      if (indexObserver) {
-        indexObserver.observe(el);
-      }
-    });
+    animatedElements.forEach(el => observer.observe(el));
   });
 
   // Modern FAQ Toggle
