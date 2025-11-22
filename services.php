@@ -28,6 +28,12 @@
                     <span>Available 24/7</span>
                 </div>
             </div>
+            <div class="hero-cta-buttons fade-in-up delay-4">
+                <a href="/contact" class="btn-modern-primary">
+                    <span>Book Appointment</span>
+                    <i class="fas fa-calendar-check"></i>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -72,19 +78,19 @@
         </div>
     </section>
 
-    <!-- Services Detail Sections -->
-    <section class="services-detail">
+    <div class="common-sec" id="real-estate">
         <div class="container">
 
-            <!-- Real Estate Services -->
-            <article class="service-detail-card" id="real-estate">
-                <div class="service-detail-grid">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
                     <div class="service-detail-image scroll-animate">
                         <img src="https://via.placeholder.com/700x500/1a1a1a/d3ae77?text=Real+Estate+Services" alt="Real Estate Services">
                         <div class="service-image-badge">
                             <i class="fas fa-home-lg-alt"></i>
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-6">
                     <div class="service-detail-content scroll-animate delay-1">
                         <span class="service-number">01</span>
                         <span class="section-tag"><i class="fas fa-home"></i> Service</span>
@@ -122,26 +128,90 @@
                             </div>
                         </div>
 
-                        <div class="service-benefit-box">
-                            <i class="fas fa-star"></i>
-                            <div>
-                                <h4>Why It Works</h4>
-                                <p>Our experience across Ottawa's markets—from downtown condos to family homes and suburban investments, helps clients move forward with confidence, not guesswork.</p>
-                            </div>
+
+                    </div>
+                </div>
+                <div class="service-benefit-box">
+                    <i class="fas fa-star"></i>
+                    <div>
+                        <h4>Why It Works</h4>
+                        <p>Our experience across Ottawa's markets—from downtown condos to family homes and suburban investments, helps clients move forward with confidence, not guesswork.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Real Estate Services FAQ -->
+    <div class="common-sec">
+        <div class="container">
+            <div class="section-header text-center scroll-animate">
+                <span class="section-tag"><i class="fas fa-question-circle"></i> FAQ</span>
+                <h2 class="section-title-modern">Real Estate Services FAQ</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-column">
+                    <div class="faq-item-modern scroll-animate">
+                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+                            <span class="faq-icon"><i class="fas fa-home"></i></span>
+                            <span class="faq-title">What areas of Ottawa do you serve?</span>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-modern">
+                            <p>We serve all areas of Ottawa, including downtown, suburban neighborhoods, and surrounding communities. Our team has extensive knowledge of local markets, from condos to family homes and investment properties.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item-modern scroll-animate delay-1">
+                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+                            <span class="faq-icon"><i class="fas fa-key"></i></span>
+                            <span class="faq-title">How do you help first-time homebuyers?</span>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-modern">
+                            <p>We guide first-time buyers through every step: understanding the market, setting realistic budgets, exploring neighborhoods, viewing properties, making offers, and navigating the closing process. We make the journey clear and stress-free.</p>
                         </div>
                     </div>
                 </div>
-            </article>
+                <div class="faq-column">
+                    <div class="faq-item-modern scroll-animate delay-2">
+                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+                            <span class="faq-icon"><i class="fas fa-chart-line"></i></span>
+                            <span class="faq-title">What makes a good investment property in Ottawa?</span>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-modern">
+                            <p>Good investment properties typically have strong rental demand, growth potential, and manageable maintenance costs. We analyze location, property condition, rental yields, and market trends to help you identify opportunities that align with your investment goals.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item-modern scroll-animate delay-3">
+                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+                            <span class="faq-icon"><i class="fas fa-tag"></i></span>
+                            <span class="faq-title">How do you determine the right selling price?</span>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-modern">
+                            <p>We conduct a comprehensive market analysis comparing similar properties, recent sales, current market conditions, and your property's unique features. This data-driven approach helps set a competitive price that attracts buyers while maximizing your return.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            <!-- Mortgage Solutions -->
-            <article class="service-detail-card" id="mortgage">
-                <div class="service-detail-grid reverse">
+    <!-- Mortgage Solutions -->
+    <div class="common-sec" id="mortgage">
+        <div class="container">
+
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
                     <div class="service-detail-image scroll-animate delay-1">
                         <img src="https://via.placeholder.com/700x500/1a1a1a/d3ae77?text=Mortgage+Solutions" alt="Mortgage Solutions">
                         <div class="service-image-badge">
                             <i class="fas fa-percent"></i>
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
                     <div class="service-detail-content scroll-animate">
                         <span class="service-number">02</span>
                         <span class="section-tag"><i class="fas fa-coins"></i> Service</span>
@@ -178,27 +248,89 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-benefit-box">
+                <i class="fas fa-check-double"></i>
+                <div>
+                    <h4>Why Clients Choose Us</h4>
+                    <p>We help you understand every option, rate, term, and lender expectation so that you can make informed decisions without financial pressure.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                        <div class="service-benefit-box">
-                            <i class="fas fa-check-double"></i>
-                            <div>
-                                <h4>Why Clients Choose Us</h4>
-                                <p>We help you understand every option, rate, term, and lender expectation so that you can make informed decisions without financial pressure.</p>
-                            </div>
+    <!-- Mortgage Solutions FAQ -->
+    <div class="common-sec">
+        <div class="container">
+            <div class="section-header text-center scroll-animate">
+                <span class="section-tag"><i class="fas fa-question-circle"></i> FAQ</span>
+                <h2 class="section-title-modern">Mortgage Solutions FAQ</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-column">
+                    <div class="faq-item-modern scroll-animate">
+                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+                            <span class="faq-icon"><i class="fas fa-user-check"></i></span>
+                            <span class="faq-title">What do I need to qualify for a mortgage?</span>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-modern">
+                            <p>Lenders typically review your credit score, income stability, debt-to-income ratio, employment history, and down payment amount. We help you understand these requirements and work with you to strengthen your application before you apply.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item-modern scroll-animate delay-1">
+                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+                            <span class="faq-icon"><i class="fas fa-percent"></i></span>
+                            <span class="faq-title">How do you help me find the best mortgage rate?</span>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-modern">
+                            <p>We work with multiple lenders and compare rates, terms, and conditions across different options. Our goal is to find you a mortgage that fits your financial situation and long-term goals, not just the lowest rate.</p>
                         </div>
                     </div>
                 </div>
-            </article>
+                <div class="faq-column">
+                    <div class="faq-item-modern scroll-animate delay-2">
+                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+                            <span class="faq-icon"><i class="fas fa-sync-alt"></i></span>
+                            <span class="faq-title">When should I consider refinancing my mortgage?</span>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-modern">
+                            <p>Refinancing can make sense when interest rates have dropped, you want to consolidate debt, need to access equity, or want to change your payment terms. We analyze your situation to determine if refinancing benefits you financially.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item-modern scroll-animate delay-3">
+                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+                            <span class="faq-icon"><i class="fas fa-building"></i></span>
+                            <span class="faq-title">Can you help with investment property mortgages?</span>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-modern">
+                            <p>Yes. Investment property mortgages have different requirements than primary residence loans. We help investors understand down payment requirements, rental income considerations, and lender expectations to secure financing that supports your investment strategy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 
-            <!-- Property Management -->
-            <article class="service-detail-card" id="property-management">
-                <div class="service-detail-grid">
+    <!-- Property Management -->
+    <div class="common-sec" id="property-management">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
                     <div class="service-detail-image scroll-animate">
                         <img src="https://via.placeholder.com/700x500/1a1a1a/d3ae77?text=Property+Management" alt="Property Management">
                         <div class="service-image-badge">
                             <i class="fas fa-building"></i>
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-6">
                     <div class="service-detail-content scroll-animate delay-1">
                         <span class="service-number">03</span>
                         <span class="section-tag"><i class="fas fa-tools"></i> Service</span>
@@ -245,26 +377,90 @@
                             </div>
                         </div>
 
-                        <div class="service-benefit-box">
-                            <i class="fas fa-heart"></i>
-                            <div>
-                                <h4>Your Property, Our Priority</h4>
-                                <p>From single-unit condos to multi-family rentals, our goal is simple—keep your property running smoothly and profitably.</p>
-                            </div>
+
+                    </div>
+                </div>
+                <div class="service-benefit-box">
+                    <i class="fas fa-heart"></i>
+                    <div>
+                        <h4>Your Property, Our Priority</h4>
+                        <p>From single-unit condos to multi-family rentals, our goal is simple—keep your property running smoothly and profitably.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Property Management FAQ -->
+    <div class="common-sec">
+        <div class="container">
+            <div class="section-header text-center scroll-animate">
+                <span class="section-tag"><i class="fas fa-question-circle"></i> FAQ</span>
+                <h2 class="section-title-modern">Property Management FAQ</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-column">
+                    <div class="faq-item-modern scroll-animate">
+                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+                            <span class="faq-icon"><i class="fas fa-building"></i></span>
+                            <span class="faq-title">What type of properties do you manage?</span>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-modern">
+                            <p>We manage a variety of residential properties, including condos, single-family homes, and multi-unit rentals. Our service covers tenant placement, maintenance coordination, rent collection, and transparent reporting.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item-modern scroll-animate delay-1">
+                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+                            <span class="faq-icon"><i class="fas fa-users"></i></span>
+                            <span class="faq-title">How do you screen and select tenants?</span>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-modern">
+                            <p>We conduct thorough background checks including credit history, employment verification, rental references, and income verification. Our screening process helps ensure reliable tenants who pay on time and take care of your property.</p>
                         </div>
                     </div>
                 </div>
-            </article>
+                <div class="faq-column">
+                    <div class="faq-item-modern scroll-animate delay-2">
+                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+                            <span class="faq-icon"><i class="fas fa-wrench"></i></span>
+                            <span class="faq-title">How do you handle maintenance and repairs?</span>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-modern">
+                            <p>We have a network of trusted local vendors and contractors. When maintenance issues arise, we assess the situation, coordinate repairs promptly, and keep you informed. For emergency repairs, we act immediately to protect your property.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item-modern scroll-animate delay-3">
+                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+                            <span class="faq-icon"><i class="fas fa-money-bill-wave"></i></span>
+                            <span class="faq-title">How often do you provide financial reports?</span>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-modern">
+                            <p>We provide monthly financial reports detailing rental income, expenses, maintenance costs, and net income. You'll always know how your property is performing financially, and we're available to answer questions anytime.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 
-            <!-- Bookkeeping & Accounting -->
-            <article class="service-detail-card" id="bookkeeping">
-                <div class="service-detail-grid reverse">
+    <!-- Bookkeeping & Accounting -->
+    <div class="common-sec" id="bookkeeping">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
                     <div class="service-detail-image scroll-animate delay-1">
                         <img src="https://via.placeholder.com/700x500/1a1a1a/d3ae77?text=Bookkeeping+%26+Accounting" alt="Bookkeeping & Accounting">
                         <div class="service-image-badge">
                             <i class="fas fa-calculator"></i>
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
                     <div class="service-detail-content scroll-animate">
                         <span class="service-number">04</span>
                         <span class="section-tag"><i class="fas fa-file-invoice-dollar"></i> Service</span>
@@ -291,26 +487,91 @@
                             </div>
                         </div>
 
-                        <div class="service-benefit-box">
-                            <i class="fas fa-award"></i>
-                            <div>
-                                <h4>Our Edge</h4>
-                                <p>We specialize in real estate accounting, meaning we understand deductions, cash flow, and the financial nuances of property ownership. Every figure is verified, every report is clear.</p>
-                            </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="service-benefit-box">
+                <i class="fas fa-award"></i>
+                <div>
+                    <h4>Our Edge</h4>
+                    <p>We specialize in real estate accounting, meaning we understand deductions, cash flow, and the financial nuances of property ownership. Every figure is verified, every report is clear.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bookkeeping & Accounting FAQ -->
+    <div class="common-sec">
+        <div class="container">
+            <div class="section-header text-center scroll-animate">
+                <span class="section-tag"><i class="fas fa-question-circle"></i> FAQ</span>
+                <h2 class="section-title-modern">Bookkeeping & Accounting FAQ</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-column">
+                    <div class="faq-item-modern scroll-animate">
+                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+                            <span class="faq-icon"><i class="fas fa-calculator"></i></span>
+                            <span class="faq-title">How does your bookkeeping and accounting service work?</span>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-modern">
+                            <p>We maintain accurate records for income, expenses, and tax reporting. Every report is organized for easy review and designed to help property owners understand their real financial performance.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item-modern scroll-animate delay-1">
+                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+                            <span class="faq-icon"><i class="fas fa-file-invoice-dollar"></i></span>
+                            <span class="faq-title">Do you provide tax filing or CRA support?</span>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-modern">
+                            <p>Yes, we assist with property-related tax preparation and reporting. Our accounting service ensures compliance and helps you take advantage of available deductions and credits.</p>
                         </div>
                     </div>
                 </div>
-            </article>
+                <div class="faq-column">
+                    <div class="faq-item-modern scroll-animate delay-2">
+                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+                            <span class="faq-icon"><i class="fas fa-chart-bar"></i></span>
+                            <span class="faq-title">What financial reports do you provide?</span>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-modern">
+                            <p>We provide income statements, expense reports, cash flow analysis, and year-end summaries. All reports are tailored to property owners and investors, making it easy to track performance and plan for taxes.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item-modern scroll-animate delay-3">
+                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+                            <span class="faq-icon"><i class="fas fa-receipt"></i></span>
+                            <span class="faq-title">How do you track property expenses?</span>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-modern">
+                            <p>We categorize all expenses (maintenance, repairs, utilities, insurance, property taxes, etc.) and maintain detailed records with receipts. This organization makes tax time easier and helps you understand where your money is going.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 
-            <!-- Building Permits & Design -->
-            <article class="service-detail-card" id="permits">
-                <div class="service-detail-grid">
+    <!-- Building Permits & Design -->
+    <div class="common-sec" id="permits">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
                     <div class="service-detail-image scroll-animate">
                         <img src="https://via.placeholder.com/700x500/1a1a1a/d3ae77?text=Building+Permits+%26+Design" alt="Building Permits & Design">
                         <div class="service-image-badge">
                             <i class="fas fa-drafting-compass"></i>
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-6">
                     <div class="service-detail-content scroll-animate delay-1">
                         <span class="service-number">05</span>
                         <span class="section-tag"><i class="fas fa-file-contract"></i> Service</span>
@@ -337,19 +598,76 @@
                             </div>
                         </div>
 
-                        <div class="service-benefit-box">
-                            <i class="fas fa-lightbulb"></i>
-                            <div>
-                                <h4>Why Choose Us</h4>
-                                <p>We know Ottawa's building requirements and local codes. That means faster approvals, fewer surprises, and clear guidance from start to finish.</p>
-                            </div>
+
+                    </div>
+                </div>
+                <div class="service-benefit-box">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <h4>Why Choose Us</h4>
+                        <p>We know Ottawa's building requirements and local codes. That means faster approvals, fewer surprises, and clear guidance from start to finish.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Building Permits & Design FAQ -->
+    <div class="common-sec">
+        <div class="container">
+            <div class="section-header text-center scroll-animate">
+                <span class="section-tag"><i class="fas fa-question-circle"></i> FAQ</span>
+                <h2 class="section-title-modern">Building Permits & Design FAQ</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-column">
+                    <div class="faq-item-modern scroll-animate">
+                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+                            <span class="faq-icon"><i class="fas fa-file-contract"></i></span>
+                            <span class="faq-title">Can you help with building permit applications in Ottawa?</span>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-modern">
+                            <p>Yes. We prepare drawings, submit applications, and coordinate with city departments to ensure compliance with local zoning and building codes. This helps streamline approvals and prevent costly delays.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item-modern scroll-animate delay-1">
+                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+                            <span class="faq-icon"><i class="fas fa-drafting-compass"></i></span>
+                            <span class="faq-title">What if my project needs both design and permits?</span>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-modern">
+                            <p>Our design and permit services work together. We collaborate with architects and engineers to create compliant, functional plans and handle submission details from start to finish.</p>
                         </div>
                     </div>
                 </div>
-            </article>
-
+                <div class="faq-column">
+                    <div class="faq-item-modern scroll-animate delay-2">
+                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+                            <span class="faq-icon"><i class="fas fa-clock"></i></span>
+                            <span class="faq-title">How long does the permit process typically take?</span>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-modern">
+                            <p>Timelines vary based on project complexity and city review schedules. Simple projects may take 2-4 weeks, while more complex applications can take 8-12 weeks. We work to expedite the process and keep you informed throughout.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item-modern scroll-animate delay-3">
+                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
+                            <span class="faq-icon"><i class="fas fa-map-marked-alt"></i></span>
+                            <span class="faq-title">Do you handle zoning and compliance issues?</span>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-modern">
+                            <p>Yes. We review zoning bylaws, setback requirements, height restrictions, and other regulations before submitting applications. This proactive approach helps avoid rejections and ensures your project meets all local requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+    </div>
 
     <!-- Integrated Support Section -->
     <section class="integrated-support">
@@ -406,77 +724,6 @@
         </div>
     </section>
 
-    <!-- Services FAQ Section -->
-    <section class="faq-modern">
-        <div class="container">
-            <div class="section-header text-center scroll-animate">
-                <span class="section-tag"><i class="fas fa-question-circle"></i> FAQ</span>
-                <h2 class="section-title-modern">Frequently Asked Questions</h2>
-                <p class="section-subtitle-modern">Find answers to common questions about our services</p>
-            </div>
-
-            <div class="faq-grid">
-                <div class="faq-column">
-                    <div class="faq-item-modern scroll-animate">
-                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
-                            <span class="faq-icon"><i class="fas fa-building"></i></span>
-                            <span class="faq-title">What type of properties do you manage?</span>
-                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
-                        </button>
-                        <div class="faq-answer-modern">
-                            <p>We manage a variety of residential properties, including condos, single-family homes, and multi-unit rentals. Our service covers tenant placement, maintenance coordination, rent collection, and transparent reporting.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item-modern scroll-animate delay-1">
-                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
-                            <span class="faq-icon"><i class="fas fa-calculator"></i></span>
-                            <span class="faq-title">How does your bookkeeping and accounting service work?</span>
-                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
-                        </button>
-                        <div class="faq-answer-modern">
-                            <p>We maintain accurate records for income, expenses, and tax reporting. Every report is organized for easy review and designed to help property owners understand their real financial performance.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item-modern scroll-animate delay-2">
-                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
-                            <span class="faq-icon"><i class="fas fa-file-invoice-dollar"></i></span>
-                            <span class="faq-title">Do you provide tax filing or CRA support?</span>
-                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
-                        </button>
-                        <div class="faq-answer-modern">
-                            <p>Yes, we assist with property-related tax preparation and reporting. Our accounting service ensures compliance and helps you take advantage of available deductions and credits.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-column">
-                    <div class="faq-item-modern scroll-animate delay-3">
-                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
-                            <span class="faq-icon"><i class="fas fa-file-contract"></i></span>
-                            <span class="faq-title">Can you help with building permit applications in Ottawa?</span>
-                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
-                        </button>
-                        <div class="faq-answer-modern">
-                            <p>Yes. We prepare drawings, submit applications, and coordinate with city departments to ensure compliance with local zoning and building codes. This helps streamline approvals and prevent costly delays.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item-modern scroll-animate delay-4">
-                        <button class="faq-question-modern" type="button" onclick="toggleModernFAQ(this)">
-                            <span class="faq-icon"><i class="fas fa-drafting-compass"></i></span>
-                            <span class="faq-title">What if my project needs both design and permits?</span>
-                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
-                        </button>
-                        <div class="faq-answer-modern">
-                            <p>Our design and permit services work together. We collaborate with architects and engineers to create compliant, functional plans and handle submission details from start to finish.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 </main>
 

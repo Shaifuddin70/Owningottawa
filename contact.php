@@ -13,6 +13,12 @@
             </div>
             <h1 class="modern-hero-title fade-in-up delay-1">Let's Start Your Property Journey</h1>
             <p class="modern-hero-subtitle fade-in-up delay-2">Have questions? Ready to buy, sell, or invest? We're here to help. Reach out and let's discuss how we can turn your real estate goals into reality.</p>
+            <div class="hero-cta-buttons fade-in-up delay-3">
+                <a href="/contact" class="btn-modern-primary">
+                    <span>Book Appointment</span>
+                    <i class="fas fa-calendar-check"></i>
+                </a>
+            </div>
         </div>
     </section>
 

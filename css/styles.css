@@ -4435,14 +4435,16 @@ a:has(.contact-item) {
     padding: 5px 5px 0 5px;
 }
 
-.common-section {
+.common-section,
+.common-sec {
     position: relative;
     z-index: 0;
     padding-top: 70px;
     padding-bottom: 70px;
 }
 
-.common-section:nth-child(even):before {
+.common-section:nth-child(even):before,
+.common-sec:nth-child(even):before {
     content: "";
     position: absolute;
     width: 100%;
@@ -4450,7 +4452,7 @@ a:has(.contact-item) {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #f8fafc;
+    background-color: var(--color-gray-light);
     border-bottom: 1px solid #f8fafc;
     z-index: -1;
 }
@@ -6728,6 +6730,11 @@ hr,
     background: var(--color-gray-light);
 }
 
+.faq-modern.service-faq {
+    padding: 4rem 0;
+    margin-top: 2rem;
+}
+
 .faq-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -7915,7 +7922,7 @@ body.menu-open {
 }
 
 .service-detail-card {
-    margin-bottom: 6rem;
+    margin-block: 6rem;
 }
 
 .service-detail-card:last-child {
@@ -7935,6 +7942,21 @@ body.menu-open {
 
 .service-detail-grid.reverse>* {
     direction: ltr;
+}
+
+/* Bootstrap row/column spacing for service sections */
+.service-detail-card .row {
+    gap: 4rem;
+}
+
+.service-detail-card .row>[class*="col-"] {
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 992px) {
+    .service-detail-card .row>[class*="col-"] {
+        margin-bottom: 0;
+    }
 }
 
 .service-detail-image {
@@ -8010,7 +8032,6 @@ body.menu-open {
 /* Service Features Grid */
 .service-features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
     margin: 2rem 0;
 }
@@ -8022,6 +8043,7 @@ body.menu-open {
     background: var(--color-gray-light);
     border-radius: 16px;
     transition: var(--transition-smooth);
+    height: 100%;
 }
 
 .service-feature:hover {
@@ -8216,17 +8238,17 @@ body.menu-open {
         padding: 4rem 0 3rem;
     }
 
-    .overview-grid,
-    .service-detail-grid {
+    .overview-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
 
-    .service-detail-grid.reverse {
-        direction: ltr;
+    /* Bootstrap columns stack automatically on mobile */
+    .service-detail-card .row {
+        gap: 3rem;
     }
 
-    /* Order: Image first, then content */
+    /* Order: Image first, then content on mobile */
     .overview-image,
     .service-detail-image {
         order: 1;
@@ -8253,9 +8275,6 @@ body.menu-open {
         height: 400px;
     }
 
-    .service-features-grid {
-        grid-template-columns: 1fr;
-    }
 
     .integration-benefits {
         grid-template-columns: 1fr;
@@ -8823,7 +8842,7 @@ body.menu-open {
 
 @media (max-width: 480px) {
     .popup-button {
-        bottom: 1rem;
+        bottom: 1.5rem;
         left: 1rem;
         width: 45px;
         height: 45px;

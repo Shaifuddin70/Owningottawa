@@ -166,15 +166,15 @@
                   <i class="fas fa-chevron-right nested-arrow"></i>
                 </a>
                 <div class="nested-dropdown-menu">
-                  <a href="/services#real-estate-buy" class="nested-dropdown-item">
-                    <i class="fas fa-shopping-cart"></i>
+                  <a href="/buy" class="nested-dropdown-item">
+                    <i class="fas fa-key"></i>
                     <span>Buy</span>
                   </a>
-                  <a href="/services#real-estate-sell" class="nested-dropdown-item">
-                    <i class="fas fa-hand-holding-usd"></i>
+                  <a href="/sell" class="nested-dropdown-item">
+                    <i class="fas fa-tag"></i>
                     <span>Sell</span>
                   </a>
-                  <a href="/services#real-estate-invest" class="nested-dropdown-item">
+                  <a href="/invest" class="nested-dropdown-item">
                     <i class="fas fa-chart-line"></i>
                     <span>Invest</span>
                   </a>
@@ -273,6 +273,12 @@
           currentPage = 'home';
         } else if (currentPath.includes('/services') || currentPath.endsWith('services.php')) {
           currentPage = 'services';
+        } else if (currentPath.includes('/buy') || currentPath.endsWith('buy.php')) {
+          currentPage = 'services'; // Buy is under services
+        } else if (currentPath.includes('/sell') || currentPath.endsWith('sell.php')) {
+          currentPage = 'services'; // Sell is under services
+        } else if (currentPath.includes('/invest') || currentPath.endsWith('invest.php')) {
+          currentPage = 'services'; // Invest is under services
         } else if (currentPath.includes('/about') || currentPath.endsWith('about.php')) {
           currentPage = 'about';
         } else if (currentPath.includes('/resources') || currentPath.endsWith('resources.php')) {

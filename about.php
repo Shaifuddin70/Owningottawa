@@ -15,7 +15,7 @@
             <p class="modern-hero-subtitle fade-in-up delay-2">From first homes to full portfolios—Owningottawa brings clarity, connection, and confidence to every stage of real estate in Ottawa.</p>
             <div class="hero-cta-buttons fade-in-up delay-3">
                 <a href="/contact" class="btn-modern-primary">
-                    <span>Book a Consultation</span>
+                    <span>Book Appointment</span>
                     <i class="fas fa-calendar-check"></i>
                 </a>
             </div>
