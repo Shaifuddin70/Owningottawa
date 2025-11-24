@@ -531,7 +531,7 @@
     <div class="container">
       <div class="cta-content scroll-animate">
         <div class="cta-icon">
-          <i class="fas fa-home-heart"></i>
+          <i class="fas fa-rocket"></i>
         </div>
         <h2 class="cta-title">Ready to Find Your Perfect Property?</h2>
         <p class="cta-text">Partner with OwningOttawa and move forward with confidence. Let's turn your real estate goals into reality.</p>

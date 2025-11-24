@@ -4,7 +4,7 @@
     <!-- Hero Section -->
     <section class="modern-hero" aria-label="Buy Real Estate">
         <div class="hero-media">
-            <img src="https://via.placeholder.com/1920x800/1a1a1a/d3ae77?text=Buy+Real+Estate" alt="Buy Real Estate Background">
+            <img src="/images/drawing-room-bg.jpg" alt="Drawing room" title="Drawing room" />
         </div>
         <div class="modern-hero-content">
             <div class="hero-badge fade-in-up">
@@ -41,8 +41,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="service-detail-image scroll-animate">
-                        <img src="https://via.placeholder.com/700x500/1a1a1a/d3ae77?text=Home+Buying+Support" alt="Home Buying Support">
+                    <div class="service-detail-image scroll-animate img-box">
+                        <img src="/images/home-interior.jpg" alt="home-interior" />
                         <div class="service-image-badge">
                             <i class="fas fa-home"></i>
                         </div>
@@ -161,8 +161,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-2">
-                    <div class="service-detail-image scroll-animate delay-1">
-                        <img src="https://via.placeholder.com/700x500/1a1a1a/d3ae77?text=Why+Choose+Us" alt="Why Choose Us for Buying">
+                    <div class="service-detail-image scroll-animate delay-1 img-box">
+                        <img src="/images/well-decorated-room.jpg" alt="well-decorated-room" title="well-decorated-room" />
                         <div class="service-image-badge">
                             <i class="fas fa-star"></i>
                         </div>
@@ -271,4 +271,3 @@
 </script>
 
 <?php include 'components/footer.php'; ?>
-
