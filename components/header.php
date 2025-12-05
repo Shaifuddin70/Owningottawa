@@ -71,7 +71,7 @@
       "name": "owningottawa",
       "description": "Real Estate Services, Mortgage Solutions, Property Management, Bookkeeping & Accounting, Building Permits & Design.",
       "url": "https://owningottawa.ca",
-      "telephone": "6133186478",
+      "telephone": "6133328884",
       "serviceArea": {
         "@type": "Place",
         "name": "Ottawa, ON"
@@ -124,6 +124,14 @@
 </head>
 
 <body>
+  <!-- Page Loader -->
+  <div id="pageLoader" class="page-loader">
+    <div class="loader-content">
+      <img src="images/Flag_map_of_Canada.svg" alt="Canada Flag" class="loader-flag" />
+      <div class="loader-spinner"></div>
+    </div>
+  </div>
+
   <!-- Header Placeholder -->
   <div id="header-placeholder"></div>
 
@@ -141,6 +149,7 @@
             </div>
           </a>
         </div>
+
 
         <!-- Navigation Links -->
         <div class="nav-menu" id="navMenu">
@@ -229,13 +238,13 @@
 
         <!-- CTA Buttons -->
         <div class="nav-cta">
-          <a href="tel:6133186478" class="cta-phone">
+          <a href="tel:6133328884" class="cta-phone">
             <i class="fas fa-phone-alt"></i>
-            <span>613-318-6478</span>
+            <span>613-332-8884</span>
           </a>
-          <a href="mailto:info@owningottawa.ca" class="cta-email">
+          <a href="mailto:shubham@soldbyduggal.com" class="cta-email">
             <i class="fas fa-envelope"></i>
-            <span>info@owningottawa.ca</span>
+            <span>shubham@soldbyduggal.com</span>
           </a>
           <a href="/contact" class="cta-appointment">
             <i class="fas fa-calendar-check"></i>

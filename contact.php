@@ -33,7 +33,7 @@
                         </div>
                         <h3 class="contact-info-title">Phone</h3>
                         <p class="contact-info-text">Call us anytime during business hours</p>
-                        <a href="tel:6133186478" class="contact-info-link">613-318-6478</a>
+                        <a href="tel:6133328884" class="contact-info-link">613-332-8884</a>
                     </div>
                 </div>
 
@@ -44,7 +44,7 @@
                         </div>
                         <h3 class="contact-info-title">Email</h3>
                         <p class="contact-info-text">Send us a message anytime</p>
-                        <a href="mailto:info@owningottawa.ca" class="contact-info-link">info@owningottawa.ca</a>
+                        <a href="mailto:shubham@soldbyduggal.com" class="contact-info-link">shubham@soldbyduggal.com</a>
                     </div>
                 </div>
 
@@ -184,7 +184,7 @@
                     </div>
                     <h3 class="alternative-title">Book an Appointment</h3>
                     <p class="alternative-text">Schedule a one-on-one consultation at your convenience</p>
-                    <a href="tel:6133186478" class="btn-modern-outline">
+                    <a href="tel:6133328884" class="btn-modern-outline">
                         <span>Schedule Now</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -196,7 +196,7 @@
                     </div>
                     <h3 class="alternative-title">Quick Chat</h3>
                     <p class="alternative-text">Have a quick question? Give us a call for immediate assistance</p>
-                    <a href="tel:6133186478" class="btn-modern-outline">
+                    <a href="tel:6133328884" class="btn-modern-outline">
                         <span>Call Now</span>
                         <i class="fas fa-phone"></i>
                     </a>
@@ -208,7 +208,7 @@
                     </div>
                     <h3 class="alternative-title">Email Us</h3>
                     <p class="alternative-text">Send us a detailed email and we'll respond within 24 hours</p>
-                    <a href="mailto:info@owningottawa.ca" class="btn-modern-outline">
+                    <a href="mailto:shubham@soldbyduggal.com" class="btn-modern-outline">
                         <span>Send Email</span>
                         <i class="fas fa-envelope"></i>
                     </a>

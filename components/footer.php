@@ -17,13 +17,13 @@
           <p class="footer-description">Your trusted real estate partner in Ottawa. Helping first-time buyers, homeowners, and residential investors navigate the market with clarity and confidence.</p>
 
           <div class="footer-contact-info">
-            <a href="tel:6133186478" class="footer-contact-item">
+            <a href="tel:6133328884" class="footer-contact-item">
               <i class="fas fa-phone-alt"></i>
-              <span>613-318-6478</span>
+              <span>613-332-8884</span>
             </a>
-            <a href="mailto:info@owningottawa.ca" class="footer-contact-item">
+            <a href="mailto:shubham@soldbyduggal.com" class="footer-contact-item">
               <i class="fas fa-envelope"></i>
-              <span>info@owningottawa.ca</span>
+              <span>shubham@soldbyduggal.com</span>
             </a>
           </div>
 
@@ -688,7 +688,7 @@
       },
       5: {
         question: "How do I book a consultation?",
-        answer: "Booking a consultation is easy! You can:\n\n📞 Call us at: 613-318-6478\n📧 Email us at: info@owningottawa.ca\n📝 Fill out our contact form on the website\n💬 Send us a message via WhatsApp\n\nWe offer free initial consultations to discuss your real estate needs and how we can help you achieve your goals."
+        answer: "Booking a consultation is easy! You can:\n\n📞 Call us at: 613-332-8884\n📧 Email us at: shubham@soldbyduggal.com\n📝 Fill out our contact form on the website\n💬 Send us a message via WhatsApp\n\nWe offer free initial consultations to discuss your real estate needs and how we can help you achieve your goals."
       },
       6: {
         question: "Tell me more about your company",
@@ -891,6 +891,146 @@
           initChatbot();
         }
       }, 100);
+    });
+  })();
+</script>
+
+<!-- Page Loader Script -->
+<script>
+  (function() {
+    const pageLoader = document.getElementById('pageLoader');
+    
+    if (!pageLoader) {
+      return;
+    }
+
+    let loaderHidden = false;
+    let hideLoaderTimeout = null;
+    let initialized = false;
+
+    // Hide loader when page is fully loaded
+    function hideLoader() {
+      if (loaderHidden || !pageLoader || pageLoader.classList.contains('hidden')) {
+        return;
+      }
+      loaderHidden = true;
+      pageLoader.classList.add('hidden');
+      // Remove from DOM after animation completes
+      setTimeout(function() {
+        if (pageLoader && pageLoader.parentNode) {
+          pageLoader.style.display = 'none';
+        }
+      }, 500);
+    }
+
+    // Function to initialize loader hiding logic
+    function initLoaderHide() {
+      if (initialized) {
+        return; // Already initialized
+      }
+      initialized = true;
+
+      // Clear any existing timeout
+      if (hideLoaderTimeout) {
+        clearTimeout(hideLoaderTimeout);
+      }
+
+      // Hide loader faster - don't wait for all resources
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          hideLoaderTimeout = setTimeout(hideLoader, 400);
+        }, { once: true });
+      } else if (document.readyState === 'interactive' || document.readyState === 'complete') {
+        // DOM already loaded, hide quickly
+        hideLoaderTimeout = setTimeout(hideLoader, 200);
+      }
+
+      // Also listen for window load as backup (but with shorter timeout)
+      window.addEventListener('load', function() {
+        if (hideLoaderTimeout) {
+          clearTimeout(hideLoaderTimeout);
+        }
+        hideLoaderTimeout = setTimeout(hideLoader, 100);
+      }, { once: true });
+
+      // Force hide after maximum time (prevent infinite loading)
+      setTimeout(function() {
+        if (!loaderHidden) {
+          hideLoader();
+        }
+      }, 2000); // Maximum 2 seconds
+    }
+
+    // Handle browser back/forward navigation (pageshow event)
+    // This runs on every page show, including back/forward navigation
+    window.addEventListener('pageshow', function(event) {
+      // Reset initialization flag
+      initialized = false;
+      
+      // Clear any existing timeout
+      if (hideLoaderTimeout) {
+        clearTimeout(hideLoaderTimeout);
+        hideLoaderTimeout = null;
+      }
+
+      // If page was loaded from cache (bfcache), hide loader immediately
+      if (event.persisted) {
+        // Page loaded from cache - it's already fully loaded, hide loader immediately
+        loaderHidden = true;
+        if (pageLoader) {
+          pageLoader.style.display = 'none';
+          pageLoader.classList.add('hidden');
+        }
+      } else {
+        // Fresh page load
+        loaderHidden = false;
+        if (pageLoader) {
+          pageLoader.style.display = 'flex';
+          pageLoader.classList.remove('hidden');
+        }
+        // Initialize hide logic
+        initLoaderHide();
+      }
+    });
+
+    // Initial setup for first load
+    // Show loader initially
+    pageLoader.style.display = 'flex';
+    pageLoader.classList.remove('hidden');
+    initLoaderHide();
+
+    // Show loader when navigating away (for page transitions)
+    let isNavigating = false;
+    
+    // Listen for link clicks
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('a');
+      if (link && link.href && !link.href.startsWith('#') && !link.href.startsWith('javascript:') && !link.href.startsWith('mailto:') && !link.href.startsWith('tel:')) {
+        try {
+          const currentHost = window.location.hostname;
+          const linkUrl = new URL(link.href, window.location.href);
+          const linkHost = linkUrl.hostname;
+          
+          // Only show loader for same-domain navigation
+          if (linkHost === currentHost || linkHost === '') {
+            isNavigating = true;
+            loaderHidden = false;
+            pageLoader.classList.remove('hidden');
+            pageLoader.style.display = 'flex';
+          }
+        } catch (err) {
+          // Invalid URL, ignore
+        }
+      }
+    }, true);
+
+    // Show loader on beforeunload (page refresh or navigation)
+    window.addEventListener('beforeunload', function() {
+      if (!isNavigating) {
+        loaderHidden = false;
+        pageLoader.classList.remove('hidden');
+        pageLoader.style.display = 'flex';
+      }
     });
   })();
 </script>

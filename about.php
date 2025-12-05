@@ -51,14 +51,14 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-2">
                     <div class="story-image scroll-animate delay-1">
-                        <img src="https://via.placeholder.com/700x600/1a1a1a/d3ae77?text=Rishabh+Founder" alt="Founder Rishabh">
+                        <img src="images/founder-shubham-duggal.jpg" alt="Founder Shubham Duggal">
                         <div class="story-badge">
                             <div class="badge-icon">
                                 <i class="fas fa-user-tie"></i>
                             </div>
                             <div class="badge-content">
-                                <h4>Rishabh</h4>
-                                <p>Founder & Lead Professional</p>
+                                <h4>Shubham Duggal</h4>
+                                <p>Founder & Real Estate Expert</p>
                             </div>
                         </div>
                     </div>
