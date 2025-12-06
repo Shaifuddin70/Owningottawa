@@ -21,12 +21,12 @@
   <link rel="canonical" href="https://owningottawa.ca/" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="images/owningottawa.jpg" />
-  <link rel="shortcut icon" type="image/jpeg" href="images/owningottawa.jpg" />
-  <link rel="apple-touch-icon" href="images/owningottawa.jpg" />
-  <link rel="apple-touch-icon" sizes="180x180" href="images/owningottawa.jpg" />
-  <link rel="icon" type="image/jpeg" sizes="32x32" href="images/owningottawa.jpg" />
-  <link rel="icon" type="image/jpeg" sizes="16x16" href="images/owningottawa.jpg" />
+  <link rel="icon" type="image/jpeg" href="/images/owningottawa.jpg" />
+  <link rel="shortcut icon" type="image/jpeg" href="/images/owningottawa.jpg" />
+  <link rel="apple-touch-icon" href="/images/owningottawa.jpg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/owningottawa.jpg" />
+  <link rel="icon" type="image/jpeg" sizes="32x32" href="/images/owningottawa.jpg" />
+  <link rel="icon" type="image/jpeg" sizes="16x16" href="/images/owningottawa.jpg" />
 
   <!-- Additional SEO Meta Tags -->
   <meta name="author" content="owningottawa" />
@@ -120,14 +120,14 @@
     }
   </script>
 
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
 
 <body>
   <!-- Page Loader -->
   <div id="pageLoader" class="page-loader">
     <div class="loader-content">
-      <img src="images/Flag_map_of_Canada.svg" alt="Canada Flag" class="loader-flag" />
+      <img src="/images/Flag_map_of_Canada.svg" alt="Canada Flag" class="loader-flag" />
       <div class="loader-spinner"></div>
     </div>
   </div>
@@ -142,7 +142,7 @@
         <!-- Logo Section -->
         <div class="modern-logo">
           <a href="/" class="logo-link">
-            <img src="images/owningottawa.jpg" alt="OwningOttawa" class="logo-image" />
+            <img src="/images/owningottawa.jpg" alt="OwningOttawa" class="logo-image" />
             <div class="logo-text">
               <span class="logo-title">OwningOttawa</span>
               <span class="logo-tagline">Premium Real Estate</span>
@@ -220,11 +220,6 @@
             </div>
           </div>
 
-          <a href="/about" class="nav-link" data-page="about">
-            <i class="fas fa-users"></i>
-            <span>About</span>
-          </a>
-
           <a href="/resources" class="nav-link" data-page="resources">
             <i class="fas fa-book"></i>
             <span>Resources</span>
@@ -234,6 +229,11 @@
             <i class="fas fa-envelope"></i>
             <span>Contact</span>
           </a>
+          <a href="/about" class="nav-link" data-page="about">
+            <i class="fas fa-users"></i>
+            <span>About</span>
+          </a>
+
         </div>
 
         <!-- CTA Buttons -->

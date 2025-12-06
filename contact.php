@@ -1,7 +1,7 @@
 <?php include 'components/header.php'; ?>
 <main class="main-content modern-redesign">
 
-    <!-- Contact Hero Section -->
+    <!--  
     <section class="modern-hero" aria-label="Contact OwningOttawa">
         <div class="hero-media">
             <img src="https://via.placeholder.com/1920x600/1a1a1a/d3ae77?text=Get+in+Touch" alt="Contact Us Background">
@@ -20,7 +20,7 @@
                 </a>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Contact Information Cards -->
     <section class="contact-info-section">

@@ -1,50 +1,6 @@
 <?php include 'components/header.php'; ?>
 <main class="main-content modern-redesign">
 
-    <!-- Hero Section -->
-    <section class="modern-hero" aria-label="About OwningOttawa">
-        <div class="hero-media">
-            <img src="https://via.placeholder.com/1920x600/1a1a1a/d3ae77?text=About+OwningOttawa" alt="About Us Background">
-        </div>
-        <div class="modern-hero-content">
-            <div class="hero-badge fade-in-up">
-                <i class="fas fa-users"></i>
-                <span>Our Story</span>
-            </div>
-            <h1 class="modern-hero-title fade-in-up delay-1">Your Property Journey, All in One Place</h1>
-            <p class="modern-hero-subtitle fade-in-up delay-2">From first homes to full portfolios—Owningottawa brings clarity, connection, and confidence to every stage of real estate in Ottawa.</p>
-            <div class="hero-cta-buttons fade-in-up delay-3">
-                <a href="/contact" class="btn-modern-primary">
-                    <span>Book Appointment</span>
-                    <i class="fas fa-calendar-check"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Introduction Section -->
-    <section class="about-intro">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="intro-image scroll-animate">
-                        <img src="https://via.placeholder.com/800x600/1a1a1a/d3ae77?text=Real+Estate+Made+Personal" alt="About OwningOttawa">
-                        <div class="image-decoration"></div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="intro-content scroll-animate delay-1">
-                        <span class="section-tag"><i class="fas fa-heart"></i> Our Mission</span>
-                        <h2 class="section-title-modern">Real Estate Made Personal</h2>
-                        <p class="section-description">Owningottawa was built on a simple belief—real estate should feel clear, confident, and built for real people, not just transactions.</p>
-                        <p>Founded by Rishabh, a dedicated Ottawa real estate professional with a passion for smart property ownership, OwningOttawa unites every key service under one roof: buying, selling, mortgages, property management, bookkeeping, and building design.</p>
-                        <p>Every client gets personalized guidance and complete support, not a handoff between departments, but a smooth, professional experience from start to finish.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Story Section -->
     <section class="about-story">
         <div class="container">
@@ -67,7 +23,7 @@
                     <div class="story-content scroll-animate">
                         <span class="section-tag"><i class="fas fa-book-open"></i> Our Story</span>
                         <h2 class="section-title-modern">The Story Behind the Vision</h2>
-                        <p class="section-description">Rishabh began OwningOttawa after seeing how disconnected the real estate process often was—buyers, sellers, and investors bouncing between agents, lenders, and managers without a single trusted point of contact.</p>
+                        <p class="section-description">Shubham Duggal began OwningOttawa after seeing how disconnected the real estate process often was—buyers, sellers, and investors bouncing between agents, lenders, and managers without a single trusted point of contact.</p>
                         <p>He set out to change that by building a platform that simplifies property ownership. His philosophy is rooted in transparency, strategy, and long-term relationships, where every client is treated as a partner in success, not a transaction.</p>
 
                         <div class="story-values">
@@ -99,6 +55,29 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="about-intro">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="intro-image scroll-animate">
+                        <img src="https://via.placeholder.com/800x600/1a1a1a/d3ae77?text=Real+Estate+Made+Personal" alt="About OwningOttawa">
+                        <div class="image-decoration"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="intro-content scroll-animate delay-1">
+                        <span class="section-tag"><i class="fas fa-heart"></i> Our Mission</span>
+                        <h2 class="section-title-modern">Real Estate Made Personal</h2>
+                        <p class="section-description">Owningottawa was built on a simple belief—real estate should feel clear, confident, and built for real people, not just transactions.</p>
+                        <p>Founded by Shubham Duggal, a dedicated Ottawa real estate professional with a passion for smart property ownership, OwningOttawa unites every key service under one roof: buying, selling, mortgages, property management, bookkeeping, and building design.</p>
+                        <p>Every client gets personalized guidance and complete support, not a handoff between departments, but a smooth, professional experience from start to finish.</p>
                     </div>
                 </div>
             </div>
@@ -232,7 +211,7 @@
                         <i class="fas fa-user-friends"></i>
                     </div>
                     <h3 class="why-card-title">Personal Connection</h3>
-                    <p class="why-card-text">Rishabh listens first, plans second, and acts with precision.</p>
+                    <p class="why-card-text">Shubham Duggal listens first, plans second, and acts with precision.</p>
                 </div>
 
                 <div class="why-card scroll-animate delay-3">
