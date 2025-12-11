@@ -21,12 +21,12 @@
   <link rel="canonical" href="https://owningottawa.ca/" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="/images/owningottawa.jpg" />
-  <link rel="shortcut icon" type="image/jpeg" href="/images/owningottawa.jpg" />
-  <link rel="apple-touch-icon" href="/images/owningottawa.jpg" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/owningottawa.jpg" />
-  <link rel="icon" type="image/jpeg" sizes="32x32" href="/images/owningottawa.jpg" />
-  <link rel="icon" type="image/jpeg" sizes="16x16" href="/images/owningottawa.jpg" />
+  <link rel="icon" type="image/jpeg" href="/images/owningottawa.svg" />
+  <link rel="shortcut icon" type="image/jpeg" href="/images/owningottawa.svg" />
+  <link rel="apple-touch-icon" href="/images/owningottawa.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/owningottawa.svg" />
+  <link rel="icon" type="image/jpeg" sizes="32x32" href="/images/owningottawa.svg" />
+  <link rel="icon" type="image/jpeg" sizes="16x16" href="/images/owningottawa.svg" />
 
   <!-- Additional SEO Meta Tags -->
   <meta name="author" content="owningottawa" />
@@ -127,7 +127,7 @@
   <!-- Page Loader -->
   <div id="pageLoader" class="page-loader">
     <div class="loader-content">
-      <img src="/images/Flag_map_of_Canada.svg" alt="Canada Flag" class="loader-flag" />
+      <img src="/images/owningottawa-footer.svg" alt="OwningOttawa" class="loader-flag" />
       <div class="loader-spinner"></div>
     </div>
   </div>
@@ -142,11 +142,7 @@
         <!-- Logo Section -->
         <div class="modern-logo">
           <a href="/" class="logo-link">
-            <img src="/images/owningottawa.jpg" alt="OwningOttawa" class="logo-image" />
-            <div class="logo-text">
-              <span class="logo-title">OwningOttawa</span>
-              <span class="logo-tagline">Premium Real Estate</span>
-            </div>
+            <img src="/images/owningottawa.svg" alt="OwningOttawa" class="logo-image" style="width: 150px;" />
           </a>
         </div>
 

@@ -10,8 +10,7 @@
         <div class="col-lg-4 col-md-6 col-12 footer-brand scroll-animate">
           <div class="footer-logo">
             <a href="/" class="footer-logo-link">
-              <img src="images/owningottawa.jpg" alt="OwningOttawa" class="footer-logo-img">
-              <span class="footer-logo-text">OwningOttawa</span>
+              <img src="images/owningottawa-footer.svg" alt="OwningOttawa" class="footer-logo-img" style="width: 250px;">
             </a>
           </div>
           <p class="footer-description">Your trusted real estate partner in Ottawa. Helping first-time buyers, homeowners, and residential investors navigate the market with clarity and confidence.</p>
@@ -899,7 +898,7 @@
 <script>
   (function() {
     const pageLoader = document.getElementById('pageLoader');
-    
+
     if (!pageLoader) {
       return;
     }
@@ -939,7 +938,9 @@
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function() {
           hideLoaderTimeout = setTimeout(hideLoader, 400);
-        }, { once: true });
+        }, {
+          once: true
+        });
       } else if (document.readyState === 'interactive' || document.readyState === 'complete') {
         // DOM already loaded, hide quickly
         hideLoaderTimeout = setTimeout(hideLoader, 200);
@@ -951,7 +952,9 @@
           clearTimeout(hideLoaderTimeout);
         }
         hideLoaderTimeout = setTimeout(hideLoader, 100);
-      }, { once: true });
+      }, {
+        once: true
+      });
 
       // Force hide after maximum time (prevent infinite loading)
       setTimeout(function() {
@@ -966,7 +969,7 @@
     window.addEventListener('pageshow', function(event) {
       // Reset initialization flag
       initialized = false;
-      
+
       // Clear any existing timeout
       if (hideLoaderTimeout) {
         clearTimeout(hideLoaderTimeout);
@@ -1001,7 +1004,7 @@
 
     // Show loader when navigating away (for page transitions)
     let isNavigating = false;
-    
+
     // Listen for link clicks
     document.addEventListener('click', function(e) {
       const link = e.target.closest('a');
@@ -1010,7 +1013,7 @@
           const currentHost = window.location.hostname;
           const linkUrl = new URL(link.href, window.location.href);
           const linkHost = linkUrl.hostname;
-          
+
           // Only show loader for same-domain navigation
           if (linkHost === currentHost || linkHost === '') {
             isNavigating = true;
