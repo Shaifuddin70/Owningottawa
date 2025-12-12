@@ -17,7 +17,7 @@
   <meta
     name="keywords"
     content="Ottawa real estate, real estate services, mortgage solutions, property management, bookkeeping, accounting, building permits, design services, home buying, home selling, first-time buyers" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="noindex, nofollow" />
   <link rel="canonical" href="https://owningottawa.ca/" />
 
   <!-- Favicon -->
@@ -199,7 +199,7 @@
                   <span class="dropdown-desc">Complete management</span>
                 </div>
               </a>
-              <a href="/services#bookkeeping" class="dropdown-item">
+              <a href="https://vermaaccounting.ca/" class="dropdown-item">
                 <i class="fas fa-calculator"></i>
                 <div class="dropdown-content">
                   <span class="dropdown-title">Bookkeeping</span>
@@ -248,12 +248,22 @@
           </a>
         </div>
 
-        <!-- Mobile Menu Toggle -->
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
+        <!-- Mobile Actions -->
+        <div class="mobile-actions">
+          <a href="tel:6133328884" class="mobile-phone-icon" aria-label="Call 613-332-8884">
+            <i class="fas fa-phone-alt"></i>
+          </a>
+          <!-- Mobile Menu Toggle -->
+          <label class="hamburger" for="mobileToggle" aria-label="Toggle menu">
+            <input type="checkbox" id="mobileToggle" />
+            <svg viewBox="0 0 32 32">
+              <path
+                class="line line-top-bottom"
+                d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+              <path class="line" d="M7 16 27 16"></path>
+            </svg>
+          </label>
+        </div>
       </div>
     </nav>
   </header>
@@ -319,16 +329,20 @@
       const navMenu = document.getElementById('navMenu');
 
       if (mobileToggle && navMenu) {
-        mobileToggle.addEventListener('click', () => {
-          mobileToggle.classList.toggle('active');
-          navMenu.classList.toggle('active');
-          document.body.classList.toggle('menu-open');
+        mobileToggle.addEventListener('change', () => {
+          if (mobileToggle.checked) {
+            navMenu.classList.add('active');
+            document.body.classList.add('menu-open');
+          } else {
+            navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+          }
         });
 
         // Close mobile menu when clicking outside
         document.addEventListener('click', (e) => {
           if (!e.target.closest('.modern-nav')) {
-            mobileToggle.classList.remove('active');
+            mobileToggle.checked = false;
             navMenu.classList.remove('active');
             document.body.classList.remove('menu-open');
           }
