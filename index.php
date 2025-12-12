@@ -329,7 +329,7 @@
   <!-- Why Choose Us -->
   <section class="why-choose-us">
     <div class="container">
-      <div class="why-grid">
+      <div class="why-choose-grid">
         <div class="why-content scroll-animate">
           <span class="section-tag"><i class="fas fa-medal"></i> Why Choose Us</span>
           <h2 class="section-title-modern">Excellence in Every Transaction</h2>
@@ -374,7 +374,7 @@
         </div>
 
         <div class="why-image scroll-animate delay-1">
-          <img src="/images/expert-agents.jpg" alt="Why Choose Owning Ottawa">
+          <img src="/images/shubham-duggal-2.jpg" alt="Shubham Duggal - Real Estate & Business Strategy">
           <div class="image-decoration"></div>
         </div>
       </div>
