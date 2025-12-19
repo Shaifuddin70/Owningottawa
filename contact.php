@@ -23,7 +23,7 @@
     </section> -->
 
     <!-- Contact Information Cards -->
-    <section class="contact-info-section">
+    <!-- <section class="contact-info-section">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 col-12  scroll-animate mb-5 mb-lg-0">
@@ -61,13 +61,13 @@
 
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Contact Form Section -->
     <section class="contact-form-section">
         <div class="container">
             <div class="contact-form-grid">
-                <form class="contact-form scroll-animate" id="contactForm" method="POST" action="#">
+                <form class="contact-form scroll-animate" id="contactForm" method="POST" action="https://formspree.io/f/meejqovw">
                     <span class="section-tag"><i class="fas fa-paper-plane"></i> Send a Message</span>
                     <div class="form-group">
                         <label for="name" class="form-label">
@@ -116,6 +116,8 @@
                         </label>
                         <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell us about your needs..." required></textarea>
                     </div>
+
+                    <div id="formMessage" class="form-message hidden"></div>
                     <button type="submit" class="btn-modern-primary form-submit">
                         <span>Send Message</span>
                         <i class="fas fa-paper-plane"></i>
@@ -124,7 +126,7 @@
 
                 <div class="contact-form-sidebar scroll-animate delay-1">
                     <div class="contact-form-image">
-                        <img src="images/expert-agents.jpg" alt="Our Expert Team" class="contact-person-image">
+                        <img src="images/shubham-duggal-3.jpg" alt="Shubham Duggal - Real Estate & Business Strategy" class="contact-person-image">
                     </div>
 
                     <div class="contact-sidebar-content">
@@ -305,7 +307,6 @@
                 const phone = document.getElementById('phone').value.trim();
                 const service = document.getElementById('service').value;
                 const message = document.getElementById('message').value.trim();
-                const consent = document.querySelector('input[name="consent"]').checked;
 
                 // Reset message
                 formMessage.textContent = '';
@@ -341,24 +342,6 @@
                     }
                 });
 
-                // Check consent
-                if (!consent) {
-                    formMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please accept the consent to proceed.';
-                    formMessage.classList.remove('hidden');
-                    formMessage.classList.add('error');
-
-                    // Scroll to consent checkbox
-                    const consentCheckbox = document.querySelector('input[name="consent"]');
-                    if (consentCheckbox) {
-                        consentCheckbox.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'center'
-                        });
-                        consentCheckbox.focus();
-                    }
-                    return;
-                }
-
                 if (!allValid) {
                     formMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please fix the errors above and try again.';
                     formMessage.classList.remove('hidden');
@@ -380,36 +363,73 @@
                 if (submitButton) {
                     submitButton.classList.add('loading');
                     submitButton.disabled = true;
+                    const buttonText = submitButton.querySelector('span');
+                    if (buttonText) buttonText.textContent = 'Sending...';
                 }
 
-                // Simulate form submission (in production, this would send to server)
-                setTimeout(() => {
-                    // Show success message
-                    formMessage.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.';
-                    formMessage.classList.remove('hidden');
-                    formMessage.classList.remove('error');
-                    formMessage.classList.add('success');
+                // Submit form to Formspree
+                const formData = new FormData(contactForm);
 
-                    // Reset form
-                    contactForm.reset();
+                fetch('https://formspree.io/f/meejqovw', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Show success message
+                            formMessage.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.';
+                            formMessage.classList.remove('hidden');
+                            formMessage.classList.remove('error');
+                            formMessage.classList.add('success');
 
-                    // Remove loading state
-                    if (submitButton) {
-                        submitButton.classList.remove('loading');
-                        submitButton.disabled = false;
-                    }
+                            // Reset form
+                            contactForm.reset();
 
-                    // Scroll to message
-                    formMessage.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'nearest'
+                            // Scroll to message
+                            formMessage.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'nearest'
+                            });
+
+                            // Remove success message after 5 seconds
+                            setTimeout(() => {
+                                formMessage.classList.add('hidden');
+                            }, 5000);
+                        } else {
+                            return response.json().then(data => {
+                                if (data.errors) {
+                                    throw new Error(data.errors.map(err => err.message).join(', '));
+                                } else {
+                                    throw new Error('Something went wrong. Please try again.');
+                                }
+                            });
+                        }
+                    })
+                    .catch(error => {
+                        // Show error message
+                        formMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + error.message + ' Please try again or contact us directly.';
+                        formMessage.classList.remove('hidden');
+                        formMessage.classList.remove('success');
+                        formMessage.classList.add('error');
+
+                        // Scroll to message
+                        formMessage.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'nearest'
+                        });
+                    })
+                    .finally(() => {
+                        // Remove loading state
+                        if (submitButton) {
+                            submitButton.classList.remove('loading');
+                            submitButton.disabled = false;
+                            const buttonText = submitButton.querySelector('span');
+                            if (buttonText) buttonText.textContent = 'Send Message';
+                        }
                     });
-
-                    // Remove success message after 5 seconds
-                    setTimeout(() => {
-                        formMessage.classList.add('hidden');
-                    }, 5000);
-                }, 1500);
             });
         }
 
