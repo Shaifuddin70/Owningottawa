@@ -4,7 +4,7 @@
     <!-- Hero Section -->
     <section class="modern-hero" aria-label="Invest in Real Estate">
         <div class="hero-media">
-            <img src="https://via.placeholder.com/1920x800/1a1a1a/d3ae77?text=Invest+in+Real+Estate" alt="Invest in Real Estate Background">
+            <img src="images/invest-banner.jpg" alt="Invest in Real Estate Banner">
         </div>
         <div class="modern-hero-content">
             <div class="hero-badge fade-in-up">
@@ -14,18 +14,18 @@
             <h1 class="modern-hero-title fade-in-up delay-1">Build Your Real Estate Portfolio</h1>
             <p class="modern-hero-subtitle fade-in-up delay-2">Expert insights into Ottawa's growing neighborhoods and emerging opportunities. We help you identify, analyze, and acquire investment properties that align with your financial goals.</p>
             <div class="hero-features fade-in-up delay-3">
-                <div class="hero-feature-item">
+                <a href="/services#real-estate" class="hero-feature-item">
                     <i class="fas fa-map-marked-alt"></i>
                     <span>Market Insights</span>
-                </div>
-                <div class="hero-feature-item">
+                </a>
+                <a href="/services#real-estate" class="hero-feature-item">
                     <i class="fas fa-calculator"></i>
                     <span>ROI Analysis</span>
-                </div>
-                <div class="hero-feature-item">
+                </a>
+                <a href="/services#real-estate" class="hero-feature-item">
                     <i class="fas fa-building"></i>
                     <span>Portfolio Growth</span>
-                </div>
+                </a>
             </div>
             <div class="hero-cta-buttons fade-in-up delay-4">
                 <a href="/contact" class="btn-modern-primary">
@@ -41,8 +41,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="service-detail-image scroll-animate">
-                        <img src="https://via.placeholder.com/700x500/1a1a1a/d3ae77?text=Investment+Guidance" alt="Investment Guidance">
+                    <div class="service-detail-image scroll-animate mb-5 mb-lg-0">
+                        <img src="images/investment-guidance.jpg" alt="Investment Guidance">
                         <div class="service-image-badge">
                             <i class="fas fa-chart-line"></i>
                         </div>
@@ -150,8 +150,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-2">
-                    <div class="service-detail-image scroll-animate delay-1">
-                        <img src="https://via.placeholder.com/700x500/1a1a1a/d3ae77?text=Why+Invest+With+Us" alt="Why Invest With Us">
+                    <div class="service-detail-image scroll-animate delay-1 mb-5 mb-lg-0">
+                        <img src="images/happy-client-2.jpg" alt="Happy Client">
                         <div class="service-image-badge">
                             <i class="fas fa-chart-line"></i>
                         </div>
@@ -260,4 +260,3 @@
 </script>
 
 <?php include 'components/footer.php'; ?>
-

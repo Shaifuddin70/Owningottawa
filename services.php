@@ -15,18 +15,18 @@
             <p class="modern-hero-subtitle fade-in-up delay-2">First home? New project? Investment opportunity? Find it, finance it, and manage it—all with OwningOttawa.</p>
             <p class="modern-hero-subtitle fade-in-up delay-2" style="margin-top: 1rem;">We bring everything under one roof: real estate, mortgages, property management, bookkeeping, and building permit design—helping you make confident property decisions from start to finish.</p>
             <div class="hero-features fade-in-up delay-3">
-                <div class="hero-feature-item">
+                <a href="/services" class="hero-feature-item">
                     <i class="fas fa-check-circle"></i>
                     <span>5 Services</span>
-                </div>
-                <div class="hero-feature-item">
+                </a>
+                <a href="/about" class="hero-feature-item">
                     <i class="fas fa-users"></i>
                     <span>Expert Team</span>
-                </div>
-                <div class="hero-feature-item">
+                </a>
+                <a href="/contact" class="hero-feature-item">
                     <i class="fas fa-clock"></i>
                     <span>Available 24/7</span>
-                </div>
+                </a>
             </div>
             <div class="hero-cta-buttons fade-in-up delay-4">
                 <a href="/contact" class="btn-modern-primary">
@@ -43,7 +43,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-2">
                     <div class="img-box overview-image scroll-animate delay-1">
-                        <img src="/images/happy-customer.jpg" alt="Happy Customer" title="Happy Customer" />
+                        <img src="/images/shubham-duggal-4.jpg" alt="Shubham Duggal - Real Estate & Business Strategy" title="Shubham Duggal - Real Estate & Business Strategy" />
                         <div class="image-decoration"></div>
                     </div>
                 </div>

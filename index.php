@@ -28,18 +28,18 @@
         Find it, finance it, and manage it—all with OwningOttawa.
       </p>
       <div class="hero-features fade-in-up delay-3">
-        <div class="hero-feature-item">
+        <a href="/services#real-estate" class="hero-feature-item">
           <i class="fas fa-home"></i>
           <span>Real Estate</span>
-        </div>
-        <div class="hero-feature-item">
+        </a>
+        <a href="/services#mortgage" class="hero-feature-item">
           <i class="fas fa-coins"></i>
           <span>Mortgages</span>
-        </div>
-        <div class="hero-feature-item">
+        </a>
+        <a href="/services#property-management" class="hero-feature-item">
           <i class="fas fa-building"></i>
           <span>Management</span>
-        </div>
+        </a>
       </div>
       <div class="hero-cta-buttons fade-in-up delay-4">
         <a href="/services" class="btn-modern-primary">

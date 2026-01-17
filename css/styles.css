@@ -5969,6 +5969,22 @@ hr,
     font-weight: 600;
 }
 
+/* Link styling for hero-feature-item */
+a.hero-feature-item {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+a.hero-feature-item:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.hero-feature-item:visited {
+    color: inherit;
+}
+
 .hero-cta-buttons {
     display: flex;
     justify-content: center;
@@ -6183,9 +6199,9 @@ hr,
 }
 
 /* Section Headers */
-.section-header {
+/* .section-header {
     margin-bottom: 4rem;
-}
+} */
 
 .section-tag {
     display: inline-flex;
@@ -9637,7 +9653,6 @@ body.modal-open {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
-    margin: 3rem 0;
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
@@ -9709,10 +9724,7 @@ body.modal-open {
     margin: 0;
 }
 
-.team-values {
-    margin-top: 4rem;
-    padding: 2rem;
-}
+
 
 .values-statement {
     font-size: 1.2rem;
