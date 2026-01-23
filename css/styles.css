@@ -3013,7 +3013,6 @@ a:has(.contact-item) {
     gap: 1.5rem;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 3rem;
 }
 
 .cta-buttons.left {
@@ -6848,7 +6847,7 @@ a.hero-feature-item:visited {
 
 /* CTA Section */
 .cta-section {
-    padding: 6rem 0;
+    padding-block: 3rem;
     background: linear-gradient(135deg, var(--color-black) 0%, #1a1a1a 100%);
     position: relative;
     overflow: hidden;
@@ -7137,6 +7136,8 @@ a.hero-feature-item:visited {
     padding: 0;
 }
 
+
+
 .modern-nav {
     padding: 1rem 0;
     transition: padding 0.3s ease;
@@ -7148,7 +7149,7 @@ a.hero-feature-item:visited {
 }
 
 .nav-container {
-    max-width: 1400px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 1.5rem;
     display: flex;
@@ -7648,6 +7649,9 @@ a.hero-feature-item:visited {
         pointer-events: none;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
+    }
+    .modern-header.scrolled .nav-menu {
+        top: 70px;
     }
 
     .nav-menu.active {
@@ -8386,7 +8390,7 @@ body.menu-open {
 
 /* Footer Top */
 .footer-top {
-    padding: 5rem 0 3rem;
+    padding: 3rem 0;
     border-bottom: 1px solid rgba(211, 174, 119, 0.2);
 }
 
@@ -8394,11 +8398,7 @@ body.menu-open {
     margin: 0;
 }
 
-.footer-top [class*="col-"] {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-bottom: 2rem;
-}
+
 
 /* Footer Brand */
 .footer-brand {
@@ -10909,7 +10909,7 @@ body.modal-open {
 
 /* Map Section */
 .contact-map-section {
-    padding: 6rem 0;
+    padding-block: 3rem;
     background: var(--color-white);
 }
 
@@ -10942,7 +10942,7 @@ body.modal-open {
 
 /* Alternative Contact Methods */
 .contact-alternative {
-    padding: 6rem 0;
+    padding-block: 3rem;
     background: linear-gradient(135deg, var(--color-black) 0%, #1a1a1a 100%);
     position: relative;
     overflow: hidden;

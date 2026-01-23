@@ -1010,12 +1010,29 @@
       const link = e.target.closest('a');
       if (link && link.href && !link.href.startsWith('#') && !link.href.startsWith('javascript:') && !link.href.startsWith('mailto:') && !link.href.startsWith('tel:')) {
         try {
+          // Check if clicking directly on dropdown arrow or nested arrow - don't show loader
+          const clickedDropdownArrow = e.target.closest('.dropdown-arrow') || e.target.closest('.nested-arrow');
+          if (clickedDropdownArrow) {
+            return; // Don't show loader for dropdown arrow clicks
+          }
+
           const currentHost = window.location.hostname;
           const linkUrl = new URL(link.href, window.location.href);
           const linkHost = linkUrl.hostname;
+          const currentPath = window.location.pathname;
+          const linkPath = linkUrl.pathname;
 
-          // Only show loader for same-domain navigation
-          if (linkHost === currentHost || linkHost === '') {
+          // Check if link is inside a nav-dropdown (has dropdown menu)
+          const navDropdown = link.closest('.nav-dropdown');
+          const hasDropdownMenu = navDropdown && navDropdown.querySelector('.dropdown-menu');
+
+          // If link has dropdown menu and we're on the same page, it's just expanding dropdown - don't show loader
+          if (hasDropdownMenu && linkPath === currentPath) {
+            return; // Don't show loader for dropdown expansion
+          }
+
+          // Only show loader for same-domain navigation to a different page
+          if ((linkHost === currentHost || linkHost === '') && linkPath !== currentPath) {
             isNavigating = true;
             loaderHidden = false;
             pageLoader.classList.remove('hidden');

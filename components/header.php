@@ -238,10 +238,10 @@
             <i class="fas fa-phone-alt"></i>
             <span>613-332-8884</span>
           </a>
-          <a href="mailto:shubham@soldbyduggal.com" class="cta-email">
+          <!-- <a href="mailto:shubham@soldbyduggal.com" class="cta-email">
             <i class="fas fa-envelope"></i>
             <span>shubham@soldbyduggal.com</span>
-          </a>
+          </a> -->
           <a href="/contact" class="cta-appointment">
             <i class="fas fa-calendar-check"></i>
             <span>Book Appointment</span>
