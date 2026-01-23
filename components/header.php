@@ -382,11 +382,22 @@
               // Close all nested dropdowns first
               nestedDropdowns.forEach(otherNested => {
                 otherNested.classList.remove('active');
+                // Reset arrow rotation when closing
+                const otherArrow = otherNested.querySelector('.nested-arrow');
+                if (otherArrow) {
+                  otherArrow.style.transform = '';
+                }
               });
 
               // Open if it wasn't active, close if it was
               if (!isCurrentlyActive) {
                 nested.classList.add('active');
+              } else {
+                // Reset arrow rotation when closing
+                const arrow = nested.querySelector('.nested-arrow');
+                if (arrow) {
+                  arrow.style.transform = '';
+                }
               }
 
               return false;
@@ -422,6 +433,21 @@
               // Close all dropdowns first
               dropdowns.forEach(otherDropdown => {
                 otherDropdown.classList.remove('active');
+                // Reset arrow rotation when closing
+                const arrow = otherDropdown.querySelector('.dropdown-arrow');
+                if (arrow) {
+                  arrow.style.transform = '';
+                }
+              });
+              
+              // Also close all nested dropdowns when closing parent dropdown
+              nestedDropdowns.forEach(nested => {
+                nested.classList.remove('active');
+                // Reset arrow rotation when closing
+                const arrow = nested.querySelector('.nested-arrow');
+                if (arrow) {
+                  arrow.style.transform = '';
+                }
               });
 
               // Open if it wasn't active, close if it was
@@ -449,6 +475,21 @@
           if (!clickedInsideDropdown) {
             dropdowns.forEach(dropdown => {
               dropdown.classList.remove('active');
+              // Reset arrow rotation when closing
+              const arrow = dropdown.querySelector('.dropdown-arrow');
+              if (arrow) {
+                arrow.style.transform = '';
+              }
+            });
+            
+            // Also close nested dropdowns and reset their arrows
+            nestedDropdowns.forEach(nested => {
+              nested.classList.remove('active');
+              // Reset arrow rotation when closing
+              const arrow = nested.querySelector('.nested-arrow');
+              if (arrow) {
+                arrow.style.transform = '';
+              }
             });
           }
         });

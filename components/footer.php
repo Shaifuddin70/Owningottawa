@@ -980,6 +980,11 @@
     // Show loader when navigating away (for page transitions)
     let isNavigating = false;
 
+    // Helper function to check if mobile
+    function isMobile() {
+      return window.innerWidth <= 992;
+    }
+
     // Listen for link clicks
     document.addEventListener('click', function(e) {
       const link = e.target.closest('a');
@@ -991,15 +996,28 @@
             return; // Don't show loader for dropdown arrow clicks
           }
 
+          // Check if link is inside a nav-dropdown (has dropdown menu)
+          const navDropdown = link.closest('.nav-dropdown');
+          const hasDropdownMenu = navDropdown && navDropdown.querySelector('.dropdown-menu');
+          
+          // Check if this is the parent nav-link that toggles dropdown on mobile
+          // The parent link has .nav-link class and is inside .nav-dropdown with a .dropdown-menu sibling
+          const isParentDropdownLink = link.classList.contains('nav-link') && hasDropdownMenu;
+          
+          // Check if this is a nested dropdown parent link that toggles nested menu on mobile
+          const isNestedDropdownParent = link.classList.contains('dropdown-item-parent') && link.closest('.dropdown-item-nested');
+          
+          // On mobile, if link is the parent dropdown link or nested dropdown parent, it will toggle dropdown instead of navigating - don't show loader
+          if ((isParentDropdownLink || isNestedDropdownParent) && isMobile()) {
+            // Don't show loader - the navigation script will prevent default and toggle dropdown
+            return;
+          }
+
           const currentHost = window.location.hostname;
           const linkUrl = new URL(link.href, window.location.href);
           const linkHost = linkUrl.hostname;
           const currentPath = window.location.pathname;
           const linkPath = linkUrl.pathname;
-
-          // Check if link is inside a nav-dropdown (has dropdown menu)
-          const navDropdown = link.closest('.nav-dropdown');
-          const hasDropdownMenu = navDropdown && navDropdown.querySelector('.dropdown-menu');
 
           // If link has dropdown menu and we're on the same page, it's just expanding dropdown - don't show loader
           if (hasDropdownMenu && linkPath === currentPath) {
