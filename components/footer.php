@@ -251,14 +251,7 @@
 </div>
 
 <script>
-  // Wrap everything in try-catch to catch any errors
-  try {
-    // Debug: Confirm script is running
-    console.log('Footer script loaded on:', window.location.pathname);
-    console.log('Footer script executing at:', new Date().toISOString());
-  } catch (e) {
-    console.error('Error in footer script initialization:', e);
-  }
+  // Script initialization
 
   // Back to top button
   const backToTop = document.getElementById('backToTop');
@@ -645,7 +638,6 @@
   function initChatbot() {
     // Prevent duplicate initialization
     if (chatbotInitialized) {
-      console.log('Chatbot already initialized, skipping...');
       return;
     }
 
@@ -660,7 +652,6 @@
 
     // Check if elements exist (safety check)
     if (!chatbotModal || !popupButton || !chatbotClose || !chatbotQuestions || !chatbotMessages || !chatbotCustom || !customMessage || !sendWhatsApp) {
-      console.warn('Chatbot elements not found');
       return;
     }
 
@@ -699,12 +690,9 @@
     popupButton.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
-      console.log('Chatbot button clicked');
       chatbotModal.classList.add('active');
       document.body.style.overflow = 'hidden';
     });
-
-    console.log('Chatbot initialized successfully');
 
     // Close chatbot
     chatbotClose.addEventListener('click', () => {
@@ -842,31 +830,20 @@
     const chatbotModal = document.getElementById('chatbotModal');
     const popupButton = document.getElementById('popupButton');
 
-    console.log('Attempting to initialize chatbot, attempt:', attempts + 1);
-    console.log('chatbotModal found:', !!chatbotModal);
-    console.log('popupButton found:', !!popupButton);
-
     if (chatbotModal && popupButton) {
       // Elements found, initialize
-      console.log('Chatbot elements found, initializing...');
       initChatbot();
     } else if (attempts < maxAttempts) {
       // Elements not found yet, try again
       setTimeout(function() {
         tryInitChatbot(attempts + 1);
       }, 100);
-    } else {
-      console.error('Chatbot elements not found after', maxAttempts, 'attempts');
-      console.error('chatbotModal:', chatbotModal);
-      console.error('popupButton:', popupButton);
-      console.error('All elements in document:', document.querySelectorAll('[id*="chatbot"], [id*="popup"]'));
     }
   }
 
   // Initialize chatbot when DOM is ready
   (function() {
     function initialize() {
-      console.log('Initializing chatbot, document.readyState:', document.readyState);
       tryInitChatbot();
     }
 
@@ -880,12 +857,10 @@
 
     // Also try on window load as backup
     window.addEventListener('load', function() {
-      console.log('Window load event fired');
       setTimeout(function() {
         const chatbotModal = document.getElementById('chatbotModal');
         const popupButton = document.getElementById('popupButton');
         if (chatbotModal && popupButton && !popupButton.hasAttribute('data-initialized')) {
-          console.log('Initializing chatbot on window load');
           popupButton.setAttribute('data-initialized', 'true');
           initChatbot();
         }
