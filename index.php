@@ -9,7 +9,7 @@
         src="https://www.youtube.com/embed/QwOMYBZwI3E?autoplay=1&mute=1&loop=1&playlist=QwOMYBZwI3E&controls=0&modestbranding=1&rel=0&playsinline=1"
         title="DESIGNER RESIDENCE | CINEMATIC REAL ESTATE VIDEO IN 4K | SONY FX6"
         frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen>
       </iframe>
