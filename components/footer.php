@@ -990,6 +990,11 @@
       const link = e.target.closest('a');
       if (link && link.href && !link.href.startsWith('#') && !link.href.startsWith('javascript:') && !link.href.startsWith('mailto:') && !link.href.startsWith('tel:')) {
         try {
+          // Don't show loader for links that open in new tab - current page doesn't navigate
+          if (link.target === '_blank') {
+            return;
+          }
+
           // Check if clicking directly on dropdown arrow or nested arrow - don't show loader
           const clickedDropdownArrow = e.target.closest('.dropdown-arrow') || e.target.closest('.nested-arrow');
           if (clickedDropdownArrow) {
