@@ -7,7 +7,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="hero-image scroll-animate">
-                        <img src="images/founder-shubham-duggal.jpg" alt="Shubham Duggal - Founder of Owning Ottawa Group">
+                        <img src="/images/founder-shubham-duggal.jpg" alt="Shubham Duggal - Founder of Owning Ottawa Group">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -39,10 +39,10 @@
             <div class="team-grid">
                 <div class="team-member-card scroll-animate ">
                     <div class="team-member-image">
-                        <img src="images/pardeep-duggal.jpg" alt="Pardeep Duggal - Construction Expertise">
+                        <img src="/images/pardeep-duggal.png" alt="Pardeep Duggal - Realtor & Construction Specialist">
                     </div>
                     <h3 class="team-member-name"><strong>Pardeep Duggal</strong></h3>
-                    <p class="team-member-role">Construction Expertise</p>
+                    <p class="team-member-role">Realtor & Construction Specialist</p>
                     <p class="team-member-description">
                         With decades of general construction contracting experience, Pardeep brings deep knowledge of building quality, structural integrity, and the essential details that protect clients from costly surprises.
                     </p>
@@ -50,7 +50,7 @@
 
                 <div class="team-member-card scroll-animate ">
                     <div class="team-member-image">
-                        <img src="images/arun-duggal.jpg" alt="Arun Duggal - Engineering & Permits Specialist">
+                        <img src="/images/arun-duggal.png" alt="Arun Duggal - Engineering & Permits Specialist">
                     </div>
                     <h3 class="team-member-name"><strong>Arun Duggal</strong></h3>
                     <p class="team-member-role">Engineering & Permits Specialist</p>
@@ -61,7 +61,7 @@
 
                 <div class="team-member-card scroll-animate ">
                     <div class="team-member-image">
-                        <img src="images/shubham-duggal.jpg" alt="Shubham Duggal - Real Estate & Business Strategy">
+                        <img src="/images/shubham-duggal.png" alt="Shubham Duggal - Real Estate & Business Strategy">
                     </div>
                     <h3 class="team-member-name"><strong>Shubham Duggal</strong></h3>
                     <p class="team-member-role">Real Estate & Business Strategy</p>
@@ -72,7 +72,7 @@
 
                 <div class="team-member-card scroll-animate ">
                     <div class="team-member-image">
-                        <img src="images/rishabh-verma.jpg" alt="Rishabh Verma - Taxation & Mortgage Solutions">
+                        <img src="/images/rishabh-verma.png" alt="Rishabh Verma - Taxation & Mortgage Solutions">
                     </div>
                     <h3 class="team-member-name"><strong>Rishabh Verma</strong></h3>
                     <p class="team-member-role">Taxation & Mortgage Solutions</p>
@@ -82,7 +82,7 @@
                 </div>
             </div>
 
-            <div class="team-values scroll-animate delay-5 text-center">
+            <div class=" mt-4 scroll-animate delay-5 text-center">
                 <p class="values-statement">
                     Together, we built Owning Ottawa Group on the values that matter most:<br />
                     <strong>trust, honesty, transparency, and doing things right from the start.</strong>

@@ -166,7 +166,7 @@
                     </div>
                     <h3 class="download-title">Investment Property Closing & Holding Costs</h3>
                     <p class="download-description">Calculate all closing costs and ongoing holding expenses for your investment property purchase.</p>
-                    <a href="calculators/Investment-Property-Closing-and-Holding-Costs.xlsx" class="download-link" data-download-file="Investment-Property-Closing-and-Holding-Costs.xlsx" data-download-name="Investment Property Closing & Holding Costs">
+                    <a href="/calculators/Investment-Property-Closing-and-Holding-Costs.xlsx" class="download-link" data-download-file="Investment-Property-Closing-and-Holding-Costs.xlsx" data-download-name="Investment Property Closing & Holding Costs">
                         <i class="fas fa-download"></i>
                         <span>Download Excel File</span>
                     </a>
@@ -178,7 +178,7 @@
                     </div>
                     <h3 class="download-title">Investment Property ROI Calculator</h3>
                     <p class="download-description">Analyze return on investment, cash-on-cash returns, and overall profitability of investment properties.</p>
-                    <a href="calculators/Investment-Property-ROI-Calculator.xlsx" class="download-link" data-download-file="Investment-Property-ROI-Calculator.xlsx" data-download-name="Investment Property ROI Calculator">
+                    <a href="/calculators/Investment-Property-ROI-Calculator.xlsx" class="download-link" data-download-file="Investment-Property-ROI-Calculator.xlsx" data-download-name="Investment Property ROI Calculator">
                         <i class="fas fa-download"></i>
                         <span>Download Excel File</span>
                     </a>
@@ -190,7 +190,7 @@
                     </div>
                     <h3 class="download-title">Property Cash Flow Analyzer</h3>
                     <p class="download-description">Comprehensive cash flow analysis tool to track income, expenses, and net cash flow for your investment properties.</p>
-                    <a href="calculators/Property-Cash-Flow-Analyzer.xlsx" class="download-link" data-download-file="Property-Cash-Flow-Analyzer.xlsx" data-download-name="Property Cash Flow Analyzer">
+                    <a href="/calculators/Property-Cash-Flow-Analyzer.xlsx" class="download-link" data-download-file="Property-Cash-Flow-Analyzer.xlsx" data-download-name="Property Cash Flow Analyzer">
                         <i class="fas fa-download"></i>
                         <span>Download Excel File</span>
                     </a>

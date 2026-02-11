@@ -10,7 +10,7 @@
         <div class="col-lg-4 col-md-6 col-12 footer-brand scroll-animate">
           <div class="footer-logo">
             <a href="/" class="footer-logo-link">
-              <img src="images/owningottawa-footer.svg" alt="OwningOttawa" class="footer-logo-img" style="width: 250px;">
+              <img src="/images/owningottawa-footer.svg" alt="OwningOttawa" class="footer-logo-img" style="width: 250px;">
             </a>
           </div>
           <p class="footer-description">Your trusted real estate partner in Ottawa. Helping first-time buyers, homeowners, and residential investors navigate the market with clarity and confidence.</p>
@@ -1060,7 +1060,7 @@
   crossorigin="anonymous"></script>
 
 <!-- JavaScript -->
-<script src="components/js/navigation.js"></script>
+<script src="/components/js/navigation.js"></script>
 <script src="https://elfsightcdn.com/platform.js" async></script>
 </body>
 

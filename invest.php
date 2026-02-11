@@ -4,7 +4,7 @@
     <!-- Hero Section -->
     <section class="modern-hero" aria-label="Invest in Real Estate">
         <div class="hero-media">
-            <img src="images/invest-banner.jpg" alt="Invest in Real Estate Banner">
+            <img src="/images/invest-banner.jpg" alt="Invest in Real Estate Banner">
         </div>
         <div class="modern-hero-content">
             <div class="hero-badge fade-in-up">
@@ -42,7 +42,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="service-detail-image scroll-animate mb-5 mb-lg-0">
-                        <img src="images/investment-guidance.jpg" alt="Investment Guidance">
+                        <img src="/images/investment-guidance.jpg" alt="Investment Guidance">
                         <div class="service-image-badge">
                             <i class="fas fa-chart-line"></i>
                         </div>
@@ -151,7 +151,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-2">
                     <div class="service-detail-image scroll-animate delay-1 mb-5 mb-lg-0">
-                        <img src="images/happy-client-2.jpg" alt="Happy Client">
+                        <img src="/images/happy-client-2.jpg" alt="Happy Client">
                         <div class="service-image-badge">
                             <i class="fas fa-chart-line"></i>
                         </div>

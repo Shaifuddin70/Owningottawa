@@ -1,69 +1,5 @@
 <?php include 'components/header.php'; ?>
 <main class="main-content modern-redesign">
-
-    <!--  
-    <section class="modern-hero" aria-label="Contact OwningOttawa">
-        <div class="hero-media">
-            <img src="https://via.placeholder.com/1920x600/1a1a1a/d3ae77?text=Get+in+Touch" alt="Contact Us Background">
-        </div>
-        <div class="modern-hero-content">
-            <div class="hero-badge fade-in-up">
-                <i class="fas fa-envelope-open-text"></i>
-                <span>Contact Us</span>
-            </div>
-            <h1 class="modern-hero-title fade-in-up delay-1">Let's Start Your Property Journey</h1>
-            <p class="modern-hero-subtitle fade-in-up delay-2">Have questions? Ready to buy, sell, or invest? We're here to help. Reach out and let's discuss how we can turn your real estate goals into reality.</p>
-            <div class="hero-cta-buttons fade-in-up delay-3">
-                <a href="/contact" class="btn-modern-primary">
-                    <span>Book Appointment</span>
-                    <i class="fas fa-calendar-check"></i>
-                </a>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Contact Information Cards -->
-    <!-- <section class="contact-info-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6 col-12  scroll-animate mb-5 mb-lg-0">
-                    <div class="contact-info-card">
-                        <div class="contact-info-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <h3 class="contact-info-title">Phone</h3>
-                        <p class="contact-info-text">Call us anytime during business hours</p>
-                        <a href="tel:6133328884" class="contact-info-link">613-332-8884</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-12  scroll-animate delay-1 mb-5 mb-lg-0">
-                    <div class="contact-info-card">
-                        <div class="contact-info-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3 class="contact-info-title">Email</h3>
-                        <p class="contact-info-text">Send us a message anytime</p>
-                        <a href="mailto:shubham@soldbyduggal.com" class="contact-info-link">shubham@soldbyduggal.com</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-12  scroll-animate delay-2">
-                    <div class="contact-info-card">
-                        <div class="contact-info-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3 class="contact-info-title">Location</h3>
-                        <p class="contact-info-text">Serving Ottawa and surrounding areas</p>
-                        <p class="contact-info-address">Ottawa, ON, Canada</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Contact Form Section -->
     <section class="contact-form-section">
         <div class="container">
             <div class="contact-form-grid">
@@ -126,7 +62,7 @@
 
                 <div class="contact-form-sidebar scroll-animate delay-1">
                     <div class="contact-form-image">
-                        <img src="images/shubham-duggal-3.jpg" alt="Shubham Duggal - Real Estate & Business Strategy" class="contact-person-image">
+                        <img src="/images/shubham-duggal-3.jpg" alt="Shubham Duggal - Real Estate & Business Strategy" class="contact-person-image">
                     </div>
 
                     <div class="contact-sidebar-content">

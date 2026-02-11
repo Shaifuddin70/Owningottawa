@@ -9,7 +9,7 @@
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <meta name="theme-color" content="#000000" />
+  <meta name="theme-color" content="#c99741" />
   <title>owningottawa — Real Estate, Mortgage, Property Management</title>
   <meta
     name="description"
@@ -17,7 +17,7 @@
   <meta
     name="keywords"
     content="Ottawa real estate, real estate services, mortgage solutions, property management, bookkeeping, accounting, building permits, design services, home buying, home selling, first-time buyers" />
-  <meta name="robots" content="noindex, nofollow" />
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://owningottawa.ca/" />
 
   <!-- Favicon -->
@@ -439,7 +439,7 @@
                   arrow.style.transform = '';
                 }
               });
-              
+
               // Also close all nested dropdowns when closing parent dropdown
               nestedDropdowns.forEach(nested => {
                 nested.classList.remove('active');
@@ -481,7 +481,7 @@
                 arrow.style.transform = '';
               }
             });
-            
+
             // Also close nested dropdowns and reset their arrows
             nestedDropdowns.forEach(nested => {
               nested.classList.remove('active');

@@ -11,6 +11,9 @@ RewriteRule ^index\.php$ / [R=301,L]
 RewriteCond %{REQUEST_URI} ^/index/?$
 RewriteRule ^(.*)$ / [R=301,L]
 
+# Explicit rule for /resources (ensures resources.php loads correctly on all hosts)
+RewriteRule ^resources/?$ resources.php [NC,L]
+
 # Clean URLs - Remove .php extension
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f

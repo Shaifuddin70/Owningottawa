@@ -6,7 +6,7 @@
         <div class="hero-media">
             <picture>
                 <source media="(max-width:575px)" srcset="/images/sell-banner-sm.jpg">
-                <img src="images/sell-banner.jpg" alt="Sell Real Estate Banner">
+                <img src="/images/sell-banner.jpg" alt="Sell Real Estate Banner">
             </picture>
         </div>
         <div class="modern-hero-content">
@@ -165,7 +165,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="service-detail-image scroll-animate mb-5 mb-lg-0">
-                        <img src="images/sold-property.jpg" alt="Sold Properties">
+                        <img src="/images/sold-property.jpg" alt="Sold Properties">
                         <div class="service-image-badge">
                             <i class="fas fa-trophy"></i>
                         </div>
