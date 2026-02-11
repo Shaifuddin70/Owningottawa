@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE / Editor
+.vscode/
+*.swp
+*.swo
+*~
+
+# Backup and temp files
+*.bak
+*.backup
+Archive.zip
+htaccess copy
+backup-page
+
+# Optional: large binaries or local config
+# node_modules/
+# .env

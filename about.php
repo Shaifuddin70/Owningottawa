@@ -2,302 +2,142 @@
 <main class="main-content modern-redesign">
 
     <!-- Hero Section -->
-    <section class="modern-hero" aria-label="About OwningOttawa">
-        <div class="hero-media">
-            <img src="https://via.placeholder.com/1920x600/1a1a1a/d3ae77?text=About+OwningOttawa" alt="About Us Background">
-        </div>
-        <div class="modern-hero-content">
-            <div class="hero-badge fade-in-up">
-                <i class="fas fa-users"></i>
-                <span>Our Story</span>
-            </div>
-            <h1 class="modern-hero-title fade-in-up delay-1">Your Property Journey, All in One Place</h1>
-            <p class="modern-hero-subtitle fade-in-up delay-2">From first homes to full portfolios—Owningottawa brings clarity, connection, and confidence to every stage of real estate in Ottawa.</p>
-            <div class="hero-cta-buttons fade-in-up delay-3">
-                <a href="/contact" class="btn-modern-primary">
-                    <span>Book Appointment</span>
-                    <i class="fas fa-calendar-check"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Introduction Section -->
-    <section class="about-intro">
+    <section class="about-hero">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="intro-image scroll-animate">
-                        <img src="https://via.placeholder.com/800x600/1a1a1a/d3ae77?text=Real+Estate+Made+Personal" alt="About OwningOttawa">
-                        <div class="image-decoration"></div>
+                    <div class="hero-image scroll-animate">
+                        <img src="/images/founder-shubham-duggal.jpg" alt="Shubham Duggal - Founder of Owning Ottawa Group">
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="intro-content scroll-animate delay-1">
-                        <span class="section-tag"><i class="fas fa-heart"></i> Our Mission</span>
-                        <h2 class="section-title-modern">Real Estate Made Personal</h2>
-                        <p class="section-description">Owningottawa was built on a simple belief—real estate should feel clear, confident, and built for real people, not just transactions.</p>
-                        <p>Founded by Rishabh, a dedicated Ottawa real estate professional with a passion for smart property ownership, OwningOttawa unites every key service under one roof: buying, selling, mortgages, property management, bookkeeping, and building design.</p>
-                        <p>Every client gets personalized guidance and complete support, not a handoff between departments, but a smooth, professional experience from start to finish.</p>
+                    <div class="hero-content scroll-animate delay-1">
+                        <h1 class="hero-title"><strong>About Us – Owning Ottawa Group</strong></h1>
+                        <p class="hero-subtitle">
+                            <strong>Built on Trust. Driven by Transparency. Focused on a Smooth Real Estate Experience.</strong>
+                        </p>
+                        <p class="hero-description">
+                            At Owning Ottawa Group, we believe real estate should feel clear, simple, and stress-free. Our mission is to create the smoothest, most transparent experience for every client we serve—while providing <strong>all services under one roof</strong>, so you can simply <strong>sit back and relax</strong>.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Story Section -->
+    <!-- Our Story & Team Section -->
     <section class="about-story">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 order-lg-2">
-                    <div class="story-image scroll-animate delay-1">
-                        <img src="https://via.placeholder.com/700x600/1a1a1a/d3ae77?text=Rishabh+Founder" alt="Founder Rishabh">
-                        <div class="story-badge">
-                            <div class="badge-icon">
-                                <i class="fas fa-user-tie"></i>
-                            </div>
-                            <div class="badge-content">
-                                <h4>Rishabh</h4>
-                                <p>Founder & Lead Professional</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 order-lg-1">
-                    <div class="story-content scroll-animate">
-                        <span class="section-tag"><i class="fas fa-book-open"></i> Our Story</span>
-                        <h2 class="section-title-modern">The Story Behind the Vision</h2>
-                        <p class="section-description">Rishabh began OwningOttawa after seeing how disconnected the real estate process often was—buyers, sellers, and investors bouncing between agents, lenders, and managers without a single trusted point of contact.</p>
-                        <p>He set out to change that by building a platform that simplifies property ownership. His philosophy is rooted in transparency, strategy, and long-term relationships, where every client is treated as a partner in success, not a transaction.</p>
+            <div class="section-header text-center scroll-animate">
+                <span class="section-tag"><i class="fas fa-book-open"></i> Our Story</span>
+                <h2 class="section-title-modern"><strong>A Legacy of Experience You Can Count On</strong></h2>
+                <p class="section-description">
+                    Owning Ottawa Group brings together a powerful team of professionals with strong backgrounds in construction, engineering, business, finance, taxation, and real estate. Together, we deliver a holistic, dependable, and client-first approach.
+                </p>
+            </div>
 
-                        <div class="story-values">
-                            <div class="story-value-item">
-                                <div class="story-value-icon">
-                                    <i class="fas fa-eye"></i>
-                                </div>
-                                <div class="story-value-content">
-                                    <h4>Transparency</h4>
-                                    <p>Clear communication at every step</p>
-                                </div>
-                            </div>
-                            <div class="story-value-item">
-                                <div class="story-value-icon">
-                                    <i class="fas fa-chess"></i>
-                                </div>
-                                <div class="story-value-content">
-                                    <h4>Strategy</h4>
-                                    <p>Data-driven decisions for success</p>
-                                </div>
-                            </div>
-                            <div class="story-value-item">
-                                <div class="story-value-icon">
-                                    <i class="fas fa-handshake"></i>
-                                </div>
-                                <div class="story-value-content">
-                                    <h4>Long-Term Relationships</h4>
-                                    <p>Partners in your success journey</p>
-                                </div>
-                            </div>
-                        </div>
+            <div class="team-grid">
+                <div class="team-member-card scroll-animate ">
+                    <div class="team-member-image">
+                        <img src="/images/pardeep-duggal.png" alt="Pardeep Duggal - Realtor & Construction Specialist">
                     </div>
+                    <h3 class="team-member-name"><strong>Pardeep Duggal</strong></h3>
+                    <p class="team-member-role">Realtor & Construction Specialist</p>
+                    <p class="team-member-description">
+                        With decades of general construction contracting experience, Pardeep brings deep knowledge of building quality, structural integrity, and the essential details that protect clients from costly surprises.
+                    </p>
                 </div>
+
+                <div class="team-member-card scroll-animate ">
+                    <div class="team-member-image">
+                        <img src="/images/arun-duggal.png" alt="Arun Duggal - Engineering & Permits Specialist">
+                    </div>
+                    <h3 class="team-member-name"><strong>Arun Duggal</strong></h3>
+                    <p class="team-member-role">Engineering & Permits Specialist</p>
+                    <p class="team-member-description">
+                        A graduate engineer with 10+ years of expertise in building design, drawings, permits, and construction oversight. Arun ensures clients receive accurate assessments and complete technical clarity.
+                    </p>
+                </div>
+
+                <div class="team-member-card scroll-animate ">
+                    <div class="team-member-image">
+                        <img src="/images/shubham-duggal.png" alt="Shubham Duggal - Real Estate & Business Strategy">
+                    </div>
+                    <h3 class="team-member-name"><strong>Shubham Duggal</strong></h3>
+                    <p class="team-member-role">Real Estate & Business Strategy</p>
+                    <p class="team-member-description">
+                        Armed with a background in commerce and an MBA, Shubham leads with strong market insight, negotiation skills, and a client-first service approach—ensuring every transaction feels smooth, informed, and supported.
+                    </p>
+                </div>
+
+                <div class="team-member-card scroll-animate ">
+                    <div class="team-member-image">
+                        <img src="/images/rishabh-verma.png" alt="Rishabh Verma - Taxation & Mortgage Solutions">
+                    </div>
+                    <h3 class="team-member-name"><strong>Rishabh Verma</strong></h3>
+                    <p class="team-member-role">Taxation & Mortgage Solutions</p>
+                    <p class="team-member-description">
+                        A B.Com (Hons) graduate from Nipissing University with 5+ years of taxation experience and a licensed mortgage agent. Rishabh adds financial clarity, helping clients optimize taxes, mortgages, and affordability.
+                    </p>
+                </div>
+            </div>
+
+            <div class=" mt-4 scroll-animate delay-5 text-center">
+                <p class="values-statement">
+                    Together, we built Owning Ottawa Group on the values that matter most:<br />
+                    <strong>trust, honesty, transparency, and doing things right from the start.</strong>
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Platform Section -->
-    <section class="about-platform">
-        <div class="container">
-            <div class="platform-content scroll-animate text-center">
-                <span class="section-tag"><i class="fas fa-network-wired"></i> Platform</span>
-                <h2 class="section-title-modern">One Platform. Every Property Solution.</h2>
-                <p class="section-description">Owningottawa bridges every part of property ownership, creating a seamless path from planning to profit. Each service connects with the others, so your financial, legal, and property goals move in sync.</p>
-
-                <div class="platform-services">
-                    <div class="platform-service-item scroll-animate delay-1">
-                        <div class="platform-service-icon">
-                            <i class="fas fa-home-lg-alt"></i>
-                        </div>
-                        <h4>Real Estate Services</h4>
-                        <p>Buying, selling, or investing with local expertise and data-backed insights.</p>
-                    </div>
-                    <div class="platform-service-item scroll-animate delay-2">
-                        <div class="platform-service-icon">
-                            <i class="fas fa-percent"></i>
-                        </div>
-                        <h4>Mortgage Solutions</h4>
-                        <p>Personalized financing options that align with your goals and timeline.</p>
-                    </div>
-                    <div class="platform-service-item scroll-animate delay-3">
-                        <div class="platform-service-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <h4>Property Management</h4>
-                        <p>Professional oversight that protects value and saves time.</p>
-                    </div>
-                    <div class="platform-service-item scroll-animate delay-4">
-                        <div class="platform-service-icon">
-                            <i class="fas fa-calculator"></i>
-                        </div>
-                        <h4>Bookkeeping & Accounting</h4>
-                        <p>Transparent records, accurate reporting, and full financial clarity.</p>
-                    </div>
-                    <div class="platform-service-item scroll-animate delay-5">
-                        <div class="platform-service-icon">
-                            <i class="fas fa-drafting-compass"></i>
-                        </div>
-                        <h4>Building Permits & Design</h4>
-                        <p>Streamlined documentation and design support for new builds or renovations.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Approach Section -->
-    <section class="about-approach">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="approach-image scroll-animate">
-                        <img src="https://via.placeholder.com/800x600/1a1a1a/d3ae77?text=A+Smarter+Way+to+Own" alt="Smart Property Ownership">
-                        <div class="image-decoration"></div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="approach-content scroll-animate delay-1">
-                        <span class="section-tag"><i class="fas fa-lightbulb"></i> Our Approach</span>
-                        <h2 class="section-title-modern">A Smarter Way to Own Property</h2>
-                        <p class="section-description">At Owningottawa, real estate isn't a one-time transaction—it's a lifelong strategy.</p>
-                        <p>We guide clients through each decision with market analysis, financial forecasting, and strategic planning, helping them grow assets and stability with every move.</p>
-                        <p>Whether it's your first condo, a multi-unit investment, or a new development project, we provide the clarity and coordination that turn complexity into confidence.</p>
-
-                        <div class="approach-features">
-                            <div class="approach-feature">
-                                <i class="fas fa-chart-bar"></i>
-                                <div>
-                                    <h4>Market Analysis</h4>
-                                    <p>Data-driven insights for informed decisions</p>
-                                </div>
-                            </div>
-                            <div class="approach-feature">
-                                <i class="fas fa-piggy-bank"></i>
-                                <div>
-                                    <h4>Financial Forecasting</h4>
-                                    <p>Plan for long-term growth and stability</p>
-                                </div>
-                            </div>
-                            <div class="approach-feature">
-                                <i class="fas fa-route"></i>
-                                <div>
-                                    <h4>Strategic Planning</h4>
-                                    <p>Clear roadmap for your property journey</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
+    <!-- Why Clients Choose Us Section -->
     <section class="about-why">
         <div class="container">
             <div class="section-header text-center scroll-animate">
                 <span class="section-tag"><i class="fas fa-star"></i> Why Choose Us</span>
-                <h2 class="section-title-modern">Why Clients Choose Owningottawa</h2>
-                <p class="section-subtitle-modern">What sets us apart in Ottawa's real estate market</p>
+                <h2 class="section-title-modern"><strong>Why Clients Choose Us</strong></h2>
             </div>
 
             <div class="why-grid">
                 <div class="why-card scroll-animate">
                     <div class="why-card-icon">
-                        <i class="fas fa-layer-group"></i>
+                        <i class="fas fa-eye"></i>
                     </div>
-                    <h3 class="why-card-title">All-in-One Expertise</h3>
-                    <p class="why-card-text">Real estate, mortgages, management, accounting, and design, all seamlessly connected.</p>
+                    <h3 class="why-card-title">Full Transparency</h3>
+                    <p class="why-card-text">We break down every step—from market evaluations to legal processes—so you always know what's happening and why.</p>
                 </div>
 
                 <div class="why-card scroll-animate delay-1">
                     <div class="why-card-icon">
-                        <i class="fas fa-map-marked-alt"></i>
+                        <i class="fas fa-check-circle"></i>
                     </div>
-                    <h3 class="why-card-title">Local Knowledge</h3>
-                    <p class="why-card-text">Insight into Ottawa's neighborhoods, development patterns, and market timing.</p>
+                    <h3 class="why-card-title">Smooth, Stress-Free Transactions</h3>
+                    <p class="why-card-text">We manage every detail and coordinate all moving parts to deliver a seamless experience from beginning to end.</p>
                 </div>
 
                 <div class="why-card scroll-animate delay-2">
                     <div class="why-card-icon">
-                        <i class="fas fa-user-friends"></i>
+                        <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 class="why-card-title">Personal Connection</h3>
-                    <p class="why-card-text">Rishabh listens first, plans second, and acts with precision.</p>
+                    <h3 class="why-card-title">Expertise That Protects Your Investment</h3>
+                    <p class="why-card-text">With a blend of construction knowledge, engineering insight, financial expertise, and business strategy, you receive well-rounded guidance backed by real experience.</p>
                 </div>
 
                 <div class="why-card scroll-animate delay-3">
                     <div class="why-card-icon">
-                        <i class="fas fa-trophy"></i>
+                        <i class="fas fa-heart"></i>
                     </div>
-                    <h3 class="why-card-title">Proven Success</h3>
-                    <p class="why-card-text">A growing network of repeat clients and referrals built on results, not promises.</p>
+                    <h3 class="why-card-title">A Family Approach to Service</h3>
+                    <p class="why-card-text">When you work with us, you're not just a client—you become part of our extended family. Your goals become our mission.</p>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Vision Section -->
-    <section class="about-vision">
-        <div class="container">
-            <div class="vision-content scroll-animate text-center">
-                <div class="vision-icon">
-                    <i class="fas fa-rocket"></i>
-                </div>
-                <span class="section-tag"><i class="fas fa-eye"></i> Vision</span>
-                <h2 class="section-title-modern">Our Vision for Ottawa's Property Future</h2>
-                <p class="section-description">Owningottawa isn't just managing today's listings; it's shaping tomorrow's real estate landscape.</p>
-                <p>We aim to make property ownership accessible, efficient, and intelligently managed for every type of client—from first-time homeowners to professional investors.</p>
-                <p>By combining technology, financial acumen, and genuine client care, we're redefining what it means to own and grow real estate in Ottawa.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Difference Section -->
-    <section class="about-difference">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 order-lg-2">
-                    <div class="difference-image scroll-animate delay-1">
-                        <img src="https://via.placeholder.com/700x600/1a1a1a/d3ae77?text=The+Difference" alt="The OwningOttawa Difference">
-                        <div class="image-decoration"></div>
+                <div class="why-card scroll-animate delay-4">
+                    <div class="why-card-icon">
+                        <i class="fas fa-home"></i>
                     </div>
-                </div>
-                <div class="col-lg-6 order-lg-1">
-                    <div class="difference-content scroll-animate">
-                        <span class="section-tag"><i class="fas fa-gem"></i> Our Difference</span>
-                        <h2 class="section-title-modern">The Difference You'll Feel</h2>
-                        <p class="section-description">What sets OwningOttawa apart is not only what we do, but also how we do it.</p>
-                        <p>Every conversation starts with understanding your goals, and every recommendation is backed by research and results. It's personal, transparent, and deeply local—the way real estate should be.</p>
-
-                        <div class="difference-points">
-                            <div class="difference-point">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Goal-Focused Approach</span>
-                            </div>
-                            <div class="difference-point">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Research-Backed Recommendations</span>
-                            </div>
-                            <div class="difference-point">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Personal & Transparent Service</span>
-                            </div>
-                            <div class="difference-point">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Deeply Local Ottawa Expertise</span>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 class="why-card-title">All Services Under One Roof</h3>
+                    <p class="why-card-text">Real estate, construction insights, engineering, taxation, and mortgage solutions—all in one place. One team. One process. One smooth experience.</p>
                 </div>
             </div>
         </div>

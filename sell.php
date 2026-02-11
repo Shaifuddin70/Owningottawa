@@ -4,7 +4,10 @@
     <!-- Hero Section -->
     <section class="modern-hero" aria-label="Sell Real Estate">
         <div class="hero-media">
-            <img src="https://via.placeholder.com/1920x800/1a1a1a/d3ae77?text=Sell+Real+Estate" alt="Sell Real Estate Background">
+            <picture>
+                <source media="(max-width:575px)" srcset="/images/sell-banner-sm.jpg">
+                <img src="/images/sell-banner.jpg" alt="Sell Real Estate Banner">
+            </picture>
         </div>
         <div class="modern-hero-content">
             <div class="hero-badge fade-in-up">
@@ -14,18 +17,18 @@
             <h1 class="modern-hero-title fade-in-up delay-1">Sell Your Property with Confidence</h1>
             <p class="modern-hero-subtitle fade-in-up delay-2">Maximize your return and minimize stress. Our proven selling strategy combines market analysis, competitive pricing, and professional marketing to get you the best results.</p>
             <div class="hero-features fade-in-up delay-3">
-                <div class="hero-feature-item">
+                <a href="/services#real-estate" class="hero-feature-item">
                     <i class="fas fa-chart-line"></i>
                     <span>Market Analysis</span>
-                </div>
-                <div class="hero-feature-item">
+                </a>
+                <a href="/services#real-estate" class="hero-feature-item">
                     <i class="fas fa-bullhorn"></i>
                     <span>Strategic Marketing</span>
-                </div>
-                <div class="hero-feature-item">
+                </a>
+                <a href="/services#real-estate" class="hero-feature-item">
                     <i class="fas fa-dollar-sign"></i>
                     <span>Maximize Value</span>
-                </div>
+                </a>
             </div>
             <div class="hero-cta-buttons fade-in-up delay-4">
                 <a href="/contact" class="btn-modern-primary">
@@ -41,8 +44,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-2">
-                    <div class="service-detail-image scroll-animate delay-1">
-                        <img src="https://via.placeholder.com/700x500/1a1a1a/d3ae77?text=Selling+Strategy" alt="Selling Strategy">
+                    <div class="service-detail-image scroll-animate delay-1 mb-5 mb-lg-0">
+                        <img src="/images/shubham-duggal-5.jpg" alt="Shubham Duggal - Real Estate & Business Strategy">
                         <div class="service-image-badge">
                             <i class="fas fa-tag"></i>
                         </div>
@@ -161,8 +164,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="service-detail-image scroll-animate">
-                        <img src="https://via.placeholder.com/700x500/1a1a1a/d3ae77?text=Why+Choose+Us" alt="Why Choose Us for Selling">
+                    <div class="service-detail-image scroll-animate mb-5 mb-lg-0">
+                        <img src="/images/sold-property.jpg" alt="Sold Properties">
                         <div class="service-image-badge">
                             <i class="fas fa-trophy"></i>
                         </div>
@@ -216,7 +219,7 @@
                         <span>Get Started</span>
                         <i class="fas fa-calendar-check"></i>
                     </a>
-                    <a href="tel:6133186478" class="btn-modern-outline">
+                    <a href="tel:6133328884" class="btn-modern-outline">
                         <span><i class="fas fa-phone"></i> Call Us Now</span>
                     </a>
                 </div>
@@ -271,4 +274,3 @@
 </script>
 
 <?php include 'components/footer.php'; ?>
-

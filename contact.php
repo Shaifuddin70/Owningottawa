@@ -1,73 +1,9 @@
 <?php include 'components/header.php'; ?>
 <main class="main-content modern-redesign">
-
-    <!-- Contact Hero Section -->
-    <section class="modern-hero" aria-label="Contact OwningOttawa">
-        <div class="hero-media">
-            <img src="https://via.placeholder.com/1920x600/1a1a1a/d3ae77?text=Get+in+Touch" alt="Contact Us Background">
-        </div>
-        <div class="modern-hero-content">
-            <div class="hero-badge fade-in-up">
-                <i class="fas fa-envelope-open-text"></i>
-                <span>Contact Us</span>
-            </div>
-            <h1 class="modern-hero-title fade-in-up delay-1">Let's Start Your Property Journey</h1>
-            <p class="modern-hero-subtitle fade-in-up delay-2">Have questions? Ready to buy, sell, or invest? We're here to help. Reach out and let's discuss how we can turn your real estate goals into reality.</p>
-            <div class="hero-cta-buttons fade-in-up delay-3">
-                <a href="/contact" class="btn-modern-primary">
-                    <span>Book Appointment</span>
-                    <i class="fas fa-calendar-check"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Information Cards -->
-    <section class="contact-info-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6 col-12  scroll-animate mb-5 mb-lg-0">
-                    <div class="contact-info-card">
-                        <div class="contact-info-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <h3 class="contact-info-title">Phone</h3>
-                        <p class="contact-info-text">Call us anytime during business hours</p>
-                        <a href="tel:6133186478" class="contact-info-link">613-318-6478</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-12  scroll-animate delay-1 mb-5 mb-lg-0">
-                    <div class="contact-info-card">
-                        <div class="contact-info-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3 class="contact-info-title">Email</h3>
-                        <p class="contact-info-text">Send us a message anytime</p>
-                        <a href="mailto:info@owningottawa.ca" class="contact-info-link">info@owningottawa.ca</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-12  scroll-animate delay-2">
-                    <div class="contact-info-card">
-                        <div class="contact-info-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3 class="contact-info-title">Location</h3>
-                        <p class="contact-info-text">Serving Ottawa and surrounding areas</p>
-                        <p class="contact-info-address">Ottawa, ON, Canada</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form Section -->
     <section class="contact-form-section">
         <div class="container">
             <div class="contact-form-grid">
-                <form class="contact-form scroll-animate" id="contactForm" method="POST" action="#">
+                <form class="contact-form scroll-animate" id="contactForm" method="POST" action="https://formspree.io/f/meejqovw">
                     <span class="section-tag"><i class="fas fa-paper-plane"></i> Send a Message</span>
                     <div class="form-group">
                         <label for="name" class="form-label">
@@ -116,6 +52,8 @@
                         </label>
                         <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell us about your needs..." required></textarea>
                     </div>
+
+                    <div id="formMessage" class="form-message hidden"></div>
                     <button type="submit" class="btn-modern-primary form-submit">
                         <span>Send Message</span>
                         <i class="fas fa-paper-plane"></i>
@@ -124,7 +62,7 @@
 
                 <div class="contact-form-sidebar scroll-animate delay-1">
                     <div class="contact-form-image">
-                        <img src="images/expert-agents.jpg" alt="Our Expert Team" class="contact-person-image">
+                        <img src="/images/shubham-duggal-3.jpg" alt="Shubham Duggal - Real Estate & Business Strategy" class="contact-person-image">
                     </div>
 
                     <div class="contact-sidebar-content">
@@ -184,7 +122,7 @@
                     </div>
                     <h3 class="alternative-title">Book an Appointment</h3>
                     <p class="alternative-text">Schedule a one-on-one consultation at your convenience</p>
-                    <a href="tel:6133186478" class="btn-modern-outline">
+                    <a href="tel:6133328884" class="btn-modern-outline">
                         <span>Schedule Now</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -196,7 +134,7 @@
                     </div>
                     <h3 class="alternative-title">Quick Chat</h3>
                     <p class="alternative-text">Have a quick question? Give us a call for immediate assistance</p>
-                    <a href="tel:6133186478" class="btn-modern-outline">
+                    <a href="tel:6133328884" class="btn-modern-outline">
                         <span>Call Now</span>
                         <i class="fas fa-phone"></i>
                     </a>
@@ -208,7 +146,7 @@
                     </div>
                     <h3 class="alternative-title">Email Us</h3>
                     <p class="alternative-text">Send us a detailed email and we'll respond within 24 hours</p>
-                    <a href="mailto:info@owningottawa.ca" class="btn-modern-outline">
+                    <a href="mailto:shubham@soldbyduggal.com" class="btn-modern-outline">
                         <span>Send Email</span>
                         <i class="fas fa-envelope"></i>
                     </a>
@@ -305,7 +243,6 @@
                 const phone = document.getElementById('phone').value.trim();
                 const service = document.getElementById('service').value;
                 const message = document.getElementById('message').value.trim();
-                const consent = document.querySelector('input[name="consent"]').checked;
 
                 // Reset message
                 formMessage.textContent = '';
@@ -341,24 +278,6 @@
                     }
                 });
 
-                // Check consent
-                if (!consent) {
-                    formMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please accept the consent to proceed.';
-                    formMessage.classList.remove('hidden');
-                    formMessage.classList.add('error');
-
-                    // Scroll to consent checkbox
-                    const consentCheckbox = document.querySelector('input[name="consent"]');
-                    if (consentCheckbox) {
-                        consentCheckbox.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'center'
-                        });
-                        consentCheckbox.focus();
-                    }
-                    return;
-                }
-
                 if (!allValid) {
                     formMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please fix the errors above and try again.';
                     formMessage.classList.remove('hidden');
@@ -380,36 +299,73 @@
                 if (submitButton) {
                     submitButton.classList.add('loading');
                     submitButton.disabled = true;
+                    const buttonText = submitButton.querySelector('span');
+                    if (buttonText) buttonText.textContent = 'Sending...';
                 }
 
-                // Simulate form submission (in production, this would send to server)
-                setTimeout(() => {
-                    // Show success message
-                    formMessage.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.';
-                    formMessage.classList.remove('hidden');
-                    formMessage.classList.remove('error');
-                    formMessage.classList.add('success');
+                // Submit form to Formspree
+                const formData = new FormData(contactForm);
 
-                    // Reset form
-                    contactForm.reset();
+                fetch('https://formspree.io/f/meejqovw', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Show success message
+                            formMessage.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.';
+                            formMessage.classList.remove('hidden');
+                            formMessage.classList.remove('error');
+                            formMessage.classList.add('success');
 
-                    // Remove loading state
-                    if (submitButton) {
-                        submitButton.classList.remove('loading');
-                        submitButton.disabled = false;
-                    }
+                            // Reset form
+                            contactForm.reset();
 
-                    // Scroll to message
-                    formMessage.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'nearest'
+                            // Scroll to message
+                            formMessage.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'nearest'
+                            });
+
+                            // Remove success message after 5 seconds
+                            setTimeout(() => {
+                                formMessage.classList.add('hidden');
+                            }, 5000);
+                        } else {
+                            return response.json().then(data => {
+                                if (data.errors) {
+                                    throw new Error(data.errors.map(err => err.message).join(', '));
+                                } else {
+                                    throw new Error('Something went wrong. Please try again.');
+                                }
+                            });
+                        }
+                    })
+                    .catch(error => {
+                        // Show error message
+                        formMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + error.message + ' Please try again or contact us directly.';
+                        formMessage.classList.remove('hidden');
+                        formMessage.classList.remove('success');
+                        formMessage.classList.add('error');
+
+                        // Scroll to message
+                        formMessage.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'nearest'
+                        });
+                    })
+                    .finally(() => {
+                        // Remove loading state
+                        if (submitButton) {
+                            submitButton.classList.remove('loading');
+                            submitButton.disabled = false;
+                            const buttonText = submitButton.querySelector('span');
+                            if (buttonText) buttonText.textContent = 'Send Message';
+                        }
                     });
-
-                    // Remove success message after 5 seconds
-                    setTimeout(() => {
-                        formMessage.classList.add('hidden');
-                    }, 5000);
-                }, 1500);
             });
         }
 

@@ -6,7 +6,7 @@
   <section class="modern-hero" aria-label="Welcome to Owning Ottawa">
     <div class="hero-media">
       <iframe class="hero-video"
-        src="https://www.youtube.com/embed/4jnzf1yj48M?autoplay=1&mute=1&loop=1&playlist=4jnzf1yj48M&controls=0&modestbranding=1&rel=0&playsinline=1"
+        src="https://www.youtube.com/embed/QwOMYBZwI3E?autoplay=1&mute=1&loop=1&playlist=QwOMYBZwI3E&controls=0&modestbranding=1&rel=0&playsinline=1"
         title="DESIGNER RESIDENCE | CINEMATIC REAL ESTATE VIDEO IN 4K | SONY FX6"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -28,21 +28,21 @@
         Find it, finance it, and manage it—all with OwningOttawa.
       </p>
       <div class="hero-features fade-in-up delay-3">
-        <div class="hero-feature-item">
+        <a href="/services#real-estate" class="hero-feature-item">
           <i class="fas fa-home"></i>
           <span>Real Estate</span>
-        </div>
-        <div class="hero-feature-item">
+        </a>
+        <a href="/services#mortgage" class="hero-feature-item">
           <i class="fas fa-coins"></i>
           <span>Mortgages</span>
-        </div>
-        <div class="hero-feature-item">
+        </a>
+        <a href="/services#property-management" class="hero-feature-item">
           <i class="fas fa-building"></i>
           <span>Management</span>
-        </div>
+        </a>
       </div>
       <div class="hero-cta-buttons fade-in-up delay-4">
-        <a href="#services" class="btn-modern-primary">
+        <a href="/services" class="btn-modern-primary">
           <span>Explore Services</span>
           <i class="fas fa-arrow-right"></i>
         </a>
@@ -55,49 +55,7 @@
     </div>
   </section>
 
-  <!-- Stats Section
-  <section class="stats-section">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-card scroll-animate">
-          <div class="stat-icon">
-            <i class="fas fa-handshake"></i>
-          </div>
-          <div class="stat-content">
-            <h3 class="stat-number" data-target="500">0</h3>
-            <p class="stat-label">Happy Clients</p>
-          </div>
-        </div>
-        <div class="stat-card scroll-animate delay-1">
-          <div class="stat-icon">
-            <i class="fas fa-key"></i>
-          </div>
-          <div class="stat-content">
-            <h3 class="stat-number" data-target="1200">0</h3>
-            <p class="stat-label">Properties Sold</p>
-          </div>
-        </div>
-        <div class="stat-card scroll-animate delay-2">
-          <div class="stat-icon">
-            <i class="fas fa-trophy"></i>
-          </div>
-          <div class="stat-content">
-            <h3 class="stat-number" data-target="15">0</h3>
-            <p class="stat-label">Years Experience</p>
-          </div>
-        </div>
-        <div class="stat-card scroll-animate delay-3">
-          <div class="stat-icon">
-            <i class="fas fa-star"></i>
-          </div>
-          <div class="stat-content">
-            <h3 class="stat-number" data-target="98">0</h3>
-            <p class="stat-label">Satisfaction</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
+
 
   <!-- Services Section -->
   <section class="modern-services" id="services">
@@ -192,82 +150,7 @@
     </div>
   </section>
 
-  <!-- Featured Properties -->
-  <!-- <section class="featured-properties">
-    <div class="container">
-      <div class="section-header text-center scroll-animate">
-        <span class="section-tag"><i class="fas fa-star"></i> Featured Listings</span>
-        <h2 class="section-title-modern">Exclusive Properties</h2>
-        <p class="section-subtitle-modern">Discover our handpicked selection of premium Ottawa real estate</p>
-      </div>
 
-      <div class="properties-grid">
-        <article class="property-card scroll-animate">
-          <div class="property-image">
-            <img src="https://via.placeholder.com/600x400/1a1a1a/d3ae77?text=Luxury+Condo" alt="Luxury Downtown Condo">
-            <div class="property-badge">Featured</div>
-            <div class="property-status">For Sale</div>
-          </div>
-          <div class="property-content">
-            <div class="property-price">$850,000</div>
-            <h3 class="property-title">Luxury Downtown Condo</h3>
-            <p class="property-location"><i class="fas fa-map-marker-alt"></i> Downtown Ottawa</p>
-            <div class="property-features">
-              <span><i class="fas fa-bed"></i> 3 Beds</span>
-              <span><i class="fas fa-bath"></i> 2 Baths</span>
-              <span><i class="fas fa-ruler-combined"></i> 1,800 sqft</span>
-            </div>
-            <a href="/services" class="property-btn">View Details <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-
-        <article class="property-card scroll-animate delay-1">
-          <div class="property-image">
-            <img src="https://via.placeholder.com/600x400/1a1a1a/d3ae77?text=Family+Home" alt="Modern Family Home">
-            <div class="property-badge">New</div>
-            <div class="property-status">For Sale</div>
-          </div>
-          <div class="property-content">
-            <div class="property-price">$1,250,000</div>
-            <h3 class="property-title">Modern Family Home</h3>
-            <p class="property-location"><i class="fas fa-map-marker-alt"></i> Kanata</p>
-            <div class="property-features">
-              <span><i class="fas fa-bed"></i> 4 Beds</span>
-              <span><i class="fas fa-bath"></i> 3 Baths</span>
-              <span><i class="fas fa-ruler-combined"></i> 2,500 sqft</span>
-            </div>
-            <a href="/services" class="property-btn">View Details <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-
-        <article class="property-card scroll-animate delay-2">
-          <div class="property-image">
-            <img src="https://via.placeholder.com/600x400/1a1a1a/d3ae77?text=Investment+Property" alt="Investment Property">
-            <div class="property-badge">Hot</div>
-            <div class="property-status">For Sale</div>
-          </div>
-          <div class="property-content">
-            <div class="property-price">$675,000</div>
-            <h3 class="property-title">Investment Opportunity</h3>
-            <p class="property-location"><i class="fas fa-map-marker-alt"></i> Orleans</p>
-            <div class="property-features">
-              <span><i class="fas fa-bed"></i> 3 Beds</span>
-              <span><i class="fas fa-bath"></i> 2 Baths</span>
-              <span><i class="fas fa-ruler-combined"></i> 1,600 sqft</span>
-            </div>
-            <a href="/services" class="property-btn">View Details <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-      </div>
-
-      <div class="text-center scroll-animate">
-        <a href="/services" class="btn-modern-primary">
-          <span>View All Properties</span>
-          <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
-    </div>
-  </section> -->
 
   <!-- Process Timeline -->
   <section class="process-timeline">
@@ -329,7 +212,7 @@
   <!-- Why Choose Us -->
   <section class="why-choose-us">
     <div class="container">
-      <div class="why-grid">
+      <div class="why-choose-grid">
         <div class="why-content scroll-animate">
           <span class="section-tag"><i class="fas fa-medal"></i> Why Choose Us</span>
           <h2 class="section-title-modern">Excellence in Every Transaction</h2>
@@ -374,7 +257,7 @@
         </div>
 
         <div class="why-image scroll-animate delay-1">
-          <img src="/images/expert-agents.jpg" alt="Why Choose Owning Ottawa">
+          <img src="/images/shubham-duggal-2.jpg" alt="Shubham Duggal - Real Estate & Business Strategy">
           <div class="image-decoration"></div>
         </div>
       </div>
@@ -540,7 +423,7 @@
             <span>Get Started Today</span>
             <i class="fas fa-arrow-right"></i>
           </a>
-          <a href="tel:6133186478" class="btn-modern-outline">
+          <a href="tel:6133328884" class="btn-modern-outline">
             <span><i class="fas fa-phone"></i> Call Now</span>
           </a>
         </div>

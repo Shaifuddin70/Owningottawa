@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap (create sitemap.xml when ready)
+# Sitemap: https://owningottawa.ca/sitemap.xml

@@ -14,18 +14,18 @@
             <h1 class="modern-hero-title fade-in-up delay-1">Find Your Perfect Home in Ottawa</h1>
             <p class="modern-hero-subtitle fade-in-up delay-2">Whether you're a first-time buyer or looking to upgrade, we guide you through every step to find the property that fits your lifestyle, budget, and long-term goals.</p>
             <div class="hero-features fade-in-up delay-3">
-                <div class="hero-feature-item">
+                <a href="/services#real-estate" class="hero-feature-item">
                     <i class="fas fa-check-circle"></i>
                     <span>Expert Guidance</span>
-                </div>
-                <div class="hero-feature-item">
+                </a>
+                <a href="/about" class="hero-feature-item">
                     <i class="fas fa-map-marked-alt"></i>
                     <span>Local Expertise</span>
-                </div>
-                <div class="hero-feature-item">
+                </a>
+                <a href="/contact" class="hero-feature-item">
                     <i class="fas fa-handshake"></i>
                     <span>Personalized Service</span>
-                </div>
+                </a>
             </div>
             <div class="hero-cta-buttons fade-in-up delay-4">
                 <a href="/contact" class="btn-modern-primary">
@@ -216,7 +216,7 @@
                         <span>Get Started</span>
                         <i class="fas fa-calendar-check"></i>
                     </a>
-                    <a href="tel:6133186478" class="btn-modern-outline">
+                    <a href="tel:6133328884" class="btn-modern-outline">
                         <span><i class="fas fa-phone"></i> Call Us Now</span>
                     </a>
                 </div>

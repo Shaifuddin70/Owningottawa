@@ -9,7 +9,7 @@
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <meta name="theme-color" content="#000000" />
+  <meta name="theme-color" content="#c99741" />
   <title>owningottawa — Real Estate, Mortgage, Property Management</title>
   <meta
     name="description"
@@ -21,12 +21,12 @@
   <link rel="canonical" href="https://owningottawa.ca/" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="images/owningottawa.jpg" />
-  <link rel="shortcut icon" type="image/jpeg" href="images/owningottawa.jpg" />
-  <link rel="apple-touch-icon" href="images/owningottawa.jpg" />
-  <link rel="apple-touch-icon" sizes="180x180" href="images/owningottawa.jpg" />
-  <link rel="icon" type="image/jpeg" sizes="32x32" href="images/owningottawa.jpg" />
-  <link rel="icon" type="image/jpeg" sizes="16x16" href="images/owningottawa.jpg" />
+  <link rel="icon" type="image/jpeg" href="/images/owningottawa.svg" />
+  <link rel="shortcut icon" type="image/jpeg" href="/images/owningottawa.svg" />
+  <link rel="apple-touch-icon" href="/images/owningottawa.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/owningottawa.svg" />
+  <link rel="icon" type="image/jpeg" sizes="32x32" href="/images/owningottawa.svg" />
+  <link rel="icon" type="image/jpeg" sizes="16x16" href="/images/owningottawa.svg" />
 
   <!-- Additional SEO Meta Tags -->
   <meta name="author" content="owningottawa" />
@@ -71,7 +71,7 @@
       "name": "owningottawa",
       "description": "Real Estate Services, Mortgage Solutions, Property Management, Bookkeeping & Accounting, Building Permits & Design.",
       "url": "https://owningottawa.ca",
-      "telephone": "6133186478",
+      "telephone": "6133328884",
       "serviceArea": {
         "@type": "Place",
         "name": "Ottawa, ON"
@@ -120,10 +120,18 @@
     }
   </script>
 
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
 
 <body>
+  <!-- Page Loader -->
+  <div id="pageLoader" class="page-loader">
+    <div class="loader-content">
+      <img src="/images/owningottawa-footer.svg" alt="OwningOttawa" class="loader-flag" />
+      <div class="loader-spinner"></div>
+    </div>
+  </div>
+
   <!-- Header Placeholder -->
   <div id="header-placeholder"></div>
 
@@ -134,13 +142,10 @@
         <!-- Logo Section -->
         <div class="modern-logo">
           <a href="/" class="logo-link">
-            <img src="images/owningottawa.jpg" alt="OwningOttawa" class="logo-image" />
-            <div class="logo-text">
-              <span class="logo-title">OwningOttawa</span>
-              <span class="logo-tagline">Premium Real Estate</span>
-            </div>
+            <img src="/images/owningottawa.svg" alt="OwningOttawa" class="logo-image" style="width: 150px;" />
           </a>
         </div>
+
 
         <!-- Navigation Links -->
         <div class="nav-menu" id="navMenu">
@@ -194,7 +199,7 @@
                   <span class="dropdown-desc">Complete management</span>
                 </div>
               </a>
-              <a href="/services#bookkeeping" class="dropdown-item">
+              <a href="https://vermaaccounting.ca/" class="dropdown-item">
                 <i class="fas fa-calculator"></i>
                 <div class="dropdown-content">
                   <span class="dropdown-title">Bookkeeping</span>
@@ -211,11 +216,6 @@
             </div>
           </div>
 
-          <a href="/about" class="nav-link" data-page="about">
-            <i class="fas fa-users"></i>
-            <span>About</span>
-          </a>
-
           <a href="/resources" class="nav-link" data-page="resources">
             <i class="fas fa-book"></i>
             <span>Resources</span>
@@ -225,30 +225,45 @@
             <i class="fas fa-envelope"></i>
             <span>Contact</span>
           </a>
+          <a href="/about" class="nav-link" data-page="about">
+            <i class="fas fa-users"></i>
+            <span>About</span>
+          </a>
+
         </div>
 
         <!-- CTA Buttons -->
         <div class="nav-cta">
-          <a href="tel:6133186478" class="cta-phone">
+          <a href="tel:6133328884" class="cta-phone">
             <i class="fas fa-phone-alt"></i>
-            <span>613-318-6478</span>
+            <span>613-332-8884</span>
           </a>
-          <a href="mailto:info@owningottawa.ca" class="cta-email">
+          <!-- <a href="mailto:shubham@soldbyduggal.com" class="cta-email">
             <i class="fas fa-envelope"></i>
-            <span>info@owningottawa.ca</span>
-          </a>
+            <span>shubham@soldbyduggal.com</span>
+          </a> -->
           <a href="/contact" class="cta-appointment">
             <i class="fas fa-calendar-check"></i>
             <span>Book Appointment</span>
           </a>
         </div>
 
-        <!-- Mobile Menu Toggle -->
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
+        <!-- Mobile Actions -->
+        <div class="mobile-actions">
+          <a href="tel:6133328884" class="mobile-phone-icon" aria-label="Call 613-332-8884">
+            <i class="fas fa-phone-alt"></i>
+          </a>
+          <!-- Mobile Menu Toggle -->
+          <label class="hamburger" for="mobileToggle" aria-label="Toggle menu">
+            <input type="checkbox" id="mobileToggle" />
+            <svg viewBox="0 0 32 32">
+              <path
+                class="line line-top-bottom"
+                d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+              <path class="line" d="M7 16 27 16"></path>
+            </svg>
+          </label>
+        </div>
       </div>
     </nav>
   </header>
@@ -314,16 +329,20 @@
       const navMenu = document.getElementById('navMenu');
 
       if (mobileToggle && navMenu) {
-        mobileToggle.addEventListener('click', () => {
-          mobileToggle.classList.toggle('active');
-          navMenu.classList.toggle('active');
-          document.body.classList.toggle('menu-open');
+        mobileToggle.addEventListener('change', () => {
+          if (mobileToggle.checked) {
+            navMenu.classList.add('active');
+            document.body.classList.add('menu-open');
+          } else {
+            navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+          }
         });
 
         // Close mobile menu when clicking outside
         document.addEventListener('click', (e) => {
           if (!e.target.closest('.modern-nav')) {
-            mobileToggle.classList.remove('active');
+            mobileToggle.checked = false;
             navMenu.classList.remove('active');
             document.body.classList.remove('menu-open');
           }
@@ -363,11 +382,22 @@
               // Close all nested dropdowns first
               nestedDropdowns.forEach(otherNested => {
                 otherNested.classList.remove('active');
+                // Reset arrow rotation when closing
+                const otherArrow = otherNested.querySelector('.nested-arrow');
+                if (otherArrow) {
+                  otherArrow.style.transform = '';
+                }
               });
 
               // Open if it wasn't active, close if it was
               if (!isCurrentlyActive) {
                 nested.classList.add('active');
+              } else {
+                // Reset arrow rotation when closing
+                const arrow = nested.querySelector('.nested-arrow');
+                if (arrow) {
+                  arrow.style.transform = '';
+                }
               }
 
               return false;
@@ -403,6 +433,21 @@
               // Close all dropdowns first
               dropdowns.forEach(otherDropdown => {
                 otherDropdown.classList.remove('active');
+                // Reset arrow rotation when closing
+                const arrow = otherDropdown.querySelector('.dropdown-arrow');
+                if (arrow) {
+                  arrow.style.transform = '';
+                }
+              });
+
+              // Also close all nested dropdowns when closing parent dropdown
+              nestedDropdowns.forEach(nested => {
+                nested.classList.remove('active');
+                // Reset arrow rotation when closing
+                const arrow = nested.querySelector('.nested-arrow');
+                if (arrow) {
+                  arrow.style.transform = '';
+                }
               });
 
               // Open if it wasn't active, close if it was
@@ -430,6 +475,21 @@
           if (!clickedInsideDropdown) {
             dropdowns.forEach(dropdown => {
               dropdown.classList.remove('active');
+              // Reset arrow rotation when closing
+              const arrow = dropdown.querySelector('.dropdown-arrow');
+              if (arrow) {
+                arrow.style.transform = '';
+              }
+            });
+
+            // Also close nested dropdowns and reset their arrows
+            nestedDropdowns.forEach(nested => {
+              nested.classList.remove('active');
+              // Reset arrow rotation when closing
+              const arrow = nested.querySelector('.nested-arrow');
+              if (arrow) {
+                arrow.style.transform = '';
+              }
             });
           }
         });
