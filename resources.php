@@ -56,7 +56,7 @@
                     </div>
                     <h3 class="resource-title">First-Time Home Buyer Guide</h3>
                     <p class="resource-description">Everything you need to know about buying your first home in Ottawa, from pre-approval to closing day.</p>
-                    <a href="/contact" class="resource-link">
+                    <a href="/files/OwningOttawa-Group-Buyers-Guide.pdf" class="resource-link" target="_blank" rel="noopener">
                         <span>Get the Guide</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -68,7 +68,7 @@
                     </div>
                     <h3 class="resource-title">Selling Your Home Guide</h3>
                     <p class="resource-description">Learn how to prepare, price, and market your property for a successful sale in Ottawa's competitive market.</p>
-                    <a href="/contact" class="resource-link">
+                    <a href="/files/Sellers-Guide-OwningOttawaGroup.pdf" class="resource-link" target="_blank" rel="noopener">
                         <span>Get the Guide</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -80,7 +80,7 @@
                     </div>
                     <h3 class="resource-title">Investment Property Guide</h3>
                     <p class="resource-description">Strategies and insights for building a profitable real estate portfolio in Ottawa's growing market.</p>
-                    <a href="/contact" class="resource-link">
+                    <a href="/files/InvestorsGuide-OwningOttawaGroup.pdf" class="resource-link" target="_blank" rel="noopener">
                         <span>Get the Guide</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -88,11 +88,11 @@
 
                 <div class="resource-card scroll-animate delay-3">
                     <div class="resource-icon">
-                        <i class="fas fa-percent"></i>
+                        <i class="fas fa-truck-moving"></i>
                     </div>
-                    <h3 class="resource-title">Mortgage Guide</h3>
-                    <p class="resource-description">Understanding mortgage options, rates, and the approval process to secure the best financing for your property.</p>
-                    <a href="/contact" class="resource-link">
+                    <h3 class="resource-title">Relocation Guide</h3>
+                    <p class="resource-description">Everything you need for a smooth move to Ottawa, including tips for relocating and settling into your new home.</p>
+                    <a href="/files/RelocationGuide-Owning-Ottawa-Group.pdf" class="resource-link" target="_blank" rel="noopener">
                         <span>Get the Guide</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -393,7 +393,7 @@
             </div>
             <div class="download-modal-body">
                 <p class="download-modal-description">Please provide your information to download this calculator. We'll send you updates and helpful resources.</p>
-                <form class="contact-form download-form" id="downloadForm" method="POST" action="https://formspree.io/f/xvgeqylj">
+                <form class="contact-form download-form" id="downloadForm" method="POST" action="https://formspree.io/f/meejqovw">
                     <input type="hidden" name="calculator_name" id="calculatorName" value="">
                     <input type="hidden" name="calculator_file" id="calculatorFile" value="">
                     <input type="hidden" name="form_type" value="calculator_download">
@@ -823,7 +823,7 @@
 
                 try {
                     // Submit to Formspree
-                    const response = await fetch('https://formspree.io/f/xvgeqylj', {
+                    const response = await fetch('https://formspree.io/f/meejqovw', {
                         method: 'POST',
                         body: formData,
                         headers: {
