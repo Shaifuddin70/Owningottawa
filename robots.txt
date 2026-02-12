@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://owningottawa.ca/sitemap.xml
+Sitemap: https://owningottawa.com/sitemap.xml
