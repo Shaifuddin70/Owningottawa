@@ -216,6 +216,11 @@
             </div>
           </div>
 
+          <a href="http://listing.owningottawa.com/" class="nav-link" data-page="properties">
+            <i class="fas fa-list"></i>
+            <span>Properties</span>
+          </a>
+
           <a href="/resources" class="nav-link" data-page="resources">
             <i class="fas fa-book"></i>
             <span>Resources</span>

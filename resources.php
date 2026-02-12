@@ -393,7 +393,7 @@
             </div>
             <div class="download-modal-body">
                 <p class="download-modal-description">Please provide your information to download this calculator. We'll send you updates and helpful resources.</p>
-                <form class="contact-form download-form" id="downloadForm" method="POST" action="https://formspree.io/f/meejqovw">
+                <form class="contact-form download-form" id="downloadForm" method="POST" action="https://formspree.io/f/mqedereb">
                     <input type="hidden" name="calculator_name" id="calculatorName" value="">
                     <input type="hidden" name="calculator_file" id="calculatorFile" value="">
                     <input type="hidden" name="form_type" value="calculator_download">
@@ -823,7 +823,7 @@
 
                 try {
                     // Submit to Formspree
-                    const response = await fetch('https://formspree.io/f/meejqovw', {
+                    const response = await fetch('https://formspree.io/f/mqedereb', {
                         method: 'POST',
                         body: formData,
                         headers: {

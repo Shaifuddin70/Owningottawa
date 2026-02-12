@@ -108,6 +108,12 @@
               </a>
             </li>
             <li>
+              <a href="http://listing.owningottawa.com/">
+                <i class="fas fa-list"></i>
+                <span>Properties</span>
+              </a>
+            </li>
+            <li>
               <a href="/contact">
                 <i class="fas fa-envelope"></i>
                 <span>Contact Us</span>

@@ -3,7 +3,7 @@
     <section class="contact-form-section">
         <div class="container">
             <div class="contact-form-grid">
-                <form class="contact-form scroll-animate" id="contactForm" method="POST" action="https://formspree.io/f/meejqovw">
+                <form class="contact-form scroll-animate" id="contactForm" method="POST" action="https://formspree.io/f/mqedereb">
                     <span class="section-tag"><i class="fas fa-paper-plane"></i> Send a Message</span>
                     <div class="form-group">
                         <label for="name" class="form-label">
@@ -306,7 +306,7 @@
                 // Submit form to Formspree
                 const formData = new FormData(contactForm);
 
-                fetch('https://formspree.io/f/meejqovw', {
+                fetch('https://formspree.io/f/mqedereb', {
                         method: 'POST',
                         body: formData,
                         headers: {
