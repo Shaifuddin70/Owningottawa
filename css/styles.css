@@ -11581,3 +11581,38 @@ body.modal-open {
         border-width: 3px;
     }
 }
+
+/* Featured Listings iframe section */
+.featured-listings-iframe {
+    padding: 4rem 0;
+    background: var(--color-gray-light, #f8f9fa);
+}
+
+.featured-listings-iframe .section-header {
+    margin-bottom: 2rem;
+}
+
+.iframe-wrapper {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    background: var(--color-white);
+}
+
+.featured-listings-frame {
+    width: 100%;
+    min-height: 800px;
+    border: none;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .featured-listings-iframe {
+        padding: 2.5rem 0;
+    }
+
+    .featured-listings-frame {
+        min-height: 600px;
+    }
+}

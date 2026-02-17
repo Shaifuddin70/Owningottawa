@@ -55,7 +55,26 @@
     </div>
   </section>
 
-
+  <!-- Featured Listings iframe -->
+  <section class="common-section featured-listings-iframe" aria-label="Featured Property Listings">
+    <div class="container">
+      <div class="section-header text-center scroll-animate">
+        <span class="section-tag"><i class="fas fa-star"></i> Featured</span>
+        <h2 class="section-title-modern">Featured Listings</h2>
+        <p class="section-subtitle-modern">Browse our exclusive property listings</p>
+      </div>
+      <div class="iframe-wrapper scroll-animate">
+        <iframe
+          src="https://listing.owningottawa.com/featured-listings"
+          title="Featured Property Listings"
+          frameborder="0"
+          allowfullscreen
+          loading="lazy"
+          class="featured-listings-frame">
+        </iframe>
+      </div>
+    </div>
+  </section>
 
   <!-- Services Section -->
   <section class="modern-services" id="services">
