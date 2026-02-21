@@ -62,7 +62,7 @@
       <h2 class="section-title-modern">Featured Listings</h2>
       <p class="section-subtitle-modern">Browse our exclusive property listings</p>
     </div>
-    <div class=" scroll-animate mx-5">
+    <div class=" scroll-animate px-lg-5">
       <iframe
         src="https://listing.owningottawa.com/featured-listings"
         title="Featured Property Listings"
