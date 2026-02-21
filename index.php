@@ -69,7 +69,7 @@
         frameborder="0"
         allowfullscreen
         loading="lazy"
-        class="featured-listings-frame p-lg-5">
+        class="featured-listings-frame p-lg-5 p-3">
       </iframe>
     </div>
   </section>
