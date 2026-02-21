@@ -18,7 +18,16 @@
     name="keywords"
     content="Ottawa real estate, real estate services, mortgage solutions, property management, bookkeeping, accounting, building permits, design services, home buying, home selling, first-time buyers" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://owningottawa.ca/" />
+  <?php
+  $canonical_base = 'https://owningottawa.com';
+  $canonical_path = trim(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH), '/');
+  if ($canonical_path === '' || $canonical_path === 'index.php') {
+    $canonical_url = $canonical_base . '/';
+  } else {
+    $canonical_url = $canonical_base . '/' . $canonical_path;
+  }
+  ?>
+  <link rel="canonical" href="<?php echo htmlspecialchars($canonical_url); ?>" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="/images/owningottawa.svg" />
