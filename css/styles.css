@@ -685,7 +685,6 @@ body {
 
 /* background + overlay when .has-bg is used */
 .cta-split.has-bg {
-    background-image: url('images/hero-poster.jpg');
     background-size: cover;
     background-position: center;
 }

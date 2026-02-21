@@ -48,7 +48,7 @@
   <meta property="og:title" content="owningottawa — Real Estate, Mortgage, Property Management" />
   <meta property="og:description" content="Serving Ottawa home buyers and sellers with real estate, mortgage, property management, bookkeeping & accounting, and permits & design." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://owningottawa.ca/" />
+  <meta property="og:url" content="<?php echo htmlspecialchars($canonical_url); ?>" />
   <meta property="og:site_name" content="owningottawa" />
   <meta property="og:locale" content="en_CA" />
 
@@ -79,7 +79,7 @@
       "@type": "RealEstateAgent",
       "name": "owningottawa",
       "description": "Real Estate Services, Mortgage Solutions, Property Management, Bookkeeping & Accounting, Building Permits & Design.",
-      "url": "https://owningottawa.ca",
+      "url": "https://owningottawa.com",
       "telephone": "6133328884",
       "serviceArea": {
         "@type": "Place",
