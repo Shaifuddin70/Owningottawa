@@ -15,7 +15,7 @@
       </iframe>
     </div>
 
-    <div class="modern-hero-content">
+    <div class="modern-hero-content my-5">
       <div class="hero-badge fade-in-up">
         <i class="fas fa-crown"></i>
         <span>Premium Real Estate Portfolio</span>
