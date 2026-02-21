@@ -252,10 +252,7 @@
             <span>Resources</span>
           </a>
 
-          <a href="/contact" class="nav-link" data-page="contact">
-            <i class="fas fa-envelope"></i>
-            <span>Contact</span>
-          </a>
+
 
           <div class="nav-dropdown">
             <a href="#" data-page="visitors-tools" class="nav-link">
@@ -323,7 +320,10 @@
               </a>
             </div>
           </div>
-
+          <a href="/contact" class="nav-link" data-page="contact">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+          </a>
           <a href="/about" class="nav-link" data-page="about">
             <i class="fas fa-users"></i>
             <span>About</span>

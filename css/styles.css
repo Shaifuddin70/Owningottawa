@@ -688,7 +688,9 @@ body {
     background-size: cover;
     background-position: center;
 }
-
+.fas.fa-phone-alt{
+    transform: rotate(90deg);
+}
 .cta-split.has-bg::before {
     content: "";
     position: absolute;
