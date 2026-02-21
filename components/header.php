@@ -216,10 +216,27 @@
             </div>
           </div>
 
-          <a href="http://listing.owningottawa.com/" class="nav-link" data-page="properties">
-            <i class="fas fa-list"></i>
-            <span>Properties</span>
-          </a>
+          <div class="nav-dropdown">
+            <a href="#" data-page="properties" class="nav-link">
+              <i class="fas fa-list"></i>
+              <span>Properties</span>
+              <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </a>
+            <div class="dropdown-menu">
+              <a href="https://listing.owningottawa.com/" class="dropdown-item">
+                <i class="fas fa-list"></i>
+                <div class="dropdown-content">
+                  <span class="dropdown-title">Properties</span>
+                </div>
+              </a>
+              <a href="https://listing.owningottawa.com/pre-construction" class="dropdown-item">
+                <i class="fas fa-list"></i>
+                <div class="dropdown-content">
+                  <span class="dropdown-title">Pre-Construction</span>
+                </div>
+              </a>
+            </div>
+          </div>
 
           <a href="/resources" class="nav-link" data-page="resources">
             <i class="fas fa-book"></i>
@@ -230,6 +247,74 @@
             <i class="fas fa-envelope"></i>
             <span>Contact</span>
           </a>
+
+          <div class="nav-dropdown">
+            <a href="#" data-page="visitors-tools" class="nav-link">
+              <i class="fas fa-tools"></i>
+              <span>Visitor's Tools</span>
+              <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </a>
+            <div class="dropdown-menu">
+              <div class="dropdown-item-nested">
+                <a href="#" class="dropdown-item dropdown-item-parent">
+                  <div class="dropdown-content">
+                    <span class="dropdown-title">Calculators</span>
+                  </div>
+                  <i class="fas fa-chevron-right nested-arrow"></i>
+                </a>
+                <div class="nested-dropdown-menu">
+                  <a href="https://listing.owningottawa.com/calculator/mortgage-calculator" class="nested-dropdown-item"><span>Mortgage Calculator</span></a>
+                  <a href="https://listing.owningottawa.com/calculator/land-transfer-tax-calculator" class="nested-dropdown-item"><span>Land Transfer Tax Calculator</span></a>
+                  <a href="https://listing.owningottawa.com/calculator/cmhc-calculator" class="nested-dropdown-item"><span>CMHC Calculator</span></a>
+                  <a href="https://listing.owningottawa.com/calculator/mac-calculator" class="nested-dropdown-item"><span>Mortgage Affordability Calculator</span></a>
+                  <a href="https://listing.owningottawa.com/calculator/renewal-calculator" class="nested-dropdown-item"><span>Renewal Calculator</span></a>
+                </div>
+              </div>
+              <div class="dropdown-item-nested">
+                <a href="#" class="dropdown-item dropdown-item-parent">
+                  <div class="dropdown-content">
+                    <span class="dropdown-title">Useful links</span>
+                  </div>
+                  <i class="fas fa-chevron-right nested-arrow"></i>
+                </a>
+                <div class="nested-dropdown-menu">
+                  <a href="https://trreb.ca/index.php/market-news/market-watch" target="_blank" rel="noopener noreferrer" class="nested-dropdown-item"><span>Market Watch Report</span></a>
+                  <a href="https://www.compareschoolrankings.org" target="_blank" rel="noopener noreferrer" class="nested-dropdown-item"><span>School Rankings</span></a>
+                  <a href="https://www.onland.ca/ui/" target="_blank" rel="noopener noreferrer" class="nested-dropdown-item"><span>Land Registry</span></a>
+                  <a href="https://www.peelregion.ca/" target="_blank" rel="noopener noreferrer" class="nested-dropdown-item"><span>Region Of Peel</span></a>
+                  <a href="https://www.bank-banque-canada.ca/" target="_blank" rel="noopener noreferrer" class="nested-dropdown-item"><span>Bank Of Canada</span></a>
+                  <a href="https://www.canada.ca/" target="_blank" rel="noopener noreferrer" class="nested-dropdown-item"><span>Government of Canada</span></a>
+                  <a href="https://www.ontario.ca/" target="_blank" rel="noopener noreferrer" class="nested-dropdown-item"><span>Government of Ontario</span></a>
+                  <a href="https://www.ontario.ca/page/find-school-board-or-school-authority" target="_blank" rel="noopener noreferrer" class="nested-dropdown-item"><span>Local School Boards</span></a>
+                </div>
+              </div>
+              <a href="https://listing.owningottawa.com/new-listing-alert" class="dropdown-item">
+                <div class="dropdown-content"><span class="dropdown-title">New Listing Alerts</span></div>
+              </a>
+              <a href="https://listing.owningottawa.com/price-drop-alert" class="dropdown-item">
+                <div class="dropdown-content"><span class="dropdown-title">Price Drop Alerts</span></div>
+              </a>
+              <a href="https://listing.owningottawa.com/neighbourhood-alert" class="dropdown-item">
+                <div class="dropdown-content"><span class="dropdown-title">Neighbourhood Alerts</span></div>
+              </a>
+              <a href="https://listing.owningottawa.com/open-house-alert" class="dropdown-item">
+                <div class="dropdown-content"><span class="dropdown-title">Open House Alerts</span></div>
+              </a>
+              <a href="https://listing.owningottawa.com/just-listed" class="dropdown-item">
+                <div class="dropdown-content"><span class="dropdown-title">Just Listed</span></div>
+              </a>
+              <a href="https://listing.owningottawa.com/exclusive-listing" class="dropdown-item">
+                <div class="dropdown-content"><span class="dropdown-title">Exclusive Listing</span></div>
+              </a>
+              <a href="https://listing.owningottawa.com/real-estate-guides" class="dropdown-item">
+                <div class="dropdown-content"><span class="dropdown-title">Real Estate Guides</span></div>
+              </a>
+              <a href="https://listing.owningottawa.com/real-estate-news" class="dropdown-item">
+                <div class="dropdown-content"><span class="dropdown-title">Real Estate News</span></div>
+              </a>
+            </div>
+          </div>
+
           <a href="/about" class="nav-link" data-page="about">
             <i class="fas fa-users"></i>
             <span>About</span>

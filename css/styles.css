@@ -11584,35 +11584,88 @@ body.modal-open {
 
 /* Featured Listings iframe section */
 .featured-listings-iframe {
-    padding: 4rem 0;
+    padding: 5rem 0 6rem;
     background: var(--color-gray-light, #f8f9fa);
 }
 
+.featured-listings-iframe.common-section {
+    padding-top: 5rem;
+    padding-bottom: 6rem;
+}
+
 .featured-listings-iframe .section-header {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.featured-listings-iframe .section-header.text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.featured-listings-iframe .section-subtitle-modern {
+    margin-top: 0.5rem;
 }
 
 .iframe-wrapper {
     width: 100%;
-    border-radius: 12px;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
     background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    position: relative;
+}
+
+.iframe-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light, #e8c547));
+    z-index: 1;
 }
 
 .featured-listings-frame {
     width: 100%;
-    min-height: 800px;
+    min-height: 720px;
     border: none;
     display: block;
+    background: var(--color-white);
+}
+
+@media (max-width: 992px) {
+    .featured-listings-frame {
+        min-height: 640px;
+    }
 }
 
 @media (max-width: 768px) {
     .featured-listings-iframe {
-        padding: 2.5rem 0;
+        padding: 3rem 0 4rem;
+    }
+
+    .featured-listings-iframe.common-section {
+        padding-top: 3rem;
+        padding-bottom: 4rem;
+    }
+
+    .featured-listings-iframe .section-header {
+        margin-bottom: 1.75rem;
+    }
+
+    .iframe-wrapper {
+        border-radius: 16px;
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        max-width: none;
     }
 
     .featured-listings-frame {
-        min-height: 600px;
+        min-height: 560px;
     }
 }
