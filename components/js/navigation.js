@@ -36,10 +36,7 @@ function initDropdown() {
     // Handle click events
     toggle.addEventListener("click", function (e) {
       // Only prevent default if clicking on the arrow or if it's a mobile device
-      if (
-        e.target.classList.contains("oo-arrow") ||
-        window.innerWidth <= 768
-      ) {
+      if (e.target.classList.contains("oo-arrow") || window.innerWidth <= 768) {
         e.preventDefault();
         e.stopPropagation();
 
@@ -220,9 +217,7 @@ function initMobileMenu() {
   }
 
   // Close menu when clicking on a regular link (not dropdown toggle)
-  const navLinkItems = navLinks.querySelectorAll(
-    ".oo-link:not(.oo-toggle)"
-  );
+  const navLinkItems = navLinks.querySelectorAll(".oo-link:not(.oo-toggle)");
   navLinkItems.forEach((link) => {
     link.addEventListener("click", function () {
       closeMobileMenu();

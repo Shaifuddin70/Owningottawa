@@ -68,7 +68,7 @@
               </a>
             </li>
             <li>
-              <a href="/services#bookkeeping">
+              <a href="https://vermaaccounting.ca/">
                 <i class="fas fa-calculator"></i>
                 <span>Bookkeeping & Accounting</span>
               </a>
@@ -1010,14 +1010,14 @@
           // Check if link is inside a nav-dropdown (has dropdown menu)
           const navDropdown = link.closest('.nav-dropdown');
           const hasDropdownMenu = navDropdown && navDropdown.querySelector('.dropdown-menu');
-          
+
           // Check if this is the parent nav-link that toggles dropdown on mobile
           // The parent link has .nav-link class and is inside .nav-dropdown with a .dropdown-menu sibling
           const isParentDropdownLink = link.classList.contains('nav-link') && hasDropdownMenu;
-          
+
           // Check if this is a nested dropdown parent link that toggles nested menu on mobile
           const isNestedDropdownParent = link.classList.contains('dropdown-item-parent') && link.closest('.dropdown-item-nested');
-          
+
           // On mobile, if link is the parent dropdown link or nested dropdown parent, it will toggle dropdown instead of navigating - don't show loader
           if ((isParentDropdownLink || isNestedDropdownParent) && isMobile()) {
             // Don't show loader - the navigation script will prevent default and toggle dropdown
