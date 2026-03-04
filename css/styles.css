@@ -5861,7 +5861,7 @@ hr,
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+    background: #00000069;
     z-index: 1;
 }
 

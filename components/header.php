@@ -28,6 +28,7 @@
   }
   ?>
   <link rel="canonical" href="<?php echo htmlspecialchars($canonical_url); ?>" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://owningottawa.com/sitemap.xml" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="/images/owningottawa.svg" />
