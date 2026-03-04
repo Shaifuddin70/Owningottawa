@@ -169,7 +169,7 @@
             <div class="broker-logo-wrap"><img src="/images/canadian-home-realty-logo.jpg" alt="The Canadian Home Realty Inc." class="broker-logo" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.classList.remove('hide');" /><span class="broker-name-fallback hide">The Canadian Home Realty Inc.</span></div>
           </div>
           <div class="footer-bottom-row">
-            <p class="footer-copyright-text">&copy; 2025 <span class="copyright-brand">OwningOttawa</span>. All rights reserved.</p>
+            <p class="footer-copyright-text">&copy; 2026 <span class="copyright-brand">OwningOttawa</span>. All rights reserved.</p>
 
           </div>
           <p class="footer-tagline">All services are provided with professionalism, transparency, and local market expertise.</p>
