@@ -8695,10 +8695,27 @@ body.menu-open {
     text-align: center;
 }
 
-.footer-copyright p {
+.footer-bottom-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem 1.5rem;
+}
+
+.footer-copyright-text,
+.footer-brokered {
     margin: 0;
+}
+
+.footer-copyright p,
+.footer-copyright .footer-brokered {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-copyright p {
+    margin: 0;
 }
 
 .copyright-brand {
@@ -8708,6 +8725,39 @@ body.menu-open {
 
 .footer-tagline {
     font-size: 0.85rem;
+}
+
+.footer-brokered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35em;
+}
+.footer-brokered-text{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.broker-logo-wrap {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.broker-logo {
+    max-height: 4em;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.broker-name-fallback {
+    display: inline;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.broker-name-fallback.hide {
+    display: none;
     color: rgba(255, 255, 255, 0.6);
 }
 
