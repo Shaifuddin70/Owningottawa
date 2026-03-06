@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /index.php
 
 Sitemap: https://owningottawa.com/sitemap.xml

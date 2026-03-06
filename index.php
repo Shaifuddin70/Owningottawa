@@ -54,7 +54,13 @@ include 'components/header.php'; ?>
           <i class="fas fa-paper-plane"></i>
         </a>
       </div>
-
+      <nav class="hero-explore-links scroll-animate delay-4" aria-label="Explore main pages">
+        <a href="/buy">Buy a Home</a>
+        <a href="/sell">Sell</a>
+        <a href="/invest">Invest</a>
+        <a href="/resources">Resources</a>
+        <a href="/contact">Contact</a>
+      </nav>
     </div>
   </section>
 
