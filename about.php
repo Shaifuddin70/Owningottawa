@@ -1,4 +1,7 @@
-<?php include 'components/header.php'; ?>
+<?php
+$page_title = 'About Us — Owning Ottawa Group | Ottawa Real Estate Team';
+$page_description = 'Meet the Owning Ottawa Group team. Built on trust and transparency—real estate, mortgages, property management and more. Your smooth, stress-free experience in Ottawa.';
+include 'components/header.php'; ?>
 <main class="main-content modern-redesign">
 
     <!-- Hero Section -->

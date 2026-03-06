@@ -1,4 +1,7 @@
-<?php include 'components/header.php'; ?>
+<?php
+$page_title = 'Contact Us — OwningOttawa | Get in Touch in Ottawa';
+$page_description = 'Contact Shubham Duggal and the OwningOttawa team. Book a consultation for real estate, mortgages, property management or general inquiries. Quick response, expert advice.';
+include 'components/header.php'; ?>
 <main class="main-content modern-redesign">
     <section class="contact-form-section">
         <div class="container">

@@ -1,4 +1,7 @@
-<?php include 'components/header.php'; ?>
+<?php
+$page_title = 'Buy a Home — OwningOttawa | Find Your Perfect Home in Ottawa';
+$page_description = 'Find your perfect home in Ottawa. First-time buyer or upgrade—we guide you through every step. Expert guidance, local knowledge and support from OwningOttawa.';
+include 'components/header.php'; ?>
 <main class="main-content modern-redesign">
 
     <!-- Hero Section -->

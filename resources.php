@@ -1,4 +1,7 @@
-<?php include 'components/header.php'; ?>
+<?php
+$page_title = 'Resources — OwningOttawa | Guides, Tools & Ottawa Market Insights';
+$page_description = 'Real estate resources for Ottawa: first-time buyer guides, calculators, market insights and helpful links. Make informed property decisions with OwningOttawa.';
+include 'components/header.php'; ?>
 <main class="main-content modern-redesign">
 
     <!-- Hero Section -->

@@ -1,4 +1,7 @@
-<?php include 'components/header.php'; ?>
+<?php
+$page_title = 'Real Estate Investment — OwningOttawa | Build Your Portfolio in Ottawa';
+$page_description = 'Build your real estate portfolio in Ottawa. Expert insights on neighborhoods and opportunities. We help you identify, analyze and acquire investment properties.';
+include 'components/header.php'; ?>
 <main class="main-content modern-redesign">
 
     <!-- Hero Section -->

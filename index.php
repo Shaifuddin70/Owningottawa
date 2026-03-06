@@ -1,4 +1,7 @@
-<?php include 'components/header.php'; ?>
+<?php
+$page_title = 'OwningOttawa — Real Estate, Mortgage & Property Management in Ottawa';
+$page_description = 'Your complete property partner in Ottawa. Real estate, mortgages, property management, bookkeeping and permits—all under one roof. Find, finance and manage with confidence.';
+include 'components/header.php'; ?>
 <!-- Main Content -->
 <main class="main-content modern-redesign">
 

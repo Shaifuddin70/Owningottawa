@@ -1,4 +1,7 @@
-<?php include 'components/header.php'; ?>
+<?php
+$page_title = 'Sell Your Property — OwningOttawa | Ottawa Home Selling';
+$page_description = 'Sell your Ottawa property with confidence. Market analysis, competitive pricing and professional marketing. Maximize your return and minimize stress with OwningOttawa.';
+include 'components/header.php'; ?>
 <main class="main-content modern-redesign">
 
     <!-- Hero Section -->

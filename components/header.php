@@ -1,3 +1,10 @@
+<?php
+// Detect 404 from Apache ErrorDocument so we send correct status and noindex (avoids indexing errors)
+$is_404 = !empty($_SERVER['REDIRECT_STATUS']) && $_SERVER['REDIRECT_STATUS'] === '404';
+if ($is_404) {
+  http_response_code(404);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,14 +17,23 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="theme-color" content="#c99741" />
-  <title>owningottawa — Real Estate, Mortgage, Property Management</title>
-  <meta
-    name="description"
-    content="owningottawa helps first-time home buyers and sellers in Ottawa with real estate services, mortgage solutions, property management, bookkeeping & accounting, and building permits & design." />
-  <meta
-    name="keywords"
-    content="Ottawa real estate, real estate services, mortgage solutions, property management, bookkeeping, accounting, building permits, design services, home buying, home selling, first-time buyers" />
-  <meta name="robots" content="index, follow" />
+  <?php
+  if (empty($page_title)) $page_title = 'owningottawa — Real Estate, Mortgage, Property Management';
+  if (empty($page_description)) $page_description = 'owningottawa helps first-time home buyers and sellers in Ottawa with real estate services, mortgage solutions, property management, bookkeeping & accounting, and building permits & design.';
+  if (empty($page_keywords)) $page_keywords = 'Ottawa real estate, real estate services, mortgage solutions, property management, bookkeeping, accounting, building permits, design services, home buying, home selling, first-time buyers';
+  if ($is_404) {
+    $page_title = 'Page Not Found — OwningOttawa';
+    $page_description = 'The page you requested could not be found.';
+  }
+  $page_title_esc = htmlspecialchars($page_title, ENT_QUOTES, 'UTF-8');
+  $page_description_esc = htmlspecialchars($page_description, ENT_QUOTES, 'UTF-8');
+  $page_keywords_esc = htmlspecialchars($page_keywords, ENT_QUOTES, 'UTF-8');
+  $page_robots = $is_404 ? 'noindex, nofollow' : 'index, follow';
+  ?>
+  <title><?php echo $page_title_esc; ?></title>
+  <meta name="description" content="<?php echo $page_description_esc; ?>" />
+  <meta name="keywords" content="<?php echo $page_keywords_esc; ?>" />
+  <meta name="robots" content="<?php echo htmlspecialchars($page_robots); ?>" />
   <?php
   $canonical_base = 'https://owningottawa.com';
   $canonical_path = trim(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH), '/');
@@ -27,7 +43,9 @@
     $canonical_url = $canonical_base . '/' . $canonical_path;
   }
   ?>
+  <?php if (!$is_404): ?>
   <link rel="canonical" href="<?php echo htmlspecialchars($canonical_url); ?>" />
+  <?php endif; ?>
   <link rel="sitemap" type="application/xml" title="Sitemap" href="https://owningottawa.com/sitemap.xml" />
 
   <!-- Favicon -->
@@ -46,8 +64,8 @@
   <meta name="ICBM" content="45.4215, -75.6972" />
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="owningottawa — Real Estate, Mortgage, Property Management" />
-  <meta property="og:description" content="Serving Ottawa home buyers and sellers with real estate, mortgage, property management, bookkeeping & accounting, and permits & design." />
+  <meta property="og:title" content="<?php echo $page_title_esc; ?>" />
+  <meta property="og:description" content="<?php echo $page_description_esc; ?>" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="<?php echo htmlspecialchars($canonical_url); ?>" />
   <meta property="og:site_name" content="owningottawa" />
@@ -55,8 +73,8 @@
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="owningottawa — Real Estate, Mortgage, Property Management" />
-  <meta name="twitter:description" content="Real estate and mortgage services for first-time buyers and sellers in Ottawa, plus property management, bookkeeping & accounting, and permits & design." />
+  <meta name="twitter:title" content="<?php echo $page_title_esc; ?>" />
+  <meta name="twitter:description" content="<?php echo $page_description_esc; ?>" />
 
   <!-- Google Fonts - Nunito Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
