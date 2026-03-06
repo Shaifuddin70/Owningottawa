@@ -305,14 +305,14 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
           </div>
-          <p class="testimonial-text">"Working with OwningOttawa was the best decision we made. They guided us through our first home purchase with patience and expertise."</p>
+          <p class="testimonial-text">"Shubham Duggal & his team is always there for all the questions I had even before start working with them.
+            They are so professional and always on time ....."</p>
           <div class="testimonial-author">
             <div class="author-avatar">
               <i class="fas fa-user"></i>
             </div>
             <div class="author-info">
-              <h4 class="author-name">Sarah Johnson</h4>
-              <p class="author-role">First-Time Buyer</p>
+              <h4 class="author-name">Jean Rony Pierre</h4>
             </div>
           </div>
         </article>
@@ -325,14 +325,14 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
           </div>
-          <p class="testimonial-text">"Exceptional service! They helped me find the perfect investment property and now manage it seamlessly. Highly recommend!"</p>
+          <p class="testimonial-text">"Shubham is highly responsive. He listens and understands your preferences and gives you great options that match your needs."</p>
           <div class="testimonial-author">
             <div class="author-avatar">
               <i class="fas fa-user"></i>
             </div>
             <div class="author-info">
-              <h4 class="author-name">Michael Chen</h4>
-              <p class="author-role">Property Investor</p>
+              <h4 class="author-name">Urmi Ramchandani</h4>
+
             </div>
           </div>
         </article>
@@ -345,17 +345,22 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
           </div>
-          <p class="testimonial-text">"Professional, knowledgeable, and always available. They made selling our home stress-free and got us an amazing price!"</p>
+          <p class="testimonial-text">"Shubham Duggal and his team always there to help me. With selling my condo and purchase my new townhouse. Very professional ......"</p>
           <div class="testimonial-author">
             <div class="author-avatar">
               <i class="fas fa-user"></i>
             </div>
             <div class="author-info">
-              <h4 class="author-name">Emily Rodriguez</h4>
-              <p class="author-role">Home Seller</p>
+              <h4 class="author-name">Jeenu Rikhi</h4>
             </div>
           </div>
         </article>
+      </div>
+      <div class="testimonials-cta text-center scroll-animate mt-4">
+        <a href="https://maps.app.goo.gl/3NrkdYLr5e4iR8Np7" target="_blank" rel="noopener noreferrer" class="btn-modern-primary">
+          <span>Read More</span>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
       </div>
     </div>
   </section>
