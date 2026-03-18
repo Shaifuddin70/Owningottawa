@@ -894,16 +894,20 @@
 
     let loaderHidden = false;
     let hideLoaderTimeout = null;
-    let initialized = false;
 
-    // Hide loader when page is fully loaded
     function hideLoader() {
       if (loaderHidden || !pageLoader || pageLoader.classList.contains('hidden')) {
         return;
       }
+
+      if (hideLoaderTimeout) {
+        clearTimeout(hideLoaderTimeout);
+        hideLoaderTimeout = null;
+      }
+
       loaderHidden = true;
       pageLoader.classList.add('hidden');
-      // Remove from DOM after animation completes
+
       setTimeout(function() {
         if (pageLoader && pageLoader.parentNode) {
           pageLoader.style.display = 'none';
@@ -911,159 +915,55 @@
       }, 500);
     }
 
-    // Function to initialize loader hiding logic
-    function initLoaderHide() {
-      if (initialized) {
-        return; // Already initialized
-      }
-      initialized = true;
-
-      // Clear any existing timeout
-      if (hideLoaderTimeout) {
-        clearTimeout(hideLoaderTimeout);
-      }
-
-      // Hide loader faster - don't wait for all resources
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-          hideLoaderTimeout = setTimeout(hideLoader, 400);
-        }, {
-          once: true
-        });
-      } else if (document.readyState === 'interactive' || document.readyState === 'complete') {
-        // DOM already loaded, hide quickly
-        hideLoaderTimeout = setTimeout(hideLoader, 200);
-      }
-
-      // Also listen for window load as backup (but with shorter timeout)
-      window.addEventListener('load', function() {
-        if (hideLoaderTimeout) {
-          clearTimeout(hideLoaderTimeout);
-        }
-        hideLoaderTimeout = setTimeout(hideLoader, 100);
-      }, {
-        once: true
-      });
-
-      // Force hide after maximum time (prevent infinite loading)
-      setTimeout(function() {
-        if (!loaderHidden) {
-          hideLoader();
-        }
-      }, 2000); // Maximum 2 seconds
-    }
-
-    // Handle browser back/forward navigation (pageshow event)
-    // This runs on every page show, including back/forward navigation
-    window.addEventListener('pageshow', function(event) {
-      // Reset initialization flag
-      initialized = false;
-
-      // Clear any existing timeout
+    function showLoader() {
       if (hideLoaderTimeout) {
         clearTimeout(hideLoaderTimeout);
         hideLoaderTimeout = null;
       }
 
-      // If page was loaded from cache (bfcache), hide loader immediately
-      if (event.persisted) {
-        // Page loaded from cache - it's already fully loaded, hide loader immediately
-        loaderHidden = true;
-        if (pageLoader) {
-          pageLoader.style.display = 'none';
-          pageLoader.classList.add('hidden');
-        }
-      } else {
-        // Fresh page load
-        loaderHidden = false;
-        if (pageLoader) {
-          pageLoader.style.display = 'flex';
-          pageLoader.classList.remove('hidden');
-        }
-        // Initialize hide logic
-        initLoaderHide();
-      }
-    });
-
-    // Initial setup for first load
-    // Show loader initially
-    pageLoader.style.display = 'flex';
-    pageLoader.classList.remove('hidden');
-    initLoaderHide();
-
-    // Show loader when navigating away (for page transitions)
-    let isNavigating = false;
-
-    // Helper function to check if mobile
-    function isMobile() {
-      return window.innerWidth <= 992;
+      loaderHidden = false;
+      pageLoader.style.display = 'flex';
+      pageLoader.classList.remove('hidden');
     }
 
-    // Listen for link clicks
-    document.addEventListener('click', function(e) {
-      const link = e.target.closest('a');
-      if (link && link.href && !link.href.startsWith('#') && !link.href.startsWith('javascript:') && !link.href.startsWith('mailto:') && !link.href.startsWith('tel:')) {
-        try {
-          // Don't show loader for links that open in new tab - current page doesn't navigate
-          if (link.target === '_blank') {
-            return;
-          }
-
-          // Check if clicking directly on dropdown arrow or nested arrow - don't show loader
-          const clickedDropdownArrow = e.target.closest('.dropdown-arrow') || e.target.closest('.nested-arrow');
-          if (clickedDropdownArrow) {
-            return; // Don't show loader for dropdown arrow clicks
-          }
-
-          // Check if link is inside a nav-dropdown (has dropdown menu)
-          const navDropdown = link.closest('.nav-dropdown');
-          const hasDropdownMenu = navDropdown && navDropdown.querySelector('.dropdown-menu');
-
-          // Check if this is the parent nav-link that toggles dropdown on mobile
-          // The parent link has .nav-link class and is inside .nav-dropdown with a .dropdown-menu sibling
-          const isParentDropdownLink = link.classList.contains('nav-link') && hasDropdownMenu;
-
-          // Check if this is a nested dropdown parent link that toggles nested menu on mobile
-          const isNestedDropdownParent = link.classList.contains('dropdown-item-parent') && link.closest('.dropdown-item-nested');
-
-          // On mobile, if link is the parent dropdown link or nested dropdown parent, it will toggle dropdown instead of navigating - don't show loader
-          if ((isParentDropdownLink || isNestedDropdownParent) && isMobile()) {
-            // Don't show loader - the navigation script will prevent default and toggle dropdown
-            return;
-          }
-
-          const currentHost = window.location.hostname;
-          const linkUrl = new URL(link.href, window.location.href);
-          const linkHost = linkUrl.hostname;
-          const currentPath = window.location.pathname;
-          const linkPath = linkUrl.pathname;
-
-          // If link has dropdown menu and we're on the same page, it's just expanding dropdown - don't show loader
-          if (hasDropdownMenu && linkPath === currentPath) {
-            return; // Don't show loader for dropdown expansion
-          }
-
-          // Only show loader for same-domain navigation to a different page
-          if ((linkHost === currentHost || linkHost === '') && linkPath !== currentPath) {
-            isNavigating = true;
-            loaderHidden = false;
-            pageLoader.classList.remove('hidden');
-            pageLoader.style.display = 'flex';
-          }
-        } catch (err) {
-          // Invalid URL, ignore
-        }
+    function scheduleHide(delay) {
+      if (loaderHidden) {
+        return;
       }
-    }, true);
 
-    // Show loader on beforeunload (page refresh or navigation)
-    window.addEventListener('beforeunload', function() {
-      if (!isNavigating) {
-        loaderHidden = false;
-        pageLoader.classList.remove('hidden');
-        pageLoader.style.display = 'flex';
+      if (hideLoaderTimeout) {
+        clearTimeout(hideLoaderTimeout);
+      }
+
+      hideLoaderTimeout = setTimeout(hideLoader, delay);
+    }
+
+    window.addEventListener('pageshow', function(event) {
+      if (event.persisted) {
+        hideLoader();
       }
     });
+
+    if (document.readyState === 'loading') {
+      showLoader();
+      document.addEventListener('DOMContentLoaded', function() {
+        scheduleHide(150);
+      }, {
+        once: true
+      });
+    } else {
+      hideLoader();
+    }
+
+    window.addEventListener('load', function() {
+      scheduleHide(0);
+    }, {
+      once: true
+    });
+
+    setTimeout(function() {
+      hideLoader();
+    }, 2500);
   })();
 </script>
 

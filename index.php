@@ -9,8 +9,8 @@ include 'components/header.php'; ?>
   <section class="modern-hero" aria-label="Welcome to Owning Ottawa">
     <div class="hero-media">
       <iframe class="hero-video"
-        src="https://www.youtube.com/embed/QwOMYBZwI3E?autoplay=1&mute=1&loop=1&playlist=QwOMYBZwI3E&controls=0&modestbranding=1&rel=0&playsinline=1"
-        title="DESIGNER RESIDENCE | CINEMATIC REAL ESTATE VIDEO IN 4K | SONY FX6"
+        src="https://www.youtube.com/embed/3Q67k3EebYk?autoplay=1&mute=1&loop=1&playlist=3Q67k3EebYk&controls=0&modestbranding=1&rel=0&playsinline=1"
+        title="OwningOttawa - Ottawa Real Estate"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         referrerpolicy="strict-origin-when-cross-origin"

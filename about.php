@@ -10,7 +10,7 @@ include 'components/header.php'; ?>
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="hero-image scroll-animate">
-                        <img src="/images/founder-shubham-duggal.jpg" alt="Shubham Duggal - Founder of Owning Ottawa Group">
+                        <img src="/images/founder-shubham-duggal-with-family.jpg" alt="Shubham Duggal - Founder of Owning Ottawa Group">
                     </div>
                 </div>
                 <div class="col-lg-6">
