@@ -14,6 +14,11 @@ RewriteRule ^(.*)$ / [R=301,L]
 # Explicit rule for /resources (ensures resources.php loads correctly on all hosts)
 RewriteRule ^resources/?$ resources.php [NC,L]
 
+RewriteRule ^review/?$ review.php [NC,L]
+
+RewriteRule ^blog/?$ blog.php [NC,L]
+RewriteRule ^blog/([^/]+)/?$ blog.php?slug=$1 [NC,L,QSA]
+
 # Clean URLs - Remove .php extension
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f

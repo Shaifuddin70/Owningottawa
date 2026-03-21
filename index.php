@@ -1,6 +1,12 @@
 <?php
 $page_title = 'OwningOttawa — Real Estate, Mortgage & Property Management in Ottawa';
 $page_description = 'Your complete property partner in Ottawa. Real estate, mortgages, property management, bookkeeping and permits—all under one roof. Find, finance and manage with confidence.';
+require_once __DIR__ . '/includes/content_store.php';
+$homeVideos = content_get_active_videos();
+$homeTestimonials = content_get_active_testimonials();
+$page_extra_head = count($homeVideos) > 0
+    ? '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" crossorigin="anonymous" />'
+    : '';
 include 'components/header.php'; ?>
 <!-- Main Content -->
 <main class="main-content modern-redesign">
@@ -182,6 +188,49 @@ include 'components/header.php'; ?>
     </div>
   </section>
 
+  <?php if (count($homeVideos) > 0): ?>
+  <!-- Video gallery (managed in /admin) -->
+  <section class="home-videos-section common-section section-bg" id="videos" aria-label="Video gallery">
+    <div class="container">
+      <div class="section-header text-center scroll-animate">
+        <span class="section-tag"><i class="fas fa-play-circle"></i> Videos</span>
+        <h2 class="section-title-modern">See Us in Action</h2>
+        <p class="section-subtitle-modern">Clips, walkthroughs, and updates from OwningOttawa</p>
+      </div>
+      <div class="home-videos-carousel" data-visible-slides="3">
+        <button class="home-videos-nav home-videos-prev" type="button" aria-label="Previous videos">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="home-videos-viewport">
+          <div class="home-videos-track">
+        <?php foreach ($homeVideos as $vi => $video):
+            $resolved = content_video_resolve((string) $video['video_url'], (string) ($video['thumbnail_url'] ?? ''));
+            $embedUrl = $resolved['embed'];
+            $thumb = $resolved['thumb'];
+            $vTitle = trim((string) ($video['title'] ?? ''));
+            $delayClass = $vi > 0 ? ' delay-' . min($vi, 4) : '';
+            $thumbStyle = $thumb !== '' ? ' style="background-image:url(' . htmlspecialchars($thumb, ENT_QUOTES, 'UTF-8') . ')"' : '';
+            ?>
+        <a class="video-card scroll-animate<?php echo $delayClass; ?>"
+          href="<?php echo htmlspecialchars($embedUrl, ENT_QUOTES, 'UTF-8'); ?>"
+          data-fancybox="home-videos"
+          data-type="iframe"
+          data-caption="<?php echo htmlspecialchars($vTitle !== '' ? $vTitle : 'Video', ENT_QUOTES, 'UTF-8'); ?>">
+          <div class="video-card-thumb<?php echo $thumb === '' ? ' video-card-thumb--fallback' : ''; ?>"<?php echo $thumbStyle; ?>>
+            <span class="video-card-play" aria-hidden="true"><i class="fas fa-play"></i></span>
+          </div>
+        </a>
+        <?php endforeach; ?>
+          </div>
+        </div>
+        <button class="home-videos-nav home-videos-next" type="button" aria-label="Next videos">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
+
 
 
   <!-- Process Timeline -->
@@ -296,79 +345,79 @@ include 'components/header.php'; ?>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="testimonials-section">
+  <!-- Testimonials (managed in /admin; public submissions via /review) -->
+  <?php
+    $testimonialsCount = count($homeTestimonials);
+    $testimonialsFew = $testimonialsCount > 0 && $testimonialsCount <= 2;
+  ?>
+  <section class="testimonials-section" id="testimonials">
     <div class="container">
-      <div class="section-header text-center scroll-animate">
-        <span class="section-tag"><i class="fas fa-quote-left"></i> Testimonials</span>
-        <h2 class="section-title-modern">What Our Clients Say</h2>
-        <p class="section-subtitle-modern">Real stories from satisfied property owners and investors</p>
+      <div class="testimonials-section-head scroll-animate">
+        <div class="testimonials-section-head-main section-header">
+          <span class="section-tag"><i class="fas fa-quote-left"></i> Testimonials</span>
+          <h2 class="section-title-modern">What Our Clients Say</h2>
+          <p class="section-subtitle-modern">Real stories from satisfied property owners and investors</p>
+        </div>
+        <div class="testimonials-read-more-wrap">
+          <a href="https://maps.app.goo.gl/3NrkdYLr5e4iR8Np7" target="_blank" rel="noopener noreferrer" class="btn-modern-primary testimonials-read-more-btn">
+            <span>Read more</span>
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
       </div>
 
-      <div class="testimonials-grid">
-        <article class="testimonial-card scroll-animate">
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+      <?php if ($testimonialsCount > 0): ?>
+      <div class="testimonials-carousel<?php echo $testimonialsFew ? ' testimonials-carousel--few' : ''; ?>" data-count="<?php echo (int) $testimonialsCount; ?>">
+        <button class="home-videos-nav testimonials-nav-prev" type="button" aria-label="Previous testimonials">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="testimonials-viewport">
+          <div class="testimonials-track">
+        <?php foreach ($homeTestimonials as $ti => $t):
+            $rating = (int) ($t['rating'] ?? 5);
+            $rating = max(1, min(5, $rating));
+            $delayClass = $ti > 0 ? ' delay-' . min($ti, 4) : '';
+            $avatar = trim((string) ($t['avatar_url'] ?? ''));
+            $role = trim((string) ($t['author_role'] ?? ''));
+            ?>
+        <article class="testimonial-card scroll-animate<?php echo $delayClass; ?>">
+          <div class="testimonial-stars" aria-label="<?php echo $rating; ?> out of 5 stars">
+            <?php for ($s = 0; $s < 5; $s++): ?>
+              <i class="fas fa-star<?php echo $s < $rating ? '' : ' testimonial-star--muted'; ?>"></i>
+            <?php endfor; ?>
           </div>
-          <p class="testimonial-text">"Shubham Duggal & his team is always there for all the questions I had even before start working with them.
-            They are so professional and always on time ....."</p>
+          <p class="testimonial-text">"<?php echo htmlspecialchars((string) $t['quote'], ENT_QUOTES, 'UTF-8'); ?>"</p>
           <div class="testimonial-author">
             <div class="author-avatar">
-              <i class="fas fa-user"></i>
+              <?php if ($avatar !== ''): ?>
+                <img src="<?php echo htmlspecialchars($avatar, ENT_QUOTES, 'UTF-8'); ?>" alt="" loading="lazy" width="60" height="60" />
+              <?php else: ?>
+                <i class="fas fa-user" aria-hidden="true"></i>
+              <?php endif; ?>
             </div>
             <div class="author-info">
-              <h4 class="author-name">Jean Rony Pierre</h4>
+              <h4 class="author-name"><?php echo htmlspecialchars((string) $t['author_name'], ENT_QUOTES, 'UTF-8'); ?></h4>
+              <?php if ($role !== ''): ?>
+                <p class="author-role"><?php echo htmlspecialchars($role, ENT_QUOTES, 'UTF-8'); ?></p>
+              <?php endif; ?>
             </div>
           </div>
         </article>
-
-        <article class="testimonial-card scroll-animate delay-1">
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+        <?php endforeach; ?>
           </div>
-          <p class="testimonial-text">"Shubham is highly responsive. He listens and understands your preferences and gives you great options that match your needs."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">
-              <i class="fas fa-user"></i>
-            </div>
-            <div class="author-info">
-              <h4 class="author-name">Urmi Ramchandani</h4>
-
-            </div>
-          </div>
-        </article>
-
-        <article class="testimonial-card scroll-animate delay-2">
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <p class="testimonial-text">"Shubham Duggal and his team always there to help me. With selling my condo and purchase my new townhouse. Very professional ......"</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">
-              <i class="fas fa-user"></i>
-            </div>
-            <div class="author-info">
-              <h4 class="author-name">Jeenu Rikhi</h4>
-            </div>
-          </div>
-        </article>
+        </div>
+        <button class="home-videos-nav testimonials-nav-next" type="button" aria-label="Next testimonials">
+          <i class="fas fa-chevron-right"></i>
+        </button>
       </div>
+      <?php else: ?>
+      <p class="testimonials-empty text-center text-muted scroll-animate mb-0">Reviews from clients will appear here. Be the first to share your experience.</p>
+      <?php endif; ?>
+
       <div class="testimonials-cta text-center scroll-animate mt-4">
-        <a href="https://maps.app.goo.gl/3NrkdYLr5e4iR8Np7" target="_blank" rel="noopener noreferrer" class="btn-modern-primary">
-          <span>Read More</span>
-          <i class="fas fa-external-link-alt"></i>
+        <a href="/review" class="btn-modern-outline testimonials-post-review-btn">
+          <span>Post a review</span>
+          <i class="fas fa-pen"></i>
         </a>
       </div>
     </div>
@@ -565,5 +614,290 @@ include 'components/header.php'; ?>
     });
   });
 </script>
+
+<?php if (count($homeVideos) > 0): ?>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js" crossorigin="anonymous"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof Fancybox !== 'undefined') {
+      Fancybox.bind('[data-fancybox="home-videos"]');
+    }
+
+    const carousel = document.querySelector('.home-videos-carousel');
+    if (!carousel) return;
+
+    const viewport = carousel.querySelector('.home-videos-viewport');
+    const track = carousel.querySelector('.home-videos-track');
+    const originalSlides = track ? Array.from(track.querySelectorAll('.video-card')) : [];
+    const prevBtn = carousel.querySelector('.home-videos-prev');
+    const nextBtn = carousel.querySelector('.home-videos-next');
+    if (!viewport || !track || originalSlides.length === 0 || !prevBtn || !nextBtn) return;
+
+    let currentIndex = 0;
+    let autoplayTimer = null;
+    let isTransitioning = false;
+
+    function getVisibleCount() {
+      if (window.innerWidth < 768) return 1;
+      if (window.innerWidth < 992) return 2;
+      return 3;
+    }
+
+    function resetTrackContent() {
+      const visible = getVisibleCount();
+      track.innerHTML = '';
+      originalSlides.forEach((slide) => track.appendChild(slide.cloneNode(true)));
+      for (let i = 0; i < visible; i += 1) {
+        track.appendChild(originalSlides[i % originalSlides.length].cloneNode(true));
+      }
+    }
+
+    function updateSlider() {
+      const visible = getVisibleCount();
+      const slideCount = originalSlides.length;
+      if (slideCount <= visible) {
+        currentIndex = 0;
+      } else if (currentIndex < 0) {
+        currentIndex = slideCount - 1;
+      }
+      const firstSlide = track.querySelector('.video-card');
+      const slideWidth = firstSlide ? firstSlide.getBoundingClientRect().width : 0;
+      const gap = parseFloat(window.getComputedStyle(track).columnGap || window.getComputedStyle(track).gap || '0') || 0;
+      const offset = currentIndex * (slideWidth + gap);
+      track.style.transform = 'translateX(-' + offset + 'px)';
+      prevBtn.disabled = slideCount <= visible;
+      nextBtn.disabled = slideCount <= visible;
+      carousel.classList.toggle('is-static', slideCount <= visible);
+    }
+
+    function goNextAuto() {
+      const visible = getVisibleCount();
+      if (originalSlides.length <= visible || isTransitioning) return;
+      isTransitioning = true;
+      currentIndex += 1;
+      updateSlider();
+    }
+
+    function startAutoplay() {
+      if (autoplayTimer) clearInterval(autoplayTimer);
+      autoplayTimer = setInterval(goNextAuto, 3500);
+    }
+
+    function stopAutoplay() {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    }
+
+    prevBtn.addEventListener('click', function () {
+      const visible = getVisibleCount();
+      if (originalSlides.length <= visible || isTransitioning) return;
+      isTransitioning = true;
+      currentIndex = currentIndex <= 0 ? originalSlides.length - 1 : currentIndex - 1;
+      updateSlider();
+      startAutoplay();
+    });
+
+    nextBtn.addEventListener('click', function () {
+      goNextAuto();
+      startAutoplay();
+    });
+
+    track.addEventListener('transitionend', function () {
+      const visible = getVisibleCount();
+      if (originalSlides.length <= visible) {
+        isTransitioning = false;
+        return;
+      }
+      if (currentIndex >= originalSlides.length) {
+        track.style.transition = 'none';
+        currentIndex = 0;
+        updateSlider();
+        // Force reflow so the next move animates normally.
+        void track.offsetHeight;
+        track.style.transition = '';
+      }
+      isTransitioning = false;
+    });
+
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('mouseleave', startAutoplay);
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        stopAutoplay();
+      } else {
+        startAutoplay();
+      }
+    });
+
+    window.addEventListener('resize', function () {
+      resetTrackContent();
+      track.style.transition = 'none';
+      updateSlider();
+      void track.offsetHeight;
+      track.style.transition = '';
+    });
+    resetTrackContent();
+    updateSlider();
+    startAutoplay();
+  });
+</script>
+<?php endif; ?>
+
+<?php if ($testimonialsCount > 0): ?>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var carousel = document.querySelector('.testimonials-carousel');
+    if (!carousel) return;
+
+    var viewport = carousel.querySelector('.testimonials-viewport');
+    var track = carousel.querySelector('.testimonials-track');
+    var originalSlides = track ? Array.from(track.querySelectorAll('.testimonial-card')) : [];
+    var prevBtn = carousel.querySelector('.testimonials-nav-prev');
+    var nextBtn = carousel.querySelector('.testimonials-nav-next');
+    if (!viewport || !track || originalSlides.length === 0 || !prevBtn || !nextBtn) return;
+
+    var few = carousel.classList.contains('testimonials-carousel--few');
+    var currentIndex = 0;
+    var autoplayTimer = null;
+    var isTransitioning = false;
+
+    function getVisibleCount() {
+      if (window.innerWidth < 768) return 1;
+      if (window.innerWidth < 992) return 2;
+      return 3;
+    }
+
+    function resetTrackContent() {
+      if (few) {
+        track.innerHTML = '';
+        originalSlides.forEach(function (slide) {
+          track.appendChild(slide.cloneNode(true));
+        });
+        return;
+      }
+      var visible = getVisibleCount();
+      track.innerHTML = '';
+      originalSlides.forEach(function (slide) {
+        track.appendChild(slide.cloneNode(true));
+      });
+      for (var i = 0; i < visible; i += 1) {
+        track.appendChild(originalSlides[i % originalSlides.length].cloneNode(true));
+      }
+    }
+
+    function updateSlider() {
+      if (few) {
+        track.style.transform = '';
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
+        carousel.classList.add('is-static');
+        return;
+      }
+      var visible = getVisibleCount();
+      var slideCount = originalSlides.length;
+      if (slideCount <= visible) {
+        currentIndex = 0;
+      } else if (currentIndex < 0) {
+        currentIndex = slideCount - 1;
+      }
+      var firstSlide = track.querySelector('.testimonial-card');
+      var slideWidth = firstSlide ? firstSlide.getBoundingClientRect().width : 0;
+      var gap = parseFloat(window.getComputedStyle(track).columnGap || window.getComputedStyle(track).gap || '0') || 0;
+      var offset = currentIndex * (slideWidth + gap);
+      track.style.transform = 'translateX(-' + offset + 'px)';
+      prevBtn.disabled = slideCount <= visible;
+      nextBtn.disabled = slideCount <= visible;
+      carousel.classList.toggle('is-static', slideCount <= visible);
+    }
+
+    function goNextAuto() {
+      var visible = getVisibleCount();
+      if (few || originalSlides.length <= visible || isTransitioning) return;
+      isTransitioning = true;
+      currentIndex += 1;
+      updateSlider();
+    }
+
+    function startAutoplay() {
+      if (autoplayTimer) clearInterval(autoplayTimer);
+      autoplayTimer = setInterval(goNextAuto, 3500);
+    }
+
+    function stopAutoplay() {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    }
+
+    prevBtn.addEventListener('click', function () {
+      var visible = getVisibleCount();
+      if (few || originalSlides.length <= visible || isTransitioning) return;
+      isTransitioning = true;
+      currentIndex = currentIndex <= 0 ? originalSlides.length - 1 : currentIndex - 1;
+      updateSlider();
+      startAutoplay();
+    });
+
+    nextBtn.addEventListener('click', function () {
+      goNextAuto();
+      startAutoplay();
+    });
+
+    track.addEventListener('transitionend', function () {
+      if (few) {
+        isTransitioning = false;
+        return;
+      }
+      var visible = getVisibleCount();
+      if (originalSlides.length <= visible) {
+        isTransitioning = false;
+        return;
+      }
+      if (currentIndex >= originalSlides.length) {
+        track.style.transition = 'none';
+        currentIndex = 0;
+        updateSlider();
+        void track.offsetHeight;
+        track.style.transition = '';
+      }
+      isTransitioning = false;
+    });
+
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('mouseleave', startAutoplay);
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        stopAutoplay();
+      } else {
+        startAutoplay();
+      }
+    });
+
+    window.addEventListener('resize', function () {
+      if (few) {
+        track.style.transition = 'none';
+        updateSlider();
+        void track.offsetHeight;
+        track.style.transition = '';
+        return;
+      }
+      resetTrackContent();
+      track.style.transition = 'none';
+      updateSlider();
+      void track.offsetHeight;
+      track.style.transition = '';
+    });
+
+    resetTrackContent();
+    updateSlider();
+    if (!few) {
+      startAutoplay();
+    }
+  });
+</script>
+<?php endif; ?>
 
 <?php include 'components/footer.php'; ?>

@@ -22,6 +22,9 @@ include 'components/header.php'; ?>
                         <p class="hero-description">
                             At Owning Ottawa Group, we believe real estate should feel clear, simple, and stress-free. Our mission is to create the smoothest, most transparent experience for every client we serve—while providing <strong>all services under one roof</strong>, so you can simply <strong>sit back and relax</strong>.
                         </p>
+                        <p class="hero-description mb-0">
+                            <a href="/blog">Read our blog</a> for Ottawa real estate tips, market notes, and team updates.
+                        </p>
                     </div>
                 </div>
             </div>

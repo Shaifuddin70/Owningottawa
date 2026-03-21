@@ -1,6 +1,7 @@
 <?php
 // Detect 404 from Apache ErrorDocument so we send correct status and noindex (avoids indexing errors)
-$is_404 = !empty($_SERVER['REDIRECT_STATUS']) && $_SERVER['REDIRECT_STATUS'] === '404';
+$is_404 = (!empty($_SERVER['REDIRECT_STATUS']) && $_SERVER['REDIRECT_STATUS'] === '404')
+  || (!empty($force_404));
 if ($is_404) {
   http_response_code(404);
 }
@@ -22,8 +23,12 @@ if ($is_404) {
   if (empty($page_description)) $page_description = 'owningottawa helps first-time home buyers and sellers in Ottawa with real estate services, mortgage solutions, property management, bookkeeping & accounting, and building permits & design.';
   if (empty($page_keywords)) $page_keywords = 'Ottawa real estate, real estate services, mortgage solutions, property management, bookkeeping, accounting, building permits, design services, home buying, home selling, first-time buyers';
   if ($is_404) {
-    $page_title = 'Page Not Found — OwningOttawa';
-    $page_description = 'The page you requested could not be found.';
+    if (empty($page_title)) {
+      $page_title = 'Page Not Found — OwningOttawa';
+    }
+    if (empty($page_description)) {
+      $page_description = 'The page you requested could not be found.';
+    }
   }
   $page_title_esc = htmlspecialchars($page_title, ENT_QUOTES, 'UTF-8');
   $page_description_esc = htmlspecialchars($page_description, ENT_QUOTES, 'UTF-8');
@@ -149,6 +154,9 @@ if ($is_404) {
   </script>
 
   <link rel="stylesheet" href="/css/styles.css" />
+  <?php if (isset($page_extra_head) && $page_extra_head !== '') {
+      echo $page_extra_head;
+  } ?>
 </head>
 
 <body>
@@ -343,10 +351,29 @@ if ($is_404) {
             <i class="fas fa-envelope"></i>
             <span>Contact</span>
           </a>
-          <a href="/about" class="nav-link" data-page="about">
-            <i class="fas fa-users"></i>
-            <span>About</span>
-          </a>
+          <div class="nav-dropdown">
+            <a href="/about" class="nav-link" data-page="about">
+              <i class="fas fa-users"></i>
+              <span>About</span>
+              <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </a>
+            <div class="dropdown-menu">
+              <a href="/about" class="dropdown-item">
+                <i class="fas fa-users"></i>
+                <div class="dropdown-content">
+                  <span class="dropdown-title">About us</span>
+                  <span class="dropdown-desc">Our team &amp; story</span>
+                </div>
+              </a>
+              <a href="/blog" class="dropdown-item">
+                <i class="fas fa-blog"></i>
+                <div class="dropdown-content">
+                  <span class="dropdown-title">Blog</span>
+                  <span class="dropdown-desc">News &amp; insights</span>
+                </div>
+              </a>
+            </div>
+          </div>
 
         </div>
 
@@ -413,6 +440,8 @@ if ($is_404) {
         } else if (currentPath.includes('/invest') || currentPath.endsWith('invest.php')) {
           currentPage = 'services'; // Invest is under services
         } else if (currentPath.includes('/about') || currentPath.endsWith('about.php')) {
+          currentPage = 'about';
+        } else if (currentPath.includes('/blog') || currentPath.endsWith('blog.php')) {
           currentPage = 'about';
         } else if (currentPath.includes('/resources') || currentPath.endsWith('resources.php')) {
           currentPage = 'resources';
