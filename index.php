@@ -2,6 +2,13 @@
 $page_title = 'OwningOttawa — Real Estate, Mortgage & Property Management in Ottawa';
 $page_description = 'Your complete property partner in Ottawa. Real estate, mortgages, property management, bookkeeping and permits—all under one roof. Find, finance and manage with confidence.';
 require_once __DIR__ . '/includes/content_store.php';
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+$reviewThanks = !empty($_SESSION['review_thanks']);
+if ($reviewThanks) {
+    unset($_SESSION['review_thanks']);
+}
 $homeVideos = content_get_active_videos();
 $homeTestimonials = content_get_active_testimonials();
 $page_extra_head = count($homeVideos) > 0
@@ -10,6 +17,13 @@ $page_extra_head = count($homeVideos) > 0
 include 'components/header.php'; ?>
 <!-- Main Content -->
 <main class="main-content modern-redesign">
+  <?php if ($reviewThanks): ?>
+  <div id="reviewThanksFlash" class="review-thanks-flash" role="status" aria-live="polite">
+    <div class="alert alert-success border-0 shadow mb-0 py-3 px-4 rounded-3">
+      <strong>Thank you!</strong> Your review was submitted and will appear on the site after we approve it.
+    </div>
+  </div>
+  <?php endif; ?>
 
   <!-- Hero Section with Video Background -->
   <section class="modern-hero" aria-label="Welcome to Owning Ottawa">
@@ -422,6 +436,33 @@ include 'components/header.php'; ?>
       </div>
     </div>
   </section>
+  <?php if ($reviewThanks): ?>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var el = document.getElementById('testimonials');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', '/#testimonials');
+      }
+    }
+    var flash = document.getElementById('reviewThanksFlash');
+    if (!flash) return;
+    var hideAfterMs = 5000;
+    var remove = function () {
+      flash.classList.add('review-thanks-flash--hide');
+      var done = function () {
+        flash.remove();
+      };
+      flash.addEventListener('transitionend', function (e) {
+        if (e.propertyName === 'opacity') done();
+      }, { once: true });
+      setTimeout(done, 500);
+    };
+    setTimeout(remove, hideAfterMs);
+  });
+  </script>
+  <?php endif; ?>
 
   <!-- FAQ Section -->
   <section class="faq-modern">
@@ -619,23 +660,21 @@ include 'components/header.php'; ?>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js" crossorigin="anonymous"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    if (typeof Fancybox !== 'undefined') {
-      Fancybox.bind('[data-fancybox="home-videos"]');
-    }
-
     const carousel = document.querySelector('.home-videos-carousel');
     if (!carousel) return;
 
     const viewport = carousel.querySelector('.home-videos-viewport');
     const track = carousel.querySelector('.home-videos-track');
-    const originalSlides = track ? Array.from(track.querySelectorAll('.video-card')) : [];
+    const fromDom = track ? Array.from(track.querySelectorAll('.video-card')) : [];
+    const slideTemplates = fromDom.map((slide) => slide.cloneNode(true));
     const prevBtn = carousel.querySelector('.home-videos-prev');
     const nextBtn = carousel.querySelector('.home-videos-next');
-    if (!viewport || !track || originalSlides.length === 0 || !prevBtn || !nextBtn) return;
+    if (!viewport || !track || slideTemplates.length === 0 || !prevBtn || !nextBtn) return;
 
     let currentIndex = 0;
     let autoplayTimer = null;
     let isTransitioning = false;
+    let resizeDebounce = null;
 
     function getVisibleCount() {
       if (window.innerWidth < 768) return 1;
@@ -646,15 +685,25 @@ include 'components/header.php'; ?>
     function resetTrackContent() {
       const visible = getVisibleCount();
       track.innerHTML = '';
-      originalSlides.forEach((slide) => track.appendChild(slide.cloneNode(true)));
+      slideTemplates.forEach((slide) => track.appendChild(slide.cloneNode(true)));
       for (let i = 0; i < visible; i += 1) {
-        track.appendChild(originalSlides[i % originalSlides.length].cloneNode(true));
+        track.appendChild(slideTemplates[i % slideTemplates.length].cloneNode(true));
       }
+    }
+
+    function bindVideoLightbox() {
+      if (typeof Fancybox === 'undefined') return;
+      try {
+        if (typeof Fancybox.unbind === 'function') {
+          Fancybox.unbind('[data-fancybox="home-videos"]');
+        }
+      } catch (e) { /* noop */ }
+      Fancybox.bind('[data-fancybox="home-videos"]');
     }
 
     function updateSlider() {
       const visible = getVisibleCount();
-      const slideCount = originalSlides.length;
+      const slideCount = slideTemplates.length;
       if (slideCount <= visible) {
         currentIndex = 0;
       } else if (currentIndex < 0) {
@@ -672,7 +721,7 @@ include 'components/header.php'; ?>
 
     function goNextAuto() {
       const visible = getVisibleCount();
-      if (originalSlides.length <= visible || isTransitioning) return;
+      if (slideTemplates.length <= visible || isTransitioning) return;
       isTransitioning = true;
       currentIndex += 1;
       updateSlider();
@@ -692,9 +741,9 @@ include 'components/header.php'; ?>
 
     prevBtn.addEventListener('click', function () {
       const visible = getVisibleCount();
-      if (originalSlides.length <= visible || isTransitioning) return;
+      if (slideTemplates.length <= visible || isTransitioning) return;
       isTransitioning = true;
-      currentIndex = currentIndex <= 0 ? originalSlides.length - 1 : currentIndex - 1;
+      currentIndex = currentIndex <= 0 ? slideTemplates.length - 1 : currentIndex - 1;
       updateSlider();
       startAutoplay();
     });
@@ -706,11 +755,11 @@ include 'components/header.php'; ?>
 
     track.addEventListener('transitionend', function () {
       const visible = getVisibleCount();
-      if (originalSlides.length <= visible) {
+      if (slideTemplates.length <= visible) {
         isTransitioning = false;
         return;
       }
-      if (currentIndex >= originalSlides.length) {
+      if (currentIndex >= slideTemplates.length) {
         track.style.transition = 'none';
         currentIndex = 0;
         updateSlider();
@@ -731,15 +780,30 @@ include 'components/header.php'; ?>
       }
     });
 
-    window.addEventListener('resize', function () {
+    function layoutAfterResize() {
+      isTransitioning = false;
+      if (currentIndex >= slideTemplates.length) {
+        currentIndex = 0;
+      }
       resetTrackContent();
       track.style.transition = 'none';
-      updateSlider();
-      void track.offsetHeight;
-      track.style.transition = '';
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          updateSlider();
+          void track.offsetHeight;
+          track.style.transition = '';
+          bindVideoLightbox();
+        });
+      });
+    }
+
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeDebounce);
+      resizeDebounce = setTimeout(layoutAfterResize, 120);
     });
     resetTrackContent();
     updateSlider();
+    bindVideoLightbox();
     startAutoplay();
   });
 </script>
@@ -753,37 +817,38 @@ include 'components/header.php'; ?>
 
     var viewport = carousel.querySelector('.testimonials-viewport');
     var track = carousel.querySelector('.testimonials-track');
-    var originalSlides = track ? Array.from(track.querySelectorAll('.testimonial-card')) : [];
+    var fromDom = track ? Array.from(track.querySelectorAll('.testimonial-card')) : [];
+    var slideTemplates = fromDom.map(function (slide) { return slide.cloneNode(true); });
     var prevBtn = carousel.querySelector('.testimonials-nav-prev');
     var nextBtn = carousel.querySelector('.testimonials-nav-next');
-    if (!viewport || !track || originalSlides.length === 0 || !prevBtn || !nextBtn) return;
+    if (!viewport || !track || slideTemplates.length === 0 || !prevBtn || !nextBtn) return;
 
     var few = carousel.classList.contains('testimonials-carousel--few');
     var currentIndex = 0;
     var autoplayTimer = null;
     var isTransitioning = false;
+    var resizeDebounce = null;
 
     function getVisibleCount() {
-      if (window.innerWidth < 768) return 1;
-      if (window.innerWidth < 992) return 2;
+      if (window.innerWidth < 992) return 1;
       return 3;
     }
 
     function resetTrackContent() {
       if (few) {
         track.innerHTML = '';
-        originalSlides.forEach(function (slide) {
+        slideTemplates.forEach(function (slide) {
           track.appendChild(slide.cloneNode(true));
         });
         return;
       }
       var visible = getVisibleCount();
       track.innerHTML = '';
-      originalSlides.forEach(function (slide) {
+      slideTemplates.forEach(function (slide) {
         track.appendChild(slide.cloneNode(true));
       });
       for (var i = 0; i < visible; i += 1) {
-        track.appendChild(originalSlides[i % originalSlides.length].cloneNode(true));
+        track.appendChild(slideTemplates[i % slideTemplates.length].cloneNode(true));
       }
     }
 
@@ -796,7 +861,7 @@ include 'components/header.php'; ?>
         return;
       }
       var visible = getVisibleCount();
-      var slideCount = originalSlides.length;
+      var slideCount = slideTemplates.length;
       if (slideCount <= visible) {
         currentIndex = 0;
       } else if (currentIndex < 0) {
@@ -814,7 +879,7 @@ include 'components/header.php'; ?>
 
     function goNextAuto() {
       var visible = getVisibleCount();
-      if (few || originalSlides.length <= visible || isTransitioning) return;
+      if (few || slideTemplates.length <= visible || isTransitioning) return;
       isTransitioning = true;
       currentIndex += 1;
       updateSlider();
@@ -834,9 +899,9 @@ include 'components/header.php'; ?>
 
     prevBtn.addEventListener('click', function () {
       var visible = getVisibleCount();
-      if (few || originalSlides.length <= visible || isTransitioning) return;
+      if (few || slideTemplates.length <= visible || isTransitioning) return;
       isTransitioning = true;
-      currentIndex = currentIndex <= 0 ? originalSlides.length - 1 : currentIndex - 1;
+      currentIndex = currentIndex <= 0 ? slideTemplates.length - 1 : currentIndex - 1;
       updateSlider();
       startAutoplay();
     });
@@ -852,11 +917,11 @@ include 'components/header.php'; ?>
         return;
       }
       var visible = getVisibleCount();
-      if (originalSlides.length <= visible) {
+      if (slideTemplates.length <= visible) {
         isTransitioning = false;
         return;
       }
-      if (currentIndex >= originalSlides.length) {
+      if (currentIndex >= slideTemplates.length) {
         track.style.transition = 'none';
         currentIndex = 0;
         updateSlider();
@@ -876,19 +941,37 @@ include 'components/header.php'; ?>
       }
     });
 
-    window.addEventListener('resize', function () {
+    function layoutAfterResize() {
+      isTransitioning = false;
+      if (!few && currentIndex >= slideTemplates.length) {
+        currentIndex = 0;
+      }
       if (few) {
         track.style.transition = 'none';
-        updateSlider();
-        void track.offsetHeight;
-        track.style.transition = '';
+        resetTrackContent();
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            updateSlider();
+            void track.offsetHeight;
+            track.style.transition = '';
+          });
+        });
         return;
       }
       resetTrackContent();
       track.style.transition = 'none';
-      updateSlider();
-      void track.offsetHeight;
-      track.style.transition = '';
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          updateSlider();
+          void track.offsetHeight;
+          track.style.transition = '';
+        });
+      });
+    }
+
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeDebounce);
+      resizeDebounce = setTimeout(layoutAfterResize, 120);
     });
 
     resetTrackContent();

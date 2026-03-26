@@ -6865,26 +6865,31 @@ a.video-card {
 /* Testimonials */
 .testimonials-section-head {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 .testimonials-section-head-main {
-    flex: 1 1 280px;
-    text-align: left;
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 0 !important;
+    text-align: center;
 }
 
+.testimonials-section-head-main .section-tag,
 .testimonials-section-head-main .section-title-modern,
 .testimonials-section-head-main .section-subtitle-modern {
-    text-align: left;
+    text-align: center;
 }
 
 .testimonials-read-more-wrap {
     flex: 0 0 auto;
+    align-self: center;
 }
 
 .testimonials-read-more-btn {
@@ -6901,29 +6906,9 @@ a.video-card {
 }
 
 @media (max-width: 767.98px) {
-    .testimonials-section-head {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .testimonials-read-more-wrap {
-        align-self: flex-end;
-        text-align: right;
-        width: 100%;
-    }
-
     .testimonials-read-more-btn {
         width: auto;
         justify-content: center;
-    }
-
-    .testimonials-section-head-main {
-        text-align: center;
-    }
-
-    .testimonials-section-head-main .section-title-modern,
-    .testimonials-section-head-main .section-subtitle-modern {
-        text-align: center;
     }
 }
 
@@ -6967,8 +6952,9 @@ a.video-card {
 @media (min-width: 768px) and (max-width: 991.98px) {
     .testimonials-track {
         grid-auto-flow: column;
-        grid-auto-columns: calc((100% - 2rem) / 2);
+        grid-auto-columns: 100%;
         grid-template-columns: none;
+        gap: 1rem;
     }
 }
 
@@ -12276,4 +12262,28 @@ body.modal-open {
     max-width: 32rem;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Review submitted — fixed flash (homepage) */
+.review-thanks-flash {
+    position: fixed;
+    top: calc(5rem + env(safe-area-inset-top, 0px));
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10050;
+    max-width: min(92vw, 520px);
+    width: 100%;
+    padding: 0 0.75rem;
+    box-sizing: border-box;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    pointer-events: none;
+}
+
+.review-thanks-flash .alert {
+    pointer-events: auto;
+}
+
+.review-thanks-flash.review-thanks-flash--hide {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-12px);
 }

@@ -347,3 +347,32 @@ function content_get_blog_by_slug(string $slug): ?array
 
     return $row ?: null;
 }
+
+/**
+ * Aggregate counts for admin dashboard (per table: total, active, inactive by is_active).
+ *
+ * @return array{videos: array{total:int,active:int,inactive:int}, testimonials: array{total:int,active:int,inactive:int}, blogs: array{total:int,active:int,inactive:int}, testimonials_pending:int}
+ */
+function content_admin_dashboard_counts(PDO $pdo): array
+{
+    $out = [];
+    foreach (['videos', 'testimonials', 'blogs'] as $table) {
+        $stmt = $pdo->query(
+            'SELECT COUNT(*) AS total,
+                COALESCE(SUM(CASE WHEN is_active = 1 THEN 1 ELSE 0 END), 0) AS active,
+                COALESCE(SUM(CASE WHEN is_active = 0 THEN 1 ELSE 0 END), 0) AS inactive
+             FROM ' . $table
+        );
+        $row = $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
+        $out[$table] = [
+            'total' => (int) ($row['total'] ?? 0),
+            'active' => (int) ($row['active'] ?? 0),
+            'inactive' => (int) ($row['inactive'] ?? 0),
+        ];
+    }
+    $out['testimonials_pending'] = (int) $pdo->query(
+        "SELECT COUNT(*) FROM testimonials WHERE approval_status = 'pending'"
+    )->fetchColumn();
+
+    return $out;
+}

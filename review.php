@@ -47,9 +47,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 "INSERT INTO testimonials (quote, author_name, author_role, rating, avatar_url, sort_order, is_active, approval_status) VALUES (?,?,?,?,?,?,0,'pending')"
             );
             $st->execute([$quote, $authorName, $authorRole, $rating, '', 1000]);
-            $formMessage = 'Thank you! Your review was submitted and will appear on the site after we approve it.';
             $_SESSION['review_csrf'] = bin2hex(random_bytes(32));
-            $reviewCsrf = $_SESSION['review_csrf'];
+            $_SESSION['review_thanks'] = true;
+            header('Location: /', true, 303);
+            exit;
         }
     }
 }
