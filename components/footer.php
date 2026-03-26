@@ -108,9 +108,21 @@
               </a>
             </li>
             <li>
-              <a href="http://listing.owningottawa.com/">
-                <i class="fas fa-list"></i>
-                <span>Properties</span>
+              <a href="/buy">
+                <i class="fas fa-key"></i>
+                <span>Buy a Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="/invest">
+                <i class="fas fa-chart-line"></i>
+                <span>Invest</span>
+              </a>
+            </li>
+            <li>
+              <a href="/resources">
+                <i class="fas fa-book"></i>
+                <span>Resources</span>
               </a>
             </li>
             <li>
