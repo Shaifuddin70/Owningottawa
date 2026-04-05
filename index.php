@@ -89,6 +89,7 @@ include 'components/header.php'; ?>
     </div>
   </section>
 
+
   <!-- Services Section -->
   <section class="common-section section-bg" id="services">
     <div class="container">
@@ -183,6 +184,27 @@ include 'components/header.php'; ?>
   </section>
 
 
+  <!-- Featured Video iframe -->
+  <section class="common-section featured-listings-section" aria-label="Featured Video">
+    <div class="container">
+      <div class="section-header text-center scroll-animate">
+        <span class="section-tag"><i class="fas fa-play-circle"></i> Featured Video</span>
+        <h2 class="section-title-modern">Watch Our Featured Video</h2>
+        <p class="section-subtitle-modern">Explore the latest OwningOttawa featured video and connect with us directly.</p>
+      </div>
+      <div class="scroll-animate">
+        <iframe
+          src="https://listing.owningottawa.com/featured-video"
+          title="OwningOttawa Featured Video"
+          frameborder="0"
+          allowfullscreen
+          loading="lazy"
+
+          class="featured-listings-vframe">
+        </iframe>
+      </div>
+    </div>
+  </section>
 
   <!-- Process Timeline -->
   <section class="process-timeline">
@@ -296,74 +318,23 @@ include 'components/header.php'; ?>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="testimonials-section">
+  <!-- Testimonials (embedded from listing site) -->
+  <section class="common-section " id="testimonials" aria-label="Client testimonials">
     <div class="container">
       <div class="section-header text-center scroll-animate">
         <span class="section-tag"><i class="fas fa-quote-left"></i> Testimonials</span>
         <h2 class="section-title-modern">What Our Clients Say</h2>
         <p class="section-subtitle-modern">Real stories from satisfied property owners and investors</p>
       </div>
-
-      <div class="testimonials-grid">
-        <article class="testimonial-card scroll-animate">
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <p class="testimonial-text">"Shubham Duggal & his team is always there for all the questions I had even before start working with them.
-            They are so professional and always on time ....."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">
-              <i class="fas fa-user"></i>
-            </div>
-            <div class="author-info">
-              <h4 class="author-name">Jean Rony Pierre</h4>
-            </div>
-          </div>
-        </article>
-
-        <article class="testimonial-card scroll-animate delay-1">
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <p class="testimonial-text">"Shubham is highly responsive. He listens and understands your preferences and gives you great options that match your needs."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">
-              <i class="fas fa-user"></i>
-            </div>
-            <div class="author-info">
-              <h4 class="author-name">Urmi Ramchandani</h4>
-
-            </div>
-          </div>
-        </article>
-
-        <article class="testimonial-card scroll-animate delay-2">
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <p class="testimonial-text">"Shubham Duggal and his team always there to help me. With selling my condo and purchase my new townhouse. Very professional ......"</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">
-              <i class="fas fa-user"></i>
-            </div>
-            <div class="author-info">
-              <h4 class="author-name">Jeenu Rikhi</h4>
-            </div>
-          </div>
-        </article>
+      <div class="scroll-animate">
+        <iframe
+          src="https://listing.owningottawa.com/featured-testimonials"
+          title="OwningOttawa Featured Testimonials"
+          frameborder="0"
+          allowfullscreen
+          loading="lazy"
+          class="featured-listings-vframe testimonials-embed-frame">
+        </iframe>
       </div>
       <div class="testimonials-cta text-center scroll-animate mt-4">
         <a href="https://maps.app.goo.gl/3NrkdYLr5e4iR8Np7" target="_blank" rel="noopener noreferrer" class="btn-modern-primary">
