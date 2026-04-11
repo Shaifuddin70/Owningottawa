@@ -5887,7 +5887,7 @@ hr,
 }
 
 /* Prevent hero badge/content from hiding under fixed nav on narrow viewports */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
     .modern-hero-content {
         padding-top: 5.5rem;
     }
@@ -5897,7 +5897,7 @@ hr,
     .modern-hero-content {
         padding-top: 6rem;
     }
-}
+} */
 
 .hero-badge {
     display: inline-flex;
@@ -5963,11 +5963,18 @@ hr,
 }
 
 .hero-features {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 1.25rem;
     margin-bottom: 2.5rem;
-    flex-wrap: wrap;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.hero-feature-item:nth-child(3) {
+    grid-column: 1 / -1;
 }
 
 .hero-feature-item {
@@ -6993,7 +7000,8 @@ a.hero-feature-item:visited {
     }
 
     .hero-features {
-        gap: 1rem;
+        gap: 0.75rem 1rem;
+        max-width: 100%;
     }
 
     .hero-feature-item {
@@ -7140,12 +7148,7 @@ a.hero-feature-item:visited {
     }
 
     .hero-features {
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-
-    .hero-feature-item {
-        width: 100%;
+        gap: 0.65rem 0.75rem;
     }
 
     .section-title-modern {
@@ -11761,11 +11764,11 @@ body.modal-open {
 @media (max-width: 768px) {
 
     .featured-listings-vframe {
-        min-height: 280px;
+        min-height: 300px;
     }
 
     .testimonials-embed-frame {
-        min-height: 480px;
+        min-height: 500px;
     }
 }
 
